@@ -125,6 +125,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="packages.config" />
     <BundleResource Include="Resources\5.pdf" />
+    <BundleResource Include="Images\Invoice-50.png" />
+    <BundleResource Include="Images\Invoice-100.png" />
+    <Compile Include="InvoiceViewController.cs" />
+    <Compile Include="InvoiceViewController.designer.cs">
+      <DependentUpon>InvoiceViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SettingsViewController.cs" />
