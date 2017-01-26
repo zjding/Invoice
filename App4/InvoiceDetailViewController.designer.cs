@@ -20,13 +20,26 @@ namespace App4
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnInvoiceDate { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIBarButtonItem btnInvoiceDone { get; set; }
+
+        [Action ("OnBtnInvoiceDateUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void OnBtnInvoiceDateUpInside (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
             if (btnInvoiceCancel != null) {
                 btnInvoiceCancel.Dispose ();
                 btnInvoiceCancel = null;
+            }
+
+            if (btnInvoiceDate != null) {
+                btnInvoiceDate.Dispose ();
+                btnInvoiceDate = null;
             }
 
             if (btnInvoiceDone != null) {
