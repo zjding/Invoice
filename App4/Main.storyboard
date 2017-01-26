@@ -617,12 +617,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1518" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1656" y="-175"/>
+            <point key="canvasLocation" x="1563" y="24"/>
         </scene>
         <scene sceneID="1718">
             <objects>
-                <tableViewController id="1719" sceneMemberID="viewController" customClass="InvoiceViewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1721" customClass="InvoiceTableViewController">
+                <tableViewController id="1719" sceneMemberID="viewController" customClass="InvoiceListTableViewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1721">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -652,7 +652,9 @@
                             </segments>
                             <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                         </segmentedControl>
-                        <barButtonItem key="rightBarButtonItem" id="1787" systemItem="add"/>
+                        <barButtonItem key="rightBarButtonItem" id="1787" systemItem="add">
+                            <connections/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="btnAddInvoice" destination="1787" id="name-outlet-1787"/>
@@ -681,6 +683,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1731" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="260" y="-657"/>
+        </scene>
+        <scene sceneID="2329">
+            <objects>
+                <tableViewController id="2330" sceneMemberID="viewController" customClass="InvoiceDetailViewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2332" customClass="Invoice">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2335">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2335" id="2336">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2330" id="2333"/>
+                            <outlet property="delegate" destination="2330" id="2334"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Invoice" id="2331">
+                        <barButtonItem key="leftBarButtonItem" id="2345" systemItem="cancel">
+                            <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                            <connections>
+                                <segue id="2841" destination="2343" kind="unwind" unwindAction="UnwindToInvoiceListViewController:"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" id="2346" systemItem="done">
+                            <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                            <connections/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="btnInvoiceCancel" destination="2345" id="name-outlet-2345"/>
+                        <outlet property="btnInvoiceDone" destination="2346" id="name-outlet-2346"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2337" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="2343" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2587" y="-772"/>
+        </scene>
+        <scene sceneID="2338">
+            <objects>
+                <navigationController id="2339" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2341">
+                        <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" colorSpace="calibratedRGB" red="0.035294117647058823" green="0.35686274509803922" blue="0.96078431372549022" alpha="1"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2330" kind="relationship" relationship="rootViewController" id="2340"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2342" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1723" y="-668"/>
         </scene>
     </scenes>
     <resources>

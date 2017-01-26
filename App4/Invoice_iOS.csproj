@@ -127,9 +127,13 @@
     <BundleResource Include="Resources\5.pdf" />
     <BundleResource Include="Images\Invoice-50.png" />
     <BundleResource Include="Images\Invoice-100.png" />
-    <Compile Include="InvoiceViewController.cs" />
-    <Compile Include="InvoiceViewController.designer.cs">
-      <DependentUpon>InvoiceViewController.cs</DependentUpon>
+    <Compile Include="InvoiceDetailViewController.cs" />
+    <Compile Include="InvoiceDetailViewController.designer.cs">
+      <DependentUpon>InvoiceDetailViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceListTableViewController.cs" />
+    <Compile Include="InvoiceListTableViewController.designer.cs">
+      <DependentUpon>InvoiceListTableViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -11,27 +11,27 @@ using UIKit;
 
 namespace App4
 {
-    [Register ("InvoiceViewController")]
-    partial class InvoiceViewController
+    [Register ("InvoiceDetailViewController")]
+    partial class InvoiceDetailViewController
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIBarButtonItem btnAddInvoice { get; set; }
+        UIKit.UIBarButtonItem btnInvoiceCancel { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UISegmentedControl segPaidUnpaid { get; set; }
+        UIKit.UIBarButtonItem btnInvoiceDone { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
-            if (btnAddInvoice != null) {
-                btnAddInvoice.Dispose ();
-                btnAddInvoice = null;
+            if (btnInvoiceCancel != null) {
+                btnInvoiceCancel.Dispose ();
+                btnInvoiceCancel = null;
             }
 
-            if (segPaidUnpaid != null) {
-                segPaidUnpaid.Dispose ();
-                segPaidUnpaid = null;
+            if (btnInvoiceDone != null) {
+                btnInvoiceDone.Dispose ();
+                btnInvoiceDone = null;
             }
         }
     }
