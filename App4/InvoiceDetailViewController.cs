@@ -6,14 +6,25 @@ namespace App4
 {
     public partial class InvoiceDetailViewController : UITableViewController
     {
+		public InvoiceListTableViewController callingController;
+
         public InvoiceDetailViewController (IntPtr handle) : base (handle)
         {
         }
 
-		[Action("UnwindToInvoiceListViewController:")]
-		public void UnwindToInvoiceListViewController(UIStoryboardSegue segue)
+		public override void ViewDidLoad()
 		{
-			Console.WriteLine("We've unwinded to Pink!");
+			base.ViewDidLoad();
+
+			this.btnInvoiceCancel.Clicked += BtnInvoiceCancel_Clicked; ;
 		}
+
+		void BtnInvoiceCancel_Clicked (object sender, EventArgs e)
+		{
+			callingController.DismissViewController(true, null);
+			//callingController.DismissModalViewController(true);
+		}
+
+
     }
 }

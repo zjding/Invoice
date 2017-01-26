@@ -653,7 +653,9 @@
                             <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                         </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" id="1787" systemItem="add">
-                            <connections/>
+                            <connections>
+                                <segue id="2909" destination="2339" kind="showDetail"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
