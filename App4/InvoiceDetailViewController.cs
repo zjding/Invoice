@@ -2,6 +2,7 @@ using Foundation;
 using System;
 using UIKit;
 using SharpMobileCode.ModalPicker;
+using CoreGraphics;
 
 namespace App4
 {
@@ -59,6 +60,17 @@ namespace App4
 			};
 
 			await PresentViewControllerAsync(modalPicker, true);
+		}
+
+		public override UIView GetViewForHeader(UITableView tableView, nint section)
+		{
+			//return base.GetViewForHeader(tableView, section);
+
+			CGRect frame = new CGRect(0, 0, this.TableView.Frame.Size.Width, 40.0);
+			UIView header = new UIView(frame);
+			header.BackgroundColor = new UIColor(red: 0.92f, green: 0.92f, blue: 0.92f, alpha: 1.0f);
+
+			return header;
 		}
 	}
 }
