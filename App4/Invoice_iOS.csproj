@@ -135,6 +135,10 @@
     <Compile Include="InvoiceListTableViewController.designer.cs">
       <DependentUpon>InvoiceListTableViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClientDetailsViewController.cs" />
+    <Compile Include="ClientDetailsViewController.designer.cs">
+      <DependentUpon>ClientDetailsViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SettingsViewController.cs" />
