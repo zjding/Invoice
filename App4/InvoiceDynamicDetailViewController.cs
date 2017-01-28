@@ -1,17 +1,20 @@
 using Foundation;
 using System;
+using System.Collections.Generic;
 using UIKit;
 
 namespace App4
 {
 	
-
+    
 
     public partial class InvoiceDynamicDetailViewController : UITableViewController
     {
 		public string InvoiceNameCellIdentifier = "InvoiceNameCellIdentifier";
 		public string ClientNameCellIdentifier = "ClientNameCellIdentifier";
 		public string ItemCellIdentifier = "ItemCellIdentifier";
+
+        public List<String> items = new List<string>();
 
 		//List<string> Items = new List<string>();
 
