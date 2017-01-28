@@ -139,6 +139,13 @@
     <Compile Include="ClientDetailsViewController.designer.cs">
       <DependentUpon>ClientDetailsViewController.cs</DependentUpon>
     </Compile>
+    <BundleResource Include="Images\Add.png" />
+    <BundleResource Include="Images\Plus.png" />
+    <BundleResource Include="Images\Plus_S.png" />
+    <Compile Include="InvoiceDynamicDetailViewController.cs" />
+    <Compile Include="InvoiceDynamicDetailViewController.designer.cs">
+      <DependentUpon>InvoiceDynamicDetailViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SettingsViewController.cs" />

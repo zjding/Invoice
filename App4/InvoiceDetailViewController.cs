@@ -10,6 +10,9 @@ namespace App4
     {
 		public InvoiceListTableViewController callingController;
 
+		public int iAddItemRow = 1;
+		public int iAddItemSection = 2;
+
         public InvoiceDetailViewController (IntPtr handle) : base (handle)
         {
         }
@@ -62,15 +65,41 @@ namespace App4
 			await PresentViewControllerAsync(modalPicker, true);
 		}
 
-		public override UIView GetViewForHeader(UITableView tableView, nint section)
+		//public override UIView GetViewForHeader(UITableView tableView, nint section)
+		//{
+		//	//return base.GetViewForHeader(tableView, section);
+
+		//	CGRect frame = new CGRect(0, 0, this.TableView.Frame.Size.Width, 40.0);
+		//	UIView header = new UIView(frame);
+		//	header.BackgroundColor = new UIColor(red: 0.92f, green: 0.92f, blue: 0.92f, alpha: 1.0f);
+
+		//	return header;
+		//}
+
+		public override nint RowsInSection(UITableView tableview, nint section)
 		{
-			//return base.GetViewForHeader(tableView, section);
+			if (section == 0)
+				return 1;
+			else if (section == 1)
+				return 1;
+			else if (section == 2)
+				return iAddItemRow+1;
 
-			CGRect frame = new CGRect(0, 0, this.TableView.Frame.Size.Width, 40.0);
-			UIView header = new UIView(frame);
-			header.BackgroundColor = new UIColor(red: 0.92f, green: 0.92f, blue: 0.92f, alpha: 1.0f);
+			return 3;
+		}
 
-			return header;
+		public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
+		{
+			if (indexPath.Section == iAddItemSection && indexPath.Row == iAddItemRow)
+			{
+				iAddItemRow++;
+
+
+				this.TableView.InsertRows(new NSIndexPath[] { NSIndexPath.FromRowSection(iAddItemRow, iAddItemSection) }, UITableViewRowAnimation.Fade);
+
+
+
+			}
 		}
 	}
 }
