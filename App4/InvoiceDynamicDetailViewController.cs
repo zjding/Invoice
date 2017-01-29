@@ -13,6 +13,7 @@ namespace App4
 		public string InvoiceNameCellIdentifier = "InvoiceNameCellIdentifier";
 		public string ClientNameCellIdentifier = "ClientNameCellIdentifier";
 		public string ItemCellIdentifier = "ItemCellIdentifier";
+		public string AddItemCellIdentifier = "AddItemCellIdentifier";
 
         public List<String> items = new List<string>();
 
@@ -73,36 +74,28 @@ namespace App4
 			}
 			else if (indexPath.Section == 1)
 			{
-				UITableViewCell cell = this.TableView.DequeueReusableCell(ClientNameCellIdentifier);
+				InvoiceClientNameCell cell = this.TableView.DequeueReusableCell(ClientNameCellIdentifier) as InvoiceClientNameCell;
 
-				if (cell == null)
-				{
-					cell = new UITableViewCell(UITableViewCellStyle.Default, ClientNameCellIdentifier);
-				}
-
-				cell.TextLabel.Text = "Section 2";
+				cell.TextLabel.Text = "Jason Ding";
 
 				return cell;
 			}
 			else 
 			{
-				UITableViewCell cell = this.TableView.DequeueReusableCell(ItemCellIdentifier);
-
-				if (cell == null)
-				{
-					cell = new UITableViewCell(UITableViewCellStyle.Default, ItemCellIdentifier);
-				}
-
 				if (indexPath.Row == items.Count)
 				{
-					cell.TextLabel.Text = "Add Item";
+					InvoiceAddItemCell cell = this.TableView.DequeueReusableCell(AddItemCellIdentifier) as InvoiceAddItemCell;
+
+					return cell;
 				}
 				else
 				{
+					InvoiceItemCell cell = this.TableView.DequeueReusableCell(ItemCellIdentifier) as InvoiceItemCell;
 					cell.TextLabel.Text = items[indexPath.Row];
-				}
+					cell.DetailTextLabel.Text = "$20,00";
 
-				return cell;
+					return cell;
+				}
 			}
 		}
     }

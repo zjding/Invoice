@@ -150,6 +150,18 @@
     <Compile Include="InvoiceNameCell.designer.cs">
       <DependentUpon>InvoiceNameCell.cs</DependentUpon>
     </Compile>
+    <Compile Include="InvoiceClientNameCell.cs" />
+    <Compile Include="InvoiceClientNameCell.designer.cs">
+      <DependentUpon>InvoiceClientNameCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceItemCell.cs" />
+    <Compile Include="InvoiceItemCell.designer.cs">
+      <DependentUpon>InvoiceItemCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceAddItemCell.cs" />
+    <Compile Include="InvoiceAddItemCell.designer.cs">
+      <DependentUpon>InvoiceAddItemCell.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SettingsViewController.cs" />
