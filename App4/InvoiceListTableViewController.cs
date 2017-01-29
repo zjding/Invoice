@@ -30,9 +30,9 @@ namespace App4
 
 		public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
 		{
-			var destCtrl = segue.DestinationViewController as UINavigationController;
+			//var destCtrl = segue.DestinationViewController as UINavigationController;
 
-			((InvoiceDetailViewController)(destCtrl.ViewControllers[0])).callingController = this;
+			//((InvoiceDetailViewController)(destCtrl.ViewControllers[0])).callingController = this;
 
 			base.PrepareForSegue(segue, sender);
 		}
