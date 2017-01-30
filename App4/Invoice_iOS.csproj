@@ -162,6 +162,10 @@
     <Compile Include="InvoiceAddItemCell.designer.cs">
       <DependentUpon>InvoiceAddItemCell.cs</DependentUpon>
     </Compile>
+    <Compile Include="InvoiceItemDetailViewController.cs" />
+    <Compile Include="InvoiceItemDetailViewController.designer.cs">
+      <DependentUpon>InvoiceItemDetailViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SettingsViewController.cs" />

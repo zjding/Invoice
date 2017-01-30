@@ -98,5 +98,24 @@ namespace App4
 				}
 			}
 		}
+
+		public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
+		{
+			if (segue.Identifier == "Invoice_List_To_ItemDetail_Segue")
+			{
+				var destCtrl = segue.DestinationViewController as InvoiceItemDetailViewController;
+
+				destCtrl.callingController = this;
+			}
+
+			base.PrepareForSegue(segue, sender);
+		}
+
+		public override void ViewWillAppear(Boolean animated)
+		{
+			base.ViewWillAppear(animated);
+
+			this.TableView.ReloadData();
+		}
     }
 }
