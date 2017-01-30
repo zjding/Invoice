@@ -69,6 +69,7 @@ namespace App4
 				var curDate = new NSDate();
 
 				nameCell.btnDate.SetTitle(dateFormatter.ToString(curDate), UIControlState.Normal);
+				nameCell.viewController = this;
 
 				return nameCell;
 			}
@@ -117,5 +118,30 @@ namespace App4
 
 			this.TableView.ReloadData();
 		}
+
+		//async partial void OnBtnInvoiceDateUpInside(UIButton sender)
+		//{
+		//	var modalPicker = new ModalPickerViewController(ModalPickerType.Date, "Select a Date", this)
+		//	{
+		//		HeaderBackgroundColor = new UIColor(red: 0.00f, green: 0.46f, blue: 0.98f, alpha: 1.0f),
+		//		HeaderTextColor = UIColor.White,
+		//		TransitioningDelegate = new ModalPickerTransitionDelegate(),
+		//		ModalPresentationStyle = UIModalPresentationStyle.Custom
+		//	};
+
+		//	modalPicker.DatePicker.Mode = UIDatePickerMode.Date;
+
+		//	modalPicker.OnModalPickerDismissed += (s, ea) =>
+		//	{
+		//		var dateFormatter = new NSDateFormatter()
+		//		{
+		//			DateFormat = "MMMM dd, yyyy"
+		//		};
+
+		//		this.btnInvoiceDate.SetTitle(dateFormatter.ToString(modalPicker.DatePicker.Date), UIControlState.Normal);
+		//	};
+
+		//	await PresentViewControllerAsync(modalPicker, true);
+		//}
     }
 }

@@ -22,6 +22,10 @@ namespace App4
         [GeneratedCode ("iOS Designer", "1.0")]
         public UIKit.UILabel lblInvoiceName { get; set; }
 
+        [Action ("OnBtnInvoiceDateUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void OnBtnInvoiceDateUpInside (UIKit.UIButton sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (btnDate != null) {

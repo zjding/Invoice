@@ -949,6 +949,9 @@
                                                 <constraint id="3262" firstItem="3241" firstAttribute="height" constant="30"/>
                                                 <constraint id="3263" firstItem="3241" firstAttribute="width" constant="198"/>
                                             </constraints>
+                                            <connections>
+                                                <action selector="OnBtnInvoiceDateUpInside:" destination="3231" id="3480" eventType="touchUpInside"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
