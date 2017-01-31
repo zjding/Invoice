@@ -42,5 +42,7 @@
 	<string>Resources/Media.xcassets/LaunchImages.launchimage</string>
 	<key></key>
 	<string></string>
+	<key>NSContactsUsageDescription</key>
+	<string>Import contact</string>
 </dict>
 </plist>

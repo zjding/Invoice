@@ -1153,8 +1153,11 @@
                         </connections>
                     </tableView>
                     <navigationItem title="Title" id="3624" key="navigationItem">
-                        <barButtonItem key="rightBarButtonItem" title="Import" id="3625"/>
+                        <barButtonItem key="rightBarButtonItem" id="3625" image="Images/Contacts-25.png"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="btnImportFromContacts" destination="3625" id="name-outlet-3625"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3568" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1172,5 +1175,6 @@
         <image name="Images/Plus.png" width="50" height="50"/>
         <image name="Images/Plus_S.png" width="72" height="72"/>
         <image name="Images/Contacts-50.png" width="50" height="50"/>
+        <image name="Images/Contacts-25.png" width="25" height="25"/>
     </resources>
 </document>
