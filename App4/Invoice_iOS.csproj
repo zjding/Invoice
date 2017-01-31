@@ -172,6 +172,7 @@
     </Compile>
     <BundleResource Include="Images\Contacts-50.png" />
     <BundleResource Include="Images\Contacts-25.png" />
+    <None Include="InvoiceDB.db" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SettingsViewController.cs" />
