@@ -166,6 +166,11 @@
     <Compile Include="InvoiceItemDetailViewController.designer.cs">
       <DependentUpon>InvoiceItemDetailViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClientListTableViewController.cs" />
+    <Compile Include="ClientListTableViewController.designer.cs">
+      <DependentUpon>ClientListTableViewController.cs</DependentUpon>
+    </Compile>
+    <BundleResource Include="Images\Contacts-50.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SettingsViewController.cs" />
@@ -176,8 +181,8 @@
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewController.cs" />
-    <InterfaceDefinition Include="Main.storyboard" />
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
+    <InterfaceDefinition Include="Main.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="itextsharp">

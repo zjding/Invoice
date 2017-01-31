@@ -1098,7 +1098,7 @@
         </scene>
         <scene sceneID="3489">
             <objects>
-                <tableViewController id="3490" sceneMemberID="viewController" customClass="ClientListTableViewController">
+                <tableViewController id="3490" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="3491">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1118,47 +1118,10 @@
                             <outlet property="delegate" destination="3490" id="3493"/>
                         </connections>
                     </tableView>
-                    <navigationItem title="Clients" id="3558" key="navigationItem">
-                        <barButtonItem key="rightBarButtonItem" id="3559" systemItem="add">
-                            <connections>
-                                <segue id="3618" destination="3562" kind="show"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3496" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3204" y="-207"/>
-        </scene>
-        <scene sceneID="3561">
-            <objects>
-                <tableViewController id="3562" sceneMemberID="viewController" customClass="ClientDetailsViewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="3563">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3566">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3566" id="3567">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="3562" id="3564"/>
-                            <outlet property="delegate" destination="3562" id="3565"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem title="Title" id="3624" key="navigationItem">
-                        <barButtonItem key="rightBarButtonItem" title="Import" id="3625"/>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3568" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3876" y="-209"/>
         </scene>
     </scenes>
     <resources>
@@ -1171,6 +1134,5 @@
         <image name="Images/Add.png" width="50" height="50"/>
         <image name="Images/Plus.png" width="50" height="50"/>
         <image name="Images/Plus_S.png" width="72" height="72"/>
-        <image name="Images/Contacts-50.png" width="50" height="50"/>
     </resources>
 </document>
