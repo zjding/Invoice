@@ -253,6 +253,10 @@
     </ImageAsset>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Invoice_Model\Invoice_Model.csproj">
+      <Project>{e801ebd8-2536-4c43-99ee-fb0160bc7abd}</Project>
+      <Name>Invoice_Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SharpMobileCode.ModalPicker\SharpMobileCode.ModalPicker.csproj">
       <Project>{D8D8ED2E-2C43-416B-8196-46A0AD9788FD}</Project>
       <Name>SharpMobileCode.ModalPicker</Name>

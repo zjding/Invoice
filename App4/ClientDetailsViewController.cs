@@ -3,13 +3,18 @@ using System;
 using UIKit;
 using AddressBook;
 using AddressBookUI;
+using Invoice_Model;
 
 namespace App4
 {
 	public partial class ClientDetailsViewController : UITableViewController
 	{
+        public Client client;
+
 		public ClientDetailsViewController(IntPtr handle) : base(handle)
 		{
+            client = new Client();
+            
 		}
 
 		public override void ViewDidLoad()

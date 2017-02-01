@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Invoice_Model;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -22,6 +23,7 @@ namespace WebApiTry1.Controllers
         [Route("api/Employees/GetByFirstName/{firstName}")]
         public string Get(string firstName)
         {
+            Client client = new Client();
             return firstName;
         }
 
