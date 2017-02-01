@@ -66,7 +66,15 @@ namespace App4
 			//personController, true);
 
 			ABPeoplePickerNavigationController contactController = new ABPeoplePickerNavigationController();
+			contactController.SelectPerson2 += ContactController_SelectPerson2;
+
 			PresentViewController(contactController, true, null);
+		}
+
+		void ContactController_SelectPerson2(object sender, ABPeoplePickerSelectPerson2EventArgs e)
+		{
+			client.firstName = e.Person.FirstName;
+			client.lastName = e.Person.LastName;
 		}
 	}
 }
