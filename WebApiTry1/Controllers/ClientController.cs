@@ -46,6 +46,7 @@ namespace WebApiTry1.Controllers
             connection.Close();
 
             return clients;
+
         }
 
     }
