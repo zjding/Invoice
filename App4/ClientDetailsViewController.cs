@@ -84,8 +84,29 @@ namespace App4
 
 		void ContactController_SelectPerson2(object sender, ABPeoplePickerSelectPerson2EventArgs e)
 		{
-			client.firstName = e.Person.FirstName;
-			client.lastName = e.Person.LastName;
+			client.Name = e.Person.FirstName + " " + e.Person.LastName;
+            var phones = e.Person.GetPhones();
+            var emails = e.Person.GetEmails();
+            var addresses = e.Person.GetAllAddresses();
+
+            if (phones.Count > 0)
+            {
+                client.Phone = phones[0].Value;
+            }
+
+            if (emails.Count > 0)
+            {
+                client.Phone = emails[0].Value;
+            }
+
+            if (addresses.Count > 0)
+            {
+                client.Address1 = addresses[0].Value.State;
+                client.Address3 = addresses[0].Value.City + " " +
+                                  addresses[0].Value.State + " " +
+                                  addresses[0].Value.Country + " " +
+                                  addresses[0].Value.Zip;
+            }
 		}
 	}
 }

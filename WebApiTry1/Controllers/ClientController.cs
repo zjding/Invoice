@@ -37,8 +37,12 @@ namespace WebApiTry1.Controllers
             {
                 client = new Client();
                 client.id = Convert.ToInt32(reader["Id"]);
-                client.firstName = Convert.ToString(reader["FirstName"]);
-                client.lastName = Convert.ToString(reader["LastName"]);
+                client.Name = reader["Name"] != DBNull.Value ? Convert.ToString(reader["Name"]) : string.Empty;
+                client.Phone = reader["Phone"] != DBNull.Value ? Convert.ToString(reader["Phone"]) : string.Empty;
+                client.Email = reader["Email"] != DBNull.Value ? Convert.ToString(reader["Email"]) : string.Empty;
+                client.Address1 = reader["Address1"] != DBNull.Value ? Convert.ToString(reader["Address1"]) : string.Empty;
+                client.Address2 = reader["Address2"] != DBNull.Value ? Convert.ToString(reader["Address2"]) : string.Empty;
+                client.Address3 = reader["Address3"] != DBNull.Value ? Convert.ToString(reader["Address3"]) : string.Empty;
 
                 clients.Add(client);
             }
