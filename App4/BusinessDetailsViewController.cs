@@ -47,6 +47,8 @@ namespace App4
         partial void BusinessDetails_txtCompanyName_OnEditingDidBegin(UIKit.UITextField sender)
         {
             //this.BusinessDetails_txtCompanyName.BecomeFirstResponder();
+
+
         }
     }
 }
