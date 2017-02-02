@@ -24,7 +24,18 @@ namespace App4
 			btnImportFromContacts.Clicked += BtnImportFromContacts_Clicked;
 		}
 
-		void BtnImportFromContacts_Clicked(object sender, EventArgs e)
+		public override void WillDisplayHeaderView(UITableView tableView, UIView headerView, nint section)
+		{
+			if (section == 1)
+			{
+				var header = headerView as UITableViewHeaderFooterView;
+
+				header.TextLabel.TextColor = UIColor.DarkGray;
+				header.TextLabel.Font = UIFont.BoldSystemFontOfSize(12);
+			}
+		}
+
+		public void BtnImportFromContacts_Clicked(object sender, EventArgs e)
 		{
 			ABAuthorizationStatus status = ABAddressBook.GetAuthorizationStatus();
 			NSError error;

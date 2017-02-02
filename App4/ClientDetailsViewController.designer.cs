@@ -18,11 +18,20 @@ namespace App4
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIBarButtonItem btnImportFromContacts { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField txtClientFirstName { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
             if (btnImportFromContacts != null) {
                 btnImportFromContacts.Dispose ();
                 btnImportFromContacts = null;
+            }
+
+            if (txtClientFirstName != null) {
+                txtClientFirstName.Dispose ();
+                txtClientFirstName = null;
             }
         }
     }
