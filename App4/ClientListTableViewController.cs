@@ -25,7 +25,26 @@ namespace App4
 
 			clients = JsonConvert.DeserializeObject<List<Client>>(result);
 
-			//string a = contents.ToString();
+            this.TableView.ReloadData();
 		}
+
+        public override nint RowsInSection(UITableView tableView, nint section)
+        {
+            return clients.Count;
+        }
+
+        public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
+        {
+            UITableViewCell cell = this.TableView.DequeueReusableCell("ClientCellIdentifier");
+
+            if (cell == null)
+            {
+                cell = new UITableViewCell(UITableViewCellStyle.Default, "ClientCellIdentifier");
+            }
+
+            cell.TextLabel.Text = clients[indexPath.Row].firstName + clients[indexPath.Row].lastName;
+
+            return cell;
+        }
     }
 }
