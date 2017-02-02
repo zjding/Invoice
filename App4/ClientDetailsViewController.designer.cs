@@ -20,7 +20,27 @@ namespace App4
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField txtClientFirstName { get; set; }
+        UIKit.UITextField txtClientAddress1 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField txtClientAddress2 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField txtClientAddress3 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField txtClientEmail { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField txtClientName { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField txtClientPhone { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
@@ -29,9 +49,34 @@ namespace App4
                 btnImportFromContacts = null;
             }
 
-            if (txtClientFirstName != null) {
-                txtClientFirstName.Dispose ();
-                txtClientFirstName = null;
+            if (txtClientAddress1 != null) {
+                txtClientAddress1.Dispose ();
+                txtClientAddress1 = null;
+            }
+
+            if (txtClientAddress2 != null) {
+                txtClientAddress2.Dispose ();
+                txtClientAddress2 = null;
+            }
+
+            if (txtClientAddress3 != null) {
+                txtClientAddress3.Dispose ();
+                txtClientAddress3 = null;
+            }
+
+            if (txtClientEmail != null) {
+                txtClientEmail.Dispose ();
+                txtClientEmail = null;
+            }
+
+            if (txtClientName != null) {
+                txtClientName.Dispose ();
+                txtClientName = null;
+            }
+
+            if (txtClientPhone != null) {
+                txtClientPhone.Dispose ();
+                txtClientPhone = null;
             }
         }
     }
