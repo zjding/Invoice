@@ -57,5 +57,38 @@ namespace WebApiTry1.Controllers
 
         }
 
+        [HttpPost]
+        public HttpResponseMessage AddClient(Client client)
+        {
+            string commandString = @"INSERT INTO Client (FirstName, LastName, Phone, Email, Street1, Street2, City, State, Country, PostCode) 
+                                     Values(@FirstName, @LastName, @Phone, @Email, @Street1, @Street2, @City, @State, @Country, @PostCode)";
+
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = Constant.connectionString;
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = commandString;
+            command.Connection = connection;
+
+            command.Parameters.AddWithValue("@FirstName", client.FirstName);
+            command.Parameters.AddWithValue("@LastName", client.LastName);
+            command.Parameters.AddWithValue("@Phone", client.Phone);
+            command.Parameters.AddWithValue("@Email", client.Email);
+            command.Parameters.AddWithValue("@Street1", client.Street1);
+            command.Parameters.AddWithValue("@Street2", client.Street2);
+            command.Parameters.AddWithValue("@City", client.City);
+            command.Parameters.AddWithValue("@State", client.State);
+            command.Parameters.AddWithValue("@Country", client.Country);
+            command.Parameters.AddWithValue("@PostCode", client.PostCode);
+
+            connection.Open();
+
+            int rowInserted = command.ExecuteNonQuery();
+
+            connection.Close();
+
+            return Request.CreateResponse(HttpStatusCode.Created, "Added client successfully");
+        }
+
     }
 }
