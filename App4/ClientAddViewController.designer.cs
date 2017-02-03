@@ -32,7 +32,11 @@ namespace App4
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField txtName { get; set; }
+        UIKit.UITextField txtFirstName { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField txtLastName { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -76,9 +80,14 @@ namespace App4
                 txtEmail = null;
             }
 
-            if (txtName != null) {
-                txtName.Dispose ();
-                txtName = null;
+            if (txtFirstName != null) {
+                txtFirstName.Dispose ();
+                txtFirstName = null;
+            }
+
+            if (txtLastName != null) {
+                txtLastName.Dispose ();
+                txtLastName = null;
             }
 
             if (txtPhone != null) {

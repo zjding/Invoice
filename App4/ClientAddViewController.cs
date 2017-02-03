@@ -10,7 +10,70 @@ namespace App4
         {
         }
 
+		public override void ViewDidLoad()
+		{
+			base.ViewDidLoad();
 
+			this.txtFirstName.ShouldReturn += (textField) =>
+			{
+				((UITextField)textField).ResignFirstResponder();
+				return true;
+			};
+
+			this.txtLastName.ShouldReturn += (textField) =>
+			{
+				((UITextField)textField).ResignFirstResponder();
+				return true;
+			};
+
+			this.txtPhone.ShouldReturn += (textField) =>
+			{
+				((UITextField)textField).ResignFirstResponder();
+				return true;
+			};
+
+			this.txtEmail.ShouldReturn += (textField) =>
+			{
+				((UITextField)textField).ResignFirstResponder();
+				return true;
+			};
+
+			this.txtStreet1.ShouldReturn += (textField) =>
+			{
+				((UITextField)textField).ResignFirstResponder();
+				return true;
+			};
+
+			this.txtStreet2.ShouldReturn += (textField) =>
+			{
+				((UITextField)textField).ResignFirstResponder();
+				return true;
+			};
+
+			this.txtCity.ShouldReturn += (textField) =>
+			{
+				((UITextField)textField).ResignFirstResponder();
+				return true;
+			};
+
+			this.txtState.ShouldReturn += (textField) =>
+			{
+				((UITextField)textField).ResignFirstResponder();
+				return true;
+			};
+
+			this.txtCountry.ShouldReturn += (textField) =>
+			{
+				((UITextField)textField).ResignFirstResponder();
+				return true;
+			};
+
+			this.txtPostCode.ShouldReturn += (textField) =>
+			{
+				((UITextField)textField).ResignFirstResponder();
+				return true;
+			};
+		}
 
 		public override void WillDisplayHeaderView(UITableView tableView, UIView headerView, nint section)
 		{
