@@ -42,7 +42,7 @@ namespace App4
                 cell = new UITableViewCell(UITableViewCellStyle.Default, "ClientCellIdentifier");
             }
 
-            cell.TextLabel.Text = clients[indexPath.Row].Name;
+			cell.TextLabel.Text = clients[indexPath.Row].FirstName + " " + clients[indexPath.Row].LastName;
 
             return cell;
         }

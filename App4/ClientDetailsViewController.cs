@@ -84,35 +84,35 @@ namespace App4
 
 		void ContactController_SelectPerson2(object sender, ABPeoplePickerSelectPerson2EventArgs e)
 		{
-			client.Name = e.Person.FirstName + " " + e.Person.LastName;
-            var phones = e.Person.GetPhones();
-            var emails = e.Person.GetEmails();
-            var addresses = e.Person.GetAllAddresses();
+			//client.Name = e.Person.FirstName + " " + e.Person.LastName;
+   //         var phones = e.Person.GetPhones();
+   //         var emails = e.Person.GetEmails();
+   //         var addresses = e.Person.GetAllAddresses();
 
-            if (phones.Count > 0)
-            {
-                client.Phone = phones[0].Value;
-            }
+   //         if (phones.Count > 0)
+   //         {
+   //             client.Phone = phones[0].Value;
+   //         }
 
-            if (emails.Count > 0)
-            {
-				client.Email = emails[0].Value;
-            }
+   //         if (emails.Count > 0)
+   //         {
+			//	client.Email = emails[0].Value;
+   //         }
 
-            if (addresses.Count > 0)
-            {
-				client.Address1 = addresses[0].Value.Street;
-                client.Address3 = addresses[0].Value.City + " " +
-                                  addresses[0].Value.State + " " +
-                                  addresses[0].Value.Country + " " +
-                                  addresses[0].Value.Zip;
-            }
+   //         if (addresses.Count > 0)
+   //         {
+			//	client.Address1 = addresses[0].Value.Street;
+   //             client.Address3 = addresses[0].Value.City + " " +
+   //                               addresses[0].Value.State + " " +
+   //                               addresses[0].Value.Country + " " +
+   //                               addresses[0].Value.Zip;
+   //         }
 
-			this.txtClientName.Text = client.Name;
-			this.txtClientPhone.Text = client.Phone;
-			this.txtClientEmail.Text = client.Email;
-			this.txtClientAddress1.Text = client.Address1;
-			this.txtClientAddress3.Text = client.Address3;
+			//this.txtClientName.Text = client.Name;
+			//this.txtClientPhone.Text = client.Phone;
+			//this.txtClientEmail.Text = client.Email;
+			//this.txtClientAddress1.Text = client.Address1;
+			//this.txtClientAddress3.Text = client.Address3;
 		}
 	}
 }
