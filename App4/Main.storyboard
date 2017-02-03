@@ -1599,12 +1599,8 @@
                         </sections>
                     </tableView>
                     <navigationItem key="navigationItem" title="New Client" id="4088">
-                        <barButtonItem key="leftBarButtonItem" id="4158" systemItem="cancel">
-                            <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" id="4159" systemItem="save">
-                            <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" id="4158" systemItem="cancel"/>
+                        <barButtonItem key="rightBarButtonItem" id="4159" systemItem="save"/>
                     </navigationItem>
                     <connections>
                         <outlet property="btnImportContact" destination="4182" id="name-outlet-4182"/>
@@ -1629,10 +1625,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4098">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" colorSpace="calibratedRGB" red="0.19215686274509805" green="0.42352941176470588" blue="0.94901960784313721" alpha="1"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="4087" kind="relationship" relationship="rootViewController" id="4097"/>
