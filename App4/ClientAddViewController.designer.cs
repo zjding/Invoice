@@ -62,6 +62,10 @@ namespace App4
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnImportContact_UpInside (UIKit.UIButton sender);
 
+        [Action ("btnSave_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnSave_TouchUpInside (UIKit.UIBarButtonItem sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (btnImportContact != null) {

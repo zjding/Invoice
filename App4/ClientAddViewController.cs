@@ -137,5 +137,10 @@ namespace App4
 			this.txtCountry.Text = client.Country;
 			this.txtPostCode.Text = client.PostCode;
 		}
+
+		partial void btnSave_TouchUpInside(UIBarButtonItem sender)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }
