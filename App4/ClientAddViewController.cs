@@ -3,6 +3,9 @@ using System;
 using UIKit;
 using AddressBookUI;
 using Invoice_Model;
+using Newtonsoft.Json;
+using System.Net.Http;
+using System.Text;
 
 namespace App4
 {
@@ -138,9 +141,31 @@ namespace App4
 			this.txtPostCode.Text = client.PostCode;
 		}
 
-		partial void btnSave_TouchUpInside(UIBarButtonItem sender)
+		async partial void btnSave_TouchUpInside(UIBarButtonItem sender)
 		{
-			throw new NotImplementedException();
+			Client client = new Client();
+			client.FirstName = txtFirstName.Text;
+			client.LastName = txtLastName.Text;
+			client.Phone = txtPhone.Text;
+			client.Email = txtEmail.Text;
+			client.Street1 = txtStreet1.Text;
+			client.Street2 = txtStreet2.Text;
+			client.City = txtCity.Text;
+			client.State = txtState.Text;
+			client.Country = txtCountry.Text;
+			client.PostCode = txtPostCode.Text;
+
+			string jsonString = JsonConvert.SerializeObject(client);
+
+			HttpClient httpClient = new HttpClient();
+
+			var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
+
+			var result = await httpClient.PostAsync("http://webapitry120161228015023.azurewebsites.net/api/Client/AddClient", content);
+
+			var contents = await result.Content.ReadAsStringAsync();
+
+			string a = contents.ToString();
 		}
 	}
 }
