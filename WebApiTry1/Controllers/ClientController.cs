@@ -37,12 +37,16 @@ namespace WebApiTry1.Controllers
             {
                 client = new Client();
                 client.id = Convert.ToInt32(reader["Id"]);
-                client.Name = reader["Name"] != DBNull.Value ? Convert.ToString(reader["Name"]) : string.Empty;
+                client.FirstName = reader["FirstName"] != DBNull.Value ? Convert.ToString(reader["FirstName"]) : string.Empty;
+                client.LastName = reader["LastName"] != DBNull.Value ? Convert.ToString(reader["LastName"]) : string.Empty;
                 client.Phone = reader["Phone"] != DBNull.Value ? Convert.ToString(reader["Phone"]) : string.Empty;
                 client.Email = reader["Email"] != DBNull.Value ? Convert.ToString(reader["Email"]) : string.Empty;
-                client.Address1 = reader["Address1"] != DBNull.Value ? Convert.ToString(reader["Address1"]) : string.Empty;
-                client.Address2 = reader["Address2"] != DBNull.Value ? Convert.ToString(reader["Address2"]) : string.Empty;
-                client.Address3 = reader["Address3"] != DBNull.Value ? Convert.ToString(reader["Address3"]) : string.Empty;
+                client.Street1 = reader["Street1"] != DBNull.Value ? Convert.ToString(reader["Street1"]) : string.Empty;
+                client.Street2 = reader["Street2"] != DBNull.Value ? Convert.ToString(reader["Street2"]) : string.Empty;
+                client.City = reader["City"] != DBNull.Value ? Convert.ToString(reader["City"]) : string.Empty;
+                client.State = reader["State"] != DBNull.Value ? Convert.ToString(reader["State"]) : string.Empty;
+                client.Country = reader["Country"] != DBNull.Value ? Convert.ToString(reader["Country"]) : string.Empty;
+                client.PostCode = reader["PostCode"] != DBNull.Value ? Convert.ToString(reader["PostCode"]) : string.Empty;
 
                 clients.Add(client);
             }
