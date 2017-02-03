@@ -1384,6 +1384,9 @@
                                                     <constraints>
                                                         <constraint id="4185" firstItem="4182" firstAttribute="height" constant="30"/>
                                                     </constraints>
+                                                    <connections>
+                                                        <action selector="btnImportContact_UpInside:" destination="4087" id="4286" eventType="touchUpInside"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>

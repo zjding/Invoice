@@ -58,6 +58,10 @@ namespace App4
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField txtStreet2 { get; set; }
 
+        [Action ("btnImportContact_UpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnImportContact_UpInside (UIKit.UIButton sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (btnImportContact != null) {
