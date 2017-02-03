@@ -173,6 +173,10 @@
     <BundleResource Include="Images\Contacts-50.png" />
     <BundleResource Include="Images\Contacts-25.png" />
     <None Include="InvoiceDB.db" />
+    <Compile Include="ClientAddViewController.cs" />
+    <Compile Include="ClientAddViewController.designer.cs">
+      <DependentUpon>ClientAddViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SettingsViewController.cs" />
