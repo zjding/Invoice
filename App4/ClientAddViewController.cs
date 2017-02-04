@@ -6,12 +6,14 @@ using Invoice_Model;
 using Newtonsoft.Json;
 using System.Net.Http;
 using System.Text;
+using System.Drawing;
 
 namespace App4
 {
     public partial class ClientAddViewController : UITableViewController
     {
 		public Client client = new Client();
+		LoadingOverlay loadingOverlay;
 
         public ClientAddViewController (IntPtr handle) : base (handle)
         {
@@ -20,6 +22,10 @@ namespace App4
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+
+			//ShowActivityIndicator(this.View);
+
+
 
 			this.txtFirstName.ShouldReturn += (textField) =>
 			{
@@ -80,17 +86,19 @@ namespace App4
 				((UITextField)textField).ResignFirstResponder();
 				return true;
 			};
+
+
 		}
 
 		public override void WillDisplayHeaderView(UITableView tableView, UIView headerView, nint section)
 		{
-			if (section == 2)
-			{
-				var header = headerView as UITableViewHeaderFooterView;
+			//if (section == 2)
+			//{
+			//	var header = headerView as UITableViewHeaderFooterView;
 
-				header.TextLabel.TextColor = UIColor.DarkGray;
-				header.TextLabel.Font = UIFont.BoldSystemFontOfSize(12);
-			}
+			//	header.TextLabel.TextColor = UIColor.DarkGray;
+			//	header.TextLabel.Font = UIFont.BoldSystemFontOfSize(12);
+			//}
 		}
 
 		partial void btnImportContact_UpInside(UIButton sender)
@@ -161,11 +169,29 @@ namespace App4
 
 			var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
 
+			var bounds = UIScreen.MainScreen.Bounds;
+
+			loadingOverlay = new LoadingOverlay(bounds);
+			this.View.Add(loadingOverlay);
+
 			var result = await httpClient.PostAsync("http://webapitry120161228015023.azurewebsites.net/api/Client/AddClient", content);
 
-			var contents = await result.Content.ReadAsStringAsync();
+			//var contents = await result.Content.ReadAsStringAsync();
 
-			string a = contents.ToString();
+			//string a = contents.ToString();
+
+			loadingOverlay.Hide();
+		}
+
+		public void ShowActivityIndicator(UIView view)
+		{
+			UIActivityIndicatorView actInd = new UIActivityIndicatorView();
+			actInd.Frame = new Rectangle(0, 0, 40, 40);
+			actInd.Center = view.Center;
+			actInd.HidesWhenStopped = true;
+			actInd.ActivityIndicatorViewStyle = UIActivityIndicatorViewStyle.WhiteLarge;
+			view.AddSubview(actInd);
+			actInd.StartAnimating();
 		}
 	}
 }

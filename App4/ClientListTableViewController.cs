@@ -12,18 +12,38 @@ namespace App4
     {
 		public List<Client> clients = new List<Client>();
 
+		LoadingOverlay loadingOverlay;
+
         public ClientListTableViewController (IntPtr handle) : base (handle)
         {
         }
 
+		public override void ViewWillAppear(bool animated)
+		{
+			base.ViewWillAppear(animated);
+
+			//this.TableView.SeparatorColor = UIColor.White;
+		}
+
 		public async override void ViewDidLoad()
 		{
+			var bounds = UIScreen.MainScreen.Bounds;
+
+			loadingOverlay = new LoadingOverlay(bounds);
+			this.View.Add(loadingOverlay);
+
 			HttpClient httpClient = new HttpClient();
 
 
 			string result = await httpClient.GetStringAsync("http://webapitry120161228015023.azurewebsites.net/api/Clients/GetClients");
 
 			clients = JsonConvert.DeserializeObject<List<Client>>(result);
+
+			loadingOverlay.Hide();
+
+			this.TableView.SeparatorStyle = UITableViewCellSeparatorStyle.SingleLine;
+
+			//this.TableView.SeparatorColor = UIColor.Gray;
 
             this.TableView.ReloadData();
 		}
