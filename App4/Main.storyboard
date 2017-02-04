@@ -1133,7 +1133,7 @@
                     <navigationItem title="Clients" id="3558" key="navigationItem">
                         <barButtonItem key="rightBarButtonItem" id="4686" systemItem="add">
                             <connections>
-                                <segue id="4737" destination="4096" kind="presentation"/>
+                                <segue id="4737" destination="4096" kind="presentation" identifier="Client_List_To_New_Segue"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

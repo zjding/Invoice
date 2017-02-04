@@ -14,26 +14,21 @@ namespace App4
 
 		LoadingOverlay loadingOverlay;
 
+		HttpClient httpClient = new HttpClient();
+
         public ClientListTableViewController (IntPtr handle) : base (handle)
         {
+
         }
 
-		public override void ViewWillAppear(bool animated)
+		public async override void ViewWillAppear(bool animated)
 		{
 			base.ViewWillAppear(animated);
 
-			//this.TableView.SeparatorColor = UIColor.White;
-		}
-
-		public async override void ViewDidLoad()
-		{
 			var bounds = UIScreen.MainScreen.Bounds;
 
 			loadingOverlay = new LoadingOverlay(bounds);
 			this.View.Add(loadingOverlay);
-
-			HttpClient httpClient = new HttpClient();
-
 
 			string result = await httpClient.GetStringAsync("http://webapitry120161228015023.azurewebsites.net/api/Clients/GetClients");
 
@@ -45,8 +40,31 @@ namespace App4
 
 			//this.TableView.SeparatorColor = UIColor.Gray;
 
-            this.TableView.ReloadData();
+			this.TableView.ReloadData();
 		}
+
+		public override void ViewDidLoad()
+		{
+			base.ViewDidLoad();
+			//var bounds = UIScreen.MainScreen.Bounds;
+
+			//loadingOverlay = new LoadingOverlay(bounds);
+			//this.View.Add(loadingOverlay);
+
+			//HttpClient httpClient = new HttpClient();
+
+
+			//string result = await httpClient.GetStringAsync("http://webapitry120161228015023.azurewebsites.net/api/Clients/GetClients");
+
+			//clients = JsonConvert.DeserializeObject<List<Client>>(result);
+
+			//loadingOverlay.Hide();
+
+			//this.TableView.SeparatorStyle = UITableViewCellSeparatorStyle.SingleLine;
+
+   //         this.TableView.ReloadData();
+		}
+
 
         public override nint RowsInSection(UITableView tableView, nint section)
         {
@@ -66,5 +84,18 @@ namespace App4
 
             return cell;
         }
+
+		public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
+		{
+			if (segue.Identifier == "Client_List_To_New_Segue")
+			{
+				var destCtrl = segue.DestinationViewController as UINavigationController;
+
+				((ClientAddViewController)(destCtrl.ViewControllers[0])).callingController = this;
+
+			}
+
+			base.PrepareForSegue(segue, sender);
+		}
     }
 }

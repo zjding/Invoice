@@ -12,6 +12,8 @@ namespace App4
 {
     public partial class ClientAddViewController : UITableViewController
     {
+		public ClientListTableViewController callingController;
+
 		public Client client = new Client();
 		LoadingOverlay loadingOverlay;
 
@@ -176,11 +178,17 @@ namespace App4
 
 			var result = await httpClient.PostAsync("http://webapitry120161228015023.azurewebsites.net/api/Client/AddClient", content);
 
-			//var contents = await result.Content.ReadAsStringAsync();
+			var contents = await result.Content.ReadAsStringAsync();
 
-			//string a = contents.ToString();
+			string returnMessage = contents.ToString();
 
 			loadingOverlay.Hide();
+
+			if (returnMessage == "\"Added client successfully\"")
+			{
+				callingController.DismissViewController(true, null);
+
+			}
 		}
 
 		public void ShowActivityIndicator(UIView view)
