@@ -191,15 +191,10 @@ namespace App4
 			}
 		}
 
-		public void ShowActivityIndicator(UIView view)
+
+		partial void btnCancel_TouchUpInside(UIBarButtonItem sender)
 		{
-			UIActivityIndicatorView actInd = new UIActivityIndicatorView();
-			actInd.Frame = new Rectangle(0, 0, 40, 40);
-			actInd.Center = view.Center;
-			actInd.HidesWhenStopped = true;
-			actInd.ActivityIndicatorViewStyle = UIActivityIndicatorViewStyle.WhiteLarge;
-			view.AddSubview(actInd);
-			actInd.StartAnimating();
+			callingController.DismissViewController(true, null);
 		}
 	}
 }

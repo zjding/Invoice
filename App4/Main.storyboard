@@ -1639,7 +1639,11 @@
                         </sections>
                     </tableView>
                     <navigationItem key="navigationItem" title="New Client" id="4088">
-                        <barButtonItem key="leftBarButtonItem" id="4158" systemItem="cancel"/>
+                        <barButtonItem key="leftBarButtonItem" id="4158" systemItem="cancel">
+                            <connections>
+                                <action selector="btnCancel_TouchUpInside:" destination="4087" id="4781"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" id="4159" systemItem="save">
                             <connections>
                                 <action selector="btnSave_TouchUpInside:" destination="4087" id="4293"/>
