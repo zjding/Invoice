@@ -178,6 +178,11 @@
       <DependentUpon>ClientAddViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="LoadingOverlay.cs" />
+    <Compile Include="RaisedTabBarController.cs" />
+    <Compile Include="InvoiceTabBarController.cs" />
+    <Compile Include="InvoiceTabBarController.designer.cs">
+      <DependentUpon>InvoiceTabBarController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SettingsViewController.cs" />

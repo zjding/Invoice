@@ -10,7 +10,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="17">
             <objects>
-                <tabBarController id="18" sceneMemberID="viewController">
+                <tabBarController id="18" sceneMemberID="viewController" customClass="InvoiceTabBarController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="21">
                         <rect key="frame" x="0.0" y="687" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
