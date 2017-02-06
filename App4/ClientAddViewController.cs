@@ -132,13 +132,7 @@ namespace App4
 			//}
 		}
 
-		partial void btnImportContact_UpInside(UIButton sender)
-		{
-			//ABPeoplePickerNavigationController contactController = new ABPeoplePickerNavigationController();
-			//contactController.SelectPerson2 += ContactController_SelectPerson2;
 
-			//PresentViewController(contactController, true, null);
-		}
 
 		void ContactController_SelectPerson2(object sender, ABPeoplePickerSelectPerson2EventArgs e)
 		{
