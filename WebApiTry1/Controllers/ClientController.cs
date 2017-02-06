@@ -126,8 +126,9 @@ namespace WebApiTry1.Controllers
             return Request.CreateResponse(HttpStatusCode.Created, "Updated client successfully");
         }
 
+        [Route("api/Clients/Delete/{id}")]
         [HttpDelete]
-        public HttpResponseMessage DeleteClient([FromUri] Int32 id)
+        public HttpResponseMessage DeleteClient(string id)
         {
             string commandString = @"DELETE FROM Client WHERE Id = @Id";
 
