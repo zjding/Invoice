@@ -248,10 +248,30 @@ namespace App4
 
 		partial void barBtnImport_TouchUpInside(UIBarButtonItem sender)
 		{
-			ABPeoplePickerNavigationController contactController = new ABPeoplePickerNavigationController();
-			contactController.SelectPerson2 += ContactController_SelectPerson2;
+			if (bNew)
+			{
+				ABPeoplePickerNavigationController contactController = new ABPeoplePickerNavigationController();
+				contactController.SelectPerson2 += ContactController_SelectPerson2;
 
-			PresentViewController(contactController, true, null);
+				PresentViewController(contactController, true, null);
+			}
+			else
+			{
+				//Create Alert
+				var okCancelAlertController = UIAlertController.Create("Delete", "Do you confirm to delete the client?", UIAlertControllerStyle.Alert);
+
+				//Add Actions
+				okCancelAlertController.AddAction(UIAlertAction.Create("Yes", UIAlertActionStyle.Default, alert => DeleteClient()));
+				okCancelAlertController.AddAction(UIAlertAction.Create("No", UIAlertActionStyle.Cancel, alert => Console.WriteLine("Cancel was clicked")));
+
+				//Present Alert
+				PresentViewController(okCancelAlertController, true, null);
+			}
+		}
+
+		public void DeleteClient()
+		{
+			callingController.DismissViewController(true, null);
 		}
 	}
 }
