@@ -127,7 +127,7 @@ namespace WebApiTry1.Controllers
         }
 
         [HttpDelete]
-        public HttpResponseMessage DeleteClient(Client client)
+        public HttpResponseMessage DeleteClient([FromUri] Int32 id)
         {
             string commandString = @"DELETE FROM Client WHERE Id = @Id";
 
@@ -138,7 +138,7 @@ namespace WebApiTry1.Controllers
             command.CommandText = commandString;
             command.Connection = connection;
 
-            command.Parameters.AddWithValue("@Id", client.id);
+            command.Parameters.AddWithValue("@Id", id);
 
             connection.Open();
 
