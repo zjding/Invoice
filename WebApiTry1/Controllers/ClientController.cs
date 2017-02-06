@@ -90,5 +90,41 @@ namespace WebApiTry1.Controllers
             return Request.CreateResponse(HttpStatusCode.Created, "Added client successfully");
         }
 
+        [HttpPut]
+        public HttpResponseMessage PutClient(Client client)
+        {
+            string commandString = @"UPDATE Client Set FirstName = @FirstName, LastName = @LastName, Phone = @Phone, 
+                                    Email = @Email, Street1 = @Street1, Street2 = @Street2, City = @City, 
+                                    State = @State, Country = @Country, PostCode = @PostCode
+                                    WHERE Id = @Id";
+
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = Constant.connectionString;
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = commandString;
+            command.Connection = connection;
+
+            command.Parameters.AddWithValue("@FirstName", client.FirstName);
+            command.Parameters.AddWithValue("@LastName", client.LastName);
+            command.Parameters.AddWithValue("@Phone", client.Phone);
+            command.Parameters.AddWithValue("@Email", client.Email);
+            command.Parameters.AddWithValue("@Street1", client.Street1);
+            command.Parameters.AddWithValue("@Street2", client.Street2);
+            command.Parameters.AddWithValue("@City", client.City);
+            command.Parameters.AddWithValue("@State", client.State);
+            command.Parameters.AddWithValue("@Country", client.Country);
+            command.Parameters.AddWithValue("@PostCode", client.PostCode);
+            command.Parameters.AddWithValue("@Id", client.id);
+
+            connection.Open();
+
+            int rowInserted = command.ExecuteNonQuery();
+
+            connection.Close();
+
+            return Request.CreateResponse(HttpStatusCode.Created, "Updated client successfully");
+        }
+
     }
 }
