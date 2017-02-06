@@ -14,7 +14,10 @@ namespace App4
     {
 		public ClientListTableViewController callingController;
 
-		public Client client = new Client();
+		public Client client;
+
+		public bool bNew = true;
+
 		LoadingOverlay loadingOverlay;
 
         public ClientAddViewController (IntPtr handle) : base (handle)
@@ -27,7 +30,25 @@ namespace App4
 
 			//ShowActivityIndicator(this.View);
 
+			if (!bNew)
+			{
+				txtFirstName.Text = client.FirstName;
+				txtLastName.Text = client.LastName;
+				txtPhone.Text = client.Phone;
+				txtEmail.Text = client.Email;
 
+				txtStreet1.Text = client.Street1;
+				txtStreet2.Text = client.Street2;
+				txtCity.Text = client.City;
+				txtState.Text = client.State;
+				txtCountry.Text = client.Country;
+				txtPostCode.Text = client.PostCode;
+
+				this.Title = client.FirstName + " " + client.LastName;
+
+				//this.TableView.DeleteSections(new NSIndexSet(0), UITableViewRowAnimation.None);
+				//TableView.ReloadData();
+			}
 
 			this.txtFirstName.ShouldReturn += (textField) =>
 			{
@@ -88,9 +109,15 @@ namespace App4
 				((UITextField)textField).ResignFirstResponder();
 				return true;
 			};
-
-
 		}
+
+		//public override nint NumberOfSections(UITableView tableView)
+		//{
+		//	if (bNew)
+		//		return 3;
+		//	else
+		//		return 2;
+		//}
 
 		public override void WillDisplayHeaderView(UITableView tableView, UIView headerView, nint section)
 		{

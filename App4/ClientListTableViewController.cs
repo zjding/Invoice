@@ -94,6 +94,18 @@ namespace App4
 				((ClientAddViewController)(destCtrl.ViewControllers[0])).callingController = this;
 
 			}
+			else if (segue.Identifier == "Client_List_To_Detail_Segue")
+			{
+				var destCtrl = segue.DestinationViewController as UINavigationController;
+
+				((ClientAddViewController)(destCtrl.ViewControllers[0])).callingController = this;
+
+				((ClientAddViewController)(destCtrl.ViewControllers[0])).bNew = false;
+
+				int selectedIndex = this.TableView.IndexPathForSelectedRow.Row;
+
+				((ClientAddViewController)(destCtrl.ViewControllers[0])).client = clients[selectedIndex];
+			}
 
 			base.PrepareForSegue(segue, sender);
 		}
