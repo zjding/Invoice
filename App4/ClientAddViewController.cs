@@ -180,19 +180,23 @@ namespace App4
 
 		async partial void btnSave_TouchUpInside(UIBarButtonItem sender)
 		{
-			Client client = new Client();
-			client.FirstName = txtFirstName.Text;
-			client.LastName = txtLastName.Text;
-			client.Phone = txtPhone.Text;
-			client.Email = txtEmail.Text;
-			client.Street1 = txtStreet1.Text;
-			client.Street2 = txtStreet2.Text;
-			client.City = txtCity.Text;
-			client.State = txtState.Text;
-			client.Country = txtCountry.Text;
-			client.PostCode = txtPostCode.Text;
+			Client _client = new Client();
+			if (!bNew)
+			{
+				_client.id = client.id;
+			}
+			_client.FirstName = txtFirstName.Text;
+			_client.LastName = txtLastName.Text;
+			_client.Phone = txtPhone.Text;
+			_client.Email = txtEmail.Text;
+			_client.Street1 = txtStreet1.Text;
+			_client.Street2 = txtStreet2.Text;
+			_client.City = txtCity.Text;
+			_client.State = txtState.Text;
+			_client.Country = txtCountry.Text;
+			_client.PostCode = txtPostCode.Text;
 
-			string jsonString = JsonConvert.SerializeObject(client);
+			string jsonString = JsonConvert.SerializeObject(_client);
 
 			HttpClient httpClient = new HttpClient();
 
@@ -203,18 +207,37 @@ namespace App4
 			loadingOverlay = new LoadingOverlay(bounds);
 			this.View.Add(loadingOverlay);
 
-			var result = await httpClient.PostAsync("http://webapitry120161228015023.azurewebsites.net/api/Client/AddClient", content);
-
-			var contents = await result.Content.ReadAsStringAsync();
-
-			string returnMessage = contents.ToString();
-
-			loadingOverlay.Hide();
-
-			if (returnMessage == "\"Added client successfully\"")
+			if (bNew)
 			{
-				callingController.DismissViewController(true, null);
+				var result = await httpClient.PostAsync("http://webapitry120161228015023.azurewebsites.net/api/Client/AddClient", content);
 
+				var contents = await result.Content.ReadAsStringAsync();
+
+				string returnMessage = contents.ToString();
+
+				loadingOverlay.Hide();
+
+				if (returnMessage == "\"Added client successfully\"")
+				{
+					callingController.DismissViewController(true, null);
+
+				}
+			}
+			else
+			{
+				var result = await httpClient.PutAsync("http://webapitry120161228015023.azurewebsites.net/api/Client/PutClient", content);
+
+				var contents = await result.Content.ReadAsStringAsync();
+
+				string returnMessage = contents.ToString();
+
+				loadingOverlay.Hide();
+
+				if (returnMessage == "\"Updated client successfully\"")
+				{
+					callingController.DismissViewController(true, null);
+
+				}
 			}
 		}
 
