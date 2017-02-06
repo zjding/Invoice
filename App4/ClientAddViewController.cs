@@ -46,10 +46,11 @@ namespace App4
 
 				this.Title = client.FirstName + " " + client.LastName;
 
-
-
-				//this.TableView.DeleteSections(new NSIndexSet(0), UITableViewRowAnimation.None);
-				//TableView.ReloadData();
+				barBtnImport.Title = "Delete";
+				barBtnImport.SetTitleTextAttributes(new UITextAttributes()
+				{
+					TextColor = UIColor.Red
+				}, UIControlState.Normal);
 			}
 
 			this.txtFirstName.ShouldReturn += (textField) =>
