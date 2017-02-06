@@ -126,5 +126,28 @@ namespace WebApiTry1.Controllers
             return Request.CreateResponse(HttpStatusCode.Created, "Updated client successfully");
         }
 
+        [HttpDelete]
+        public HttpResponseMessage DeleteClient(Client client)
+        {
+            string commandString = @"DELETE FROM Client WHERE Id = @Id";
+
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = Constant.connectionString;
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = commandString;
+            command.Connection = connection;
+
+            command.Parameters.AddWithValue("@Id", client.id);
+
+            connection.Open();
+
+            int rowDeleted = command.ExecuteNonQuery();
+
+            connection.Close();
+
+            return Request.CreateResponse(HttpStatusCode.Created, "Deleted client successfully");
+        }
+
     }
 }
