@@ -16,6 +16,10 @@ namespace App4
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIBarButtonItem barBtnImport { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnImportContact { get; set; }
 
         [Outlet]
@@ -58,6 +62,10 @@ namespace App4
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField txtStreet2 { get; set; }
 
+        [Action ("barBtnImport_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void barBtnImport_TouchUpInside (UIKit.UIBarButtonItem sender);
+
         [Action ("btnCancel_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnCancel_TouchUpInside (UIKit.UIBarButtonItem sender);
@@ -72,6 +80,11 @@ namespace App4
 
         void ReleaseDesignerOutlets ()
         {
+            if (barBtnImport != null) {
+                barBtnImport.Dispose ();
+                barBtnImport = null;
+            }
+
             if (btnImportContact != null) {
                 btnImportContact.Dispose ();
                 btnImportContact = null;

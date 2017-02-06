@@ -46,6 +46,8 @@ namespace App4
 
 				this.Title = client.FirstName + " " + client.LastName;
 
+
+
 				//this.TableView.DeleteSections(new NSIndexSet(0), UITableViewRowAnimation.None);
 				//TableView.ReloadData();
 			}
@@ -132,14 +134,16 @@ namespace App4
 
 		partial void btnImportContact_UpInside(UIButton sender)
 		{
-			ABPeoplePickerNavigationController contactController = new ABPeoplePickerNavigationController();
-			contactController.SelectPerson2 += ContactController_SelectPerson2;
+			//ABPeoplePickerNavigationController contactController = new ABPeoplePickerNavigationController();
+			//contactController.SelectPerson2 += ContactController_SelectPerson2;
 
-			PresentViewController(contactController, true, null);
+			//PresentViewController(contactController, true, null);
 		}
 
 		void ContactController_SelectPerson2(object sender, ABPeoplePickerSelectPerson2EventArgs e)
 		{
+			client = new Client();
+
 			client.FirstName = e.Person.FirstName;
 			client.LastName = e.Person.LastName;
 
@@ -245,6 +249,14 @@ namespace App4
 		partial void btnCancel_TouchUpInside(UIBarButtonItem sender)
 		{
 			callingController.DismissViewController(true, null);
+		}
+
+		partial void barBtnImport_TouchUpInside(UIBarButtonItem sender)
+		{
+			ABPeoplePickerNavigationController contactController = new ABPeoplePickerNavigationController();
+			contactController.SelectPerson2 += ContactController_SelectPerson2;
+
+			PresentViewController(contactController, true, null);
 		}
 	}
 }

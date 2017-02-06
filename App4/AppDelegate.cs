@@ -19,8 +19,14 @@ namespace App4
 
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
-            // Override point for customization after application launch.
-            // If not required for your application you can safely delete this method
+			// Override point for customization after application launch.
+			// If not required for your application you can safely delete this method
+
+			UIBarButtonItem.Appearance.SetTitleTextAttributes(new UITextAttributes()
+			{
+				Font = UIFont.FromName("Avenir Next", 17)
+				//TextColor = UIColor.White
+			}, UIControlState.Normal);
 
             return true;
         }
@@ -55,5 +61,7 @@ namespace App4
         {
             // Called when the application is about to terminate. Save data, if needed. See also DidEnterBackground.
         }
+
+
     }
 }
