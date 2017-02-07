@@ -147,7 +147,7 @@ namespace WebApiTry1.Controllers
 
             connection.Close();
 
-            return Request.CreateResponse(HttpStatusCode.Created, "Deleted client successfully");
+            return Request.CreateResponse(HttpStatusCode.OK, "Deleted client successfully");
         }
 
     }
