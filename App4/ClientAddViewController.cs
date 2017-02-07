@@ -269,9 +269,18 @@ namespace App4
 			}
 		}
 
-		public void DeleteClient()
+		public async void DeleteClient()
 		{
-			callingController.DismissViewController(true, null);
+			HttpClient httpClient = new HttpClient();
+
+			var result = await httpClient.DeleteAsync("http://webapitry120161228015023.azurewebsites.net/api/Clients/Delete/" + client.id.ToString());
+
+			result.EnsureSuccessStatusCode();
+
+			if (result.IsSuccessStatusCode)
+			{
+				callingController.DismissViewController(true, null);
+			}
 		}
 	}
 }
