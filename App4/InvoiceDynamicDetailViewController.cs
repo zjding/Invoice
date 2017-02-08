@@ -2,6 +2,7 @@ using Foundation;
 using System;
 using System.Collections.Generic;
 using UIKit;
+using Invoice_Model;
 
 namespace App4
 {
@@ -16,6 +17,7 @@ namespace App4
 		public string AddItemCellIdentifier = "AddItemCellIdentifier";
 
         public List<String> items = new List<string>();
+		public Client client = new Client();
 
 		//List<string> Items = new List<string>();
 
@@ -77,7 +79,8 @@ namespace App4
 			{
 				InvoiceClientNameCell cell = this.TableView.DequeueReusableCell(ClientNameCellIdentifier) as InvoiceClientNameCell;
 
-				cell.TextLabel.Text = "Jason Ding";
+				cell.TextLabel.Text = "Client";
+				cell.DetailTextLabel.Text = client.FirstName + " " + client.LastName;
 
 				return cell;
 			}
@@ -107,6 +110,14 @@ namespace App4
 				var destCtrl = segue.DestinationViewController as InvoiceItemDetailViewController;
 
 				destCtrl.callingController = this;
+			}
+			else if (segue.Identifier == "Invoice_To_Client_Segue")
+			{
+				var destCtrl = segue.DestinationViewController as ClientListTableViewController;
+
+				destCtrl.bPickClientMode = true;
+
+				destCtrl.invoiceViewController = this;
 			}
 
 			base.PrepareForSegue(segue, sender);

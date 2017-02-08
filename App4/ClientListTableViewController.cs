@@ -24,6 +24,10 @@ namespace App4
 
 		bool bSearching = false;
 
+		public bool bPickClientMode = false;
+
+		public InvoiceDynamicDetailViewController invoiceViewController;
+
         public ClientListTableViewController (IntPtr handle) : base (handle)
         {
 
@@ -166,6 +170,18 @@ namespace App4
 
             return cell;
         }
+
+		public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
+		{
+			//base.RowSelected(tableView, indexPath);
+
+			if (bPickClientMode)
+			{
+				invoiceViewController.client = clients[indexPath.Row];
+				//invoiceViewController.DismissViewController(true, null);
+				invoiceViewController.NavigationController.PopViewController(true);
+			}
+		}
 
 		public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
 		{
