@@ -18,6 +18,8 @@ namespace App4
 
 		public bool bNew = true;
 
+		public bool bSearching = false;
+
 		LoadingOverlay loadingOverlay;
 
         public ClientAddViewController (IntPtr handle) : base (handle)
@@ -244,6 +246,9 @@ namespace App4
 		partial void btnCancel_TouchUpInside(UIBarButtonItem sender)
 		{
 			callingController.DismissViewController(true, null);
+
+			if (bSearching)
+				callingController.DismissViewController(true, null);
 		}
 
 		partial void barBtnImport_TouchUpInside(UIBarButtonItem sender)

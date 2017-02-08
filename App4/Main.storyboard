@@ -1131,14 +1131,58 @@
                         </connections>
                     </tableView>
                     <navigationItem title="Clients" id="3558" key="navigationItem">
-                        <barButtonItem key="rightBarButtonItem" id="4686" systemItem="add">
-                            <connections>
-                                <segue id="4737" destination="4096" kind="presentation" identifier="Client_List_To_New_Segue"/>
-                            </connections>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="4937">
+                            <searchBar contentMode="redraw" id="4928" translatesAutoresizingMaskIntoConstraints="NO" key="customView">
+                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="3490" id="4929"/>
+                                </connections>
+                            </searchBar>
                         </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem id="4686" systemItem="add">
+                                <connections>
+                                    <segue id="4737" destination="4096" kind="presentation" identifier="Client_List_To_New_Segue"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem style="plain" id="4947">
+                                <searchBar contentMode="redraw" id="4938" translatesAutoresizingMaskIntoConstraints="NO" key="customView">
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="3490" id="4939"/>
+                                    </connections>
+                                </searchBar>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="4931" id="4930"/>
+                        <outlet property="searchDisplayController" destination="4941" id="4940"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3496" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="4931">
+                    <connections>
+                        <outlet property="delegate" destination="3490" id="4932"/>
+                        <outlet property="searchBar" destination="4928" id="4933"/>
+                        <outlet property="searchContentsController" destination="3490" id="4934"/>
+                        <outlet property="searchResultsDataSource" destination="3490" id="4935"/>
+                        <outlet property="searchResultsDelegate" destination="3490" id="4936"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="4941">
+                    <connections>
+                        <outlet property="delegate" destination="3490" id="4942"/>
+                        <outlet property="searchBar" destination="4938" id="4943"/>
+                        <outlet property="searchContentsController" destination="3490" id="4944"/>
+                        <outlet property="searchResultsDataSource" destination="3490" id="4945"/>
+                        <outlet property="searchResultsDelegate" destination="3490" id="4946"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="3139" y="-70"/>
         </scene>
