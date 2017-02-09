@@ -12,6 +12,32 @@ namespace App4
         {
         }
 
+		public override void ViewDidLoad()
+		{
+			base.ViewDidLoad();
+
+			UIToolbar toolbar = new UIToolbar();
+
+
+			var doneButton = new UIBarButtonItem(UIBarButtonSystemItem.Done);
+			doneButton.Clicked += doneButtonClicked;
+
+			var bbs = new UIBarButtonItem[] {
+				new UIBarButtonItem(UIBarButtonSystemItem.FlexibleSpace),
+				doneButton
+			};
+
+			toolbar.SetItems(bbs, false);
+			toolbar.SizeToFit();	
+
+			txtCost.InputAccessoryView = toolbar;
+		}
+
+		void doneButtonClicked(object sender, EventArgs e)
+		{
+			txtCost.ResignFirstResponder();
+		}
+
 		public override void DidMoveToParentViewController(UIViewController parent)
 		{
 
