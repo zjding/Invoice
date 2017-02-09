@@ -150,10 +150,6 @@
     <Compile Include="InvoiceListTableViewController.designer.cs">
       <DependentUpon>InvoiceListTableViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClientDetailsViewController.cs" />
-    <Compile Include="ClientDetailsViewController.designer.cs">
-      <DependentUpon>ClientDetailsViewController.cs</DependentUpon>
-    </Compile>
     <BundleResource Include="Images\Add.png" />
     <BundleResource Include="Images\Plus.png" />
     <BundleResource Include="Images\Plus_S.png" />
