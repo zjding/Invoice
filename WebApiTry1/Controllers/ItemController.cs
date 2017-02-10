@@ -42,5 +42,42 @@ namespace WebApiTry1.Controllers
 
             return Request.CreateResponse(HttpStatusCode.Created, "Added item successfully");
         }
+
+        [Route("api/Item/GetItems")]
+        public List<Item> Get()
+        {
+            List<Item> items = new List<Item>();
+
+            string commandString = @"Select * from Item";
+
+            SqlDataReader reader = null;
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = m_connectionString;
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = commandString;
+            command.Connection = connection;
+
+            connection.Open();
+            reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Item item = new Item();
+                item.Id = Convert.ToInt32(reader["Id"]);
+                item.Name = reader["Name"] != DBNull.Value ? Convert.ToString(reader["Name"]) : string.Empty;
+                item.Price = reader["Price"] != DBNull.Value ? Convert.ToDecimal(reader["Price"]) : 0;
+                item.Quantity = reader["Quantity"] != DBNull.Value ? Convert.ToInt16(reader["Quantity"]) : 0;
+                item.bTaxable = reader["Taxable"] != DBNull.Value ? Convert.ToBoolean(reader["Taxable"]) : false;
+                item.Note = reader["Note"] != DBNull.Value ? Convert.ToString(reader["Note"]) : string.Empty;
+
+                items.Add(item);
+            }
+
+            connection.Close();
+
+            return items;
+
+        }
     }
 }
