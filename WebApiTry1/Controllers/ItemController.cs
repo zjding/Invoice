@@ -16,8 +16,8 @@ namespace WebApiTry1.Controllers
         [HttpPost]
         public HttpResponseMessage AddItem(Item item)
         {
-            string commandString = @"INSERT INTO Client (Name, Price, Quantity, DiscountType, DiscountAmount, Taxable, Note) 
-                                     Values(@Name, @Price, @Quantity, @DiscountType, @DiscountAmount, @Taxable, @Note)";
+            string commandString = @"INSERT INTO Client (Name, Price, Quantity, Taxable, Note) 
+                                     Values(@Name, @Price, @Quantity, @Taxable, @Note)";
 
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = Constant.connectionString;
@@ -29,8 +29,8 @@ namespace WebApiTry1.Controllers
             command.Parameters.AddWithValue("@Name", item.Name);
             command.Parameters.AddWithValue("@Price", item.Price);
             command.Parameters.AddWithValue("@Quantity", item.Quantity);
-            command.Parameters.AddWithValue("@DiscountType", item.DiscountType);
-            command.Parameters.AddWithValue("@DiscountAmount", item.DiscountAmount);
+            //command.Parameters.AddWithValue("@DiscountType", item.DiscountType);
+            //command.Parameters.AddWithValue("@DiscountAmount", item.DiscountAmount);
             command.Parameters.AddWithValue("@Taxable", item.bTaxable);
             command.Parameters.AddWithValue("@Note", item.Note);
 
