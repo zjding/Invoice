@@ -16,7 +16,7 @@ namespace WebApiTry1.Controllers
         [HttpPost]
         public HttpResponseMessage AddItem(Item item)
         {
-            string commandString = @"INSERT INTO Client (Name, Price, Quantity, Taxable, Note) 
+            string commandString = @"INSERT INTO Item (Name, Price, Quantity, Taxable, Note) 
                                      Values(@Name, @Price, @Quantity, @Taxable, @Note)";
 
             SqlConnection connection = new SqlConnection();
