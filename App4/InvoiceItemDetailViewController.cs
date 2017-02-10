@@ -1,6 +1,7 @@
 using Foundation;
 using System;
 using UIKit;
+using Invoice_Model;
 
 namespace App4
 {
@@ -46,6 +47,23 @@ namespace App4
 		public override void ViewWillDisappear(Boolean animated)
 		{
 			callingController.items.Add("Item " + (callingController.items.Count + 1).ToString());
+		}
+
+		partial void btnSave_TouchUpInside(UIBarButtonItem sender)
+		{
+			Item item = new Item();
+
+			item.Name = txtDescription.Text;
+			item.Price = Convert.ToDecimal(txtCost.Text);
+			//item.Quantity = Convert.ToInt16(txt
+			item.bTaxable = swTaxable.On;
+			item.Note = txtNote.Text;
+
+		}
+
+		partial void btnClose_TouchUpInside(UIBarButtonItem sender)
+		{
+			
 		}
     }
 }

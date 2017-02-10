@@ -30,6 +30,14 @@ namespace App4
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField txtNote { get; set; }
 
+        [Action ("btnClose_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnClose_TouchUpInside (UIKit.UIBarButtonItem sender);
+
+        [Action ("btnSave_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnSave_TouchUpInside (UIKit.UIBarButtonItem sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (swTaxable != null) {
