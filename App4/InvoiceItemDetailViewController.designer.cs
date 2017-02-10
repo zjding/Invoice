@@ -30,6 +30,10 @@ namespace App4
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField txtNote { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField txtQuan { get; set; }
+
         [Action ("btnClose_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnClose_TouchUpInside (UIKit.UIBarButtonItem sender);
@@ -58,6 +62,11 @@ namespace App4
             if (txtNote != null) {
                 txtNote.Dispose ();
                 txtNote = null;
+            }
+
+            if (txtQuan != null) {
+                txtQuan.Dispose ();
+                txtQuan = null;
             }
         }
     }
