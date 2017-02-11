@@ -17,6 +17,7 @@ namespace App4
 		public string ClientNameCellIdentifier = "ClientNameCellIdentifier";
 		public string ItemCellIdentifier = "ItemCellIdentifier";
 		public string AddItemCellIdentifier = "AddItemCellIdentifier";
+		public string InvoiceSignatureCellIdentifier = "InvoiceSignatureCellIdentifier";
 
 		public List<Item> items = new List<Item>();
 		public Client client = new Client();
@@ -40,7 +41,7 @@ namespace App4
 
 		public override nint NumberOfSections(UITableView tableView)
 		{
-			return 4;
+			return 5;
 		}
 
 		public override nint RowsInSection(UITableView tableView, nint section)
@@ -56,6 +57,10 @@ namespace App4
 			else if (section == 2)
 			{
 				return items.Count + 1;
+			}
+			else if (section == 3)
+			{
+				return 1;
 			}
 
 			return 0;
@@ -90,7 +95,7 @@ namespace App4
 
 				return cell;
 			}
-			else 
+			else if (indexPath.Section == 2)
 			{
 				if (indexPath.Row == items.Count)
 				{
@@ -106,6 +111,15 @@ namespace App4
 
 					return cell;
 				}
+			}
+			else
+			{
+				InvoiceSignatureCell cell = this.TableView.DequeueReusableCell(InvoiceSignatureCellIdentifier) as InvoiceSignatureCell;
+
+				//cell.TextLabel.Text = "Client";
+				//cell.DetailTextLabel.Text = client.FirstName + " " + client.LastName;
+
+				return cell;
 			}
 		}
 

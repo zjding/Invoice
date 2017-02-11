@@ -194,6 +194,14 @@
     <Compile Include="InvoiceTabBarController.designer.cs">
       <DependentUpon>InvoiceTabBarController.cs</DependentUpon>
     </Compile>
+    <Compile Include="InvoiceSignatureCell.cs" />
+    <Compile Include="InvoiceSignatureCell.designer.cs">
+      <DependentUpon>InvoiceSignatureCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceSignatureViewController.cs" />
+    <Compile Include="InvoiceSignatureViewController.designer.cs">
+      <DependentUpon>InvoiceSignatureViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SettingsViewController.cs" />
@@ -281,6 +289,10 @@
     <ProjectReference Include="..\SharpMobileCode.ModalPicker\SharpMobileCode.ModalPicker.csproj">
       <Project>{D8D8ED2E-2C43-416B-8196-46A0AD9788FD}</Project>
       <Name>SharpMobileCode.ModalPicker</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SignaturePad.iOS\SignaturePad.iOS.csproj">
+      <Project>{BEF71536-787B-431F-AC7F-A6469710D11F}</Project>
+      <Name>SignaturePad.iOS</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
