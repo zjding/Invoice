@@ -52,7 +52,7 @@ namespace App4
 
 		public override void ViewWillDisappear(Boolean animated)
 		{
-			callingController.items.Add("Item " + (callingController.items.Count + 1).ToString());
+			//callingController.items.Add("Item " + (callingController.items.Count + 1).ToString());
 		}
 
 		async partial void btnSave_TouchUpInside(UIBarButtonItem sender)

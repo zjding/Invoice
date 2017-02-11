@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using UIKit;
 using Invoice_Model;
+using System.Net.Http;
+using Newtonsoft.Json;
 
 namespace App4
 {
@@ -16,8 +18,12 @@ namespace App4
 		public string ItemCellIdentifier = "ItemCellIdentifier";
 		public string AddItemCellIdentifier = "AddItemCellIdentifier";
 
-        public List<String> items = new List<string>();
+		public List<Item> items = new List<Item>();
 		public Client client = new Client();
+
+		LoadingOverlay loadingOverlay;
+
+		HttpClient httpClient = new HttpClient();
 
 		//List<string> Items = new List<string>();
 
@@ -28,7 +34,7 @@ namespace App4
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-			items.Add("Item 1");
+			//items.Add("Item 1");
 
 		}
 
@@ -95,8 +101,8 @@ namespace App4
 				else
 				{
 					InvoiceItemCell cell = this.TableView.DequeueReusableCell(ItemCellIdentifier) as InvoiceItemCell;
-					cell.TextLabel.Text = items[indexPath.Row];
-					cell.DetailTextLabel.Text = "$20,00";
+					cell.TextLabel.Text = items[indexPath.Row].Name;
+					cell.DetailTextLabel.Text = (items[indexPath.Row].Price * items[indexPath.Row].Quantity).ToString();
 
 					return cell;
 				}
@@ -126,9 +132,22 @@ namespace App4
 			base.PrepareForSegue(segue, sender);
 		}
 
-		public override void ViewWillAppear(Boolean animated)
+		async public override void ViewWillAppear(Boolean animated)
 		{
 			base.ViewWillAppear(animated);
+
+			var bounds = UIScreen.MainScreen.Bounds;
+
+			loadingOverlay = new LoadingOverlay(bounds);
+			this.View.Add(loadingOverlay);
+
+			string result = await httpClient.GetStringAsync("http://webapitry120161228015023.azurewebsites.net/api/Item/GetItems");
+
+			items = JsonConvert.DeserializeObject<List<Item>>(result);
+
+			loadingOverlay.Hide();
+
+			this.TableView.SeparatorStyle = UITableViewCellSeparatorStyle.SingleLine;
 
 			this.TableView.ReloadData();
 		}
