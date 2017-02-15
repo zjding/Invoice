@@ -206,6 +206,14 @@
     <Compile Include="InvoiceAttachmentCell.designer.cs">
       <DependentUpon>InvoiceAttachmentCell.cs</DependentUpon>
     </Compile>
+    <Compile Include="InvoiceAttachmentViewController.cs" />
+    <Compile Include="InvoiceAttachmentViewController.designer.cs">
+      <DependentUpon>InvoiceAttachmentViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceAttachmentCollectionViewCell.cs" />
+    <Compile Include="InvoiceAttachmentCollectionViewCell.designer.cs">
+      <DependentUpon>InvoiceAttachmentCollectionViewCell.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SettingsViewController.cs" />

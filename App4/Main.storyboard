@@ -1785,7 +1785,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue id="5763" destination="5684" kind="relationship" relationship="rootViewController"/>
+                        <segue id="5984" destination="5684" kind="relationship" relationship="rootViewController"/>
                     </connections>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                 </navigationController>
@@ -1795,7 +1795,7 @@
         </scene>
         <scene sceneID="5683">
             <objects>
-                <collectionViewController id="5684" sceneMemberID="viewController">
+                <collectionViewController id="5684" sceneMemberID="viewController" customClass="InvoiceAttachmentViewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="5685">
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5838">
                             <size key="itemSize" width="50" height="50"/>
@@ -1806,13 +1806,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="5688" reuseIdentifier="collectionCellIdentifier">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="5688" reuseIdentifier="collectionCellIdentifier" customClass="InvoiceAttachmentCollectionViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="5872" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="Images/Plus_S.png">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
                                 </view>
+                                <color key="backgroundColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                <connections>
+                                    <outlet property="cellImage" destination="5872" id="name-outlet-5872"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
