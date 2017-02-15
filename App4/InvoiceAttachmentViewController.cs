@@ -27,11 +27,11 @@ namespace App4
 
 		public override UICollectionViewCell GetCell(UICollectionView collectionView, NSIndexPath indexPath)
 		{
-			var _cell = (InvoiceAttachmentCollectionViewCell)collectionView.DequeueReusableCell("collectionCellIdentifier", indexPath);
+            InvoiceAttachmentCollectionViewCell _cell = (InvoiceAttachmentCollectionViewCell)collectionView.DequeueReusableCell("collectionCellIdentifier", indexPath);
 
+            _cell.cellImage.Image = UIImage.FromFile("Images/Add.png");
 
-
-			//var img = UIImage.FromFile("Images/Add.png");
+			//var img = 
 
 
 

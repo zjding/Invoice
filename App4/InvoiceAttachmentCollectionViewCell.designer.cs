@@ -16,7 +16,7 @@ namespace App4
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIImageView cellImage { get; set; }
+        public UIKit.UIImageView cellImage { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
