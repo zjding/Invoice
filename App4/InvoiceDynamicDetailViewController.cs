@@ -18,6 +18,7 @@ namespace App4
 		public string ItemCellIdentifier = "ItemCellIdentifier";
 		public string AddItemCellIdentifier = "AddItemCellIdentifier";
 		public string InvoiceSignatureCellIdentifier = "InvoiceSignatureCellIdentifier";
+		public string InvoiceAttachmentCellIdentifier = "InvoiceAttachmentCellIdentifier";
 
 		public List<Item> items = new List<Item>();
 		public Client client = new Client();
@@ -60,7 +61,7 @@ namespace App4
 			}
 			else if (section == 3)
 			{
-				return 1;
+				return 2;
 			}
 
 			return 0;
@@ -114,12 +115,24 @@ namespace App4
 			}
 			else
 			{
-				InvoiceSignatureCell cell = this.TableView.DequeueReusableCell(InvoiceSignatureCellIdentifier) as InvoiceSignatureCell;
+				if (indexPath.Row == 0)
+				{
+					InvoiceSignatureCell cell = this.TableView.DequeueReusableCell(InvoiceSignatureCellIdentifier) as InvoiceSignatureCell;
 
-				//cell.TextLabel.Text = "Client";
-				//cell.DetailTextLabel.Text = client.FirstName + " " + client.LastName;
+					//cell.TextLabel.Text = "Client";
+					//cell.DetailTextLabel.Text = client.FirstName + " " + client.LastName;
 
-				return cell;
+					return cell;
+				}
+				else
+				{
+					InvoiceAttachmentCell cell = this.TableView.DequeueReusableCell(InvoiceAttachmentCellIdentifier) as InvoiceAttachmentCell;
+
+					//cell.TextLabel.Text = "Client";
+					//cell.DetailTextLabel.Text = client.FirstName + " " + client.LastName;
+
+					return cell;
+				}
 			}
 		}
 
