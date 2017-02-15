@@ -1047,7 +1047,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue id="5506" destination="5299" kind="presentation"/>
+                                    <segue id="5506" destination="5299" kind="presentation" identifier="Invoice_To_Signature_Segue"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1736,11 +1736,21 @@
                         </constraints>
                     </view>
                     <navigationItem title="Signature" id="5387" key="navigationItem">
-                        <barButtonItem key="rightBarButtonItem" id="5530" systemItem="done"/>
-                        <barButtonItem key="leftBarButtonItem" id="5531" systemItem="cancel"/>
+                        <barButtonItem key="rightBarButtonItem" id="5530" systemItem="done">
+                            <connections>
+                                <action selector="btnDone_TouchUpInside:" destination="5308" id="5560"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" id="5531" systemItem="cancel">
+                            <connections>
+                                <action selector="btnCancel_TouchUpInside:" destination="5308" id="5561"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="signaturePad" destination="5390" id="name-outlet-5390"/>
+                        <outlet property="btnDone" destination="5530" id="name-outlet-5530"/>
+                        <outlet property="btnCancel" destination="5531" id="name-outlet-5531"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5310" userLabel="First Responder" sceneMemberID="firstResponder"/>

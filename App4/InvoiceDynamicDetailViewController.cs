@@ -142,6 +142,12 @@ namespace App4
 
 				destCtrl.invoiceViewController = this;
 			}
+			else if (segue.Identifier == "Invoice_To_Signature_Segue")
+			{
+				var destCtrl = segue.DestinationViewController as UINavigationController;
+
+				((InvoiceSignatureViewController)(destCtrl.ViewControllers[0])).callingViewController = this;
+			}
 
 			base.PrepareForSegue(segue, sender);
 		}
