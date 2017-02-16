@@ -1865,7 +1865,7 @@
         <image name="Images/Plus_S.png" width="72" height="72"/>
         <image name="Images/Contacts-50.png" width="50" height="50"/>
         <image name="Images/Contacts-25.png" width="25" height="25"/>
-        <image name="Images/AddImage.png" width="285" height="285"/>
+        <image name="Images/AddImage.png" width="324" height="324"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedScreenMetrics key="destination" type="retina55"/>
