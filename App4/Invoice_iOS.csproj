@@ -214,6 +214,7 @@
     <Compile Include="InvoiceAttachmentCollectionViewCell.designer.cs">
       <DependentUpon>InvoiceAttachmentCollectionViewCell.cs</DependentUpon>
     </Compile>
+    <BundleResource Include="Images\AddImage.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SettingsViewController.cs" />
