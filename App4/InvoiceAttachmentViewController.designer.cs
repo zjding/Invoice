@@ -22,6 +22,14 @@ namespace App4
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIBarButtonItem btnDone { get; set; }
 
+        [Action ("btnCancel_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnCancel_TouchUpInside (UIKit.UIBarButtonItem sender);
+
+        [Action ("btnDone_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnDone_TouchUpInside (UIKit.UIBarButtonItem sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (btnCancel != null) {

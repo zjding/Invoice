@@ -84,7 +84,15 @@ namespace App4
 			await this.imagePicker.DismissViewControllerAsync(true);
 		}
 
+		partial void btnDone_TouchUpInside(UIBarButtonItem sender)
+		{
+			callingController.images = this.images;
+			callingController.DismissViewController(true, null);
+		}
 
-
+		partial void btnCancel_TouchUpInside(UIBarButtonItem sender)
+		{
+			callingController.DismissViewController(true, null);
+		}
     }
 }
