@@ -22,6 +22,7 @@ namespace App4
 
 		public List<Item> items = new List<Item>();
 		public Client client = new Client();
+		public List<UIImage> images = new List<UIImage>();
 
 		LoadingOverlay loadingOverlay;
 
@@ -160,6 +161,12 @@ namespace App4
 				var destCtrl = segue.DestinationViewController as UINavigationController;
 
 				((InvoiceSignatureViewController)(destCtrl.ViewControllers[0])).callingViewController = this;
+			}
+			else if (segue.Identifier == "Invoice_To_Attachment_Segue")
+			{
+				var destCtrl = segue.DestinationViewController as UINavigationController;
+
+				((InvoiceAttachmentViewController)(destCtrl.ViewControllers[0])).callingController = this;
 			}
 
 			base.PrepareForSegue(segue, sender);

@@ -1067,7 +1067,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue id="5832" destination="5602" kind="presentation"/>
+                                    <segue id="5832" destination="5602" kind="presentation" identifier="Invoice_To_Attachment_Segue"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

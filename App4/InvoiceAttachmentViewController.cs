@@ -8,6 +8,7 @@ namespace App4
     public partial class InvoiceAttachmentViewController : UICollectionViewController
     {
 		public List<UIImage> images = new List<UIImage>();
+		public InvoiceDynamicDetailViewController callingController;
 
 		UIImagePickerController imagePicker;
 
