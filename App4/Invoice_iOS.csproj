@@ -215,6 +215,16 @@
       <DependentUpon>InvoiceAttachmentCollectionViewCell.cs</DependentUpon>
     </Compile>
     <BundleResource Include="Images\AddImage.png" />
+    <Compile Include="InvoicePhotoViewController.cs" />
+    <Compile Include="InvoicePhotoViewController.designer.cs">
+      <DependentUpon>InvoicePhotoViewController.cs</DependentUpon>
+    </Compile>
+    <BundleResource Include="Images\photo.png" />
+    <BundleResource Include="Images\camera.png" />
+    <BundleResource Include="Images\camera-25.png" />
+    <BundleResource Include="Images\photo-25.png" />
+    <BundleResource Include="Images\Photos-25.png" />
+    <BundleResource Include="Images\Screenshot-25.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SettingsViewController.cs" />
