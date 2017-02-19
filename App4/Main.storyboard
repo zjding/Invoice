@@ -1868,71 +1868,63 @@
                             <outlet property="delegate" destination="6491" id="6495"/>
                         </connections>
                         <sections>
-                            <tableViewSection id="6506">
+                            <tableViewSection id="6506" footerTitle=" ">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="6507">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="6507" rowHeight="246">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="246"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6507" id="6508">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="245.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" id="6522" translatesAutoresizingMaskIntoConstraints="NO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6527" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" buttonType="roundedRect">
-                                                            <rect key="frame" x="32" y="7" width="109" height="30"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                                            <state key="normal" image="Images/Screenshot-25.png"/>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6528" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                                            <rect key="frame" x="212" y="0.0" width="158" height="44"/>
-                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                                            <state key="normal" image="Images/Photos-25.png">
-                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                            </state>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        </button>
-                                                    </subviews>
-                                                </view>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="6762" translatesAutoresizingMaskIntoConstraints="NO" image="Images/Image File-100.png">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="246"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint id="6523" firstItem="6522" firstAttribute="leading" secondItem="6508" secondAttribute="leading"/>
-                                                <constraint id="6524" firstItem="6522" firstAttribute="trailing" secondItem="6508" secondAttribute="trailing"/>
-                                                <constraint id="6525" firstItem="6522" firstAttribute="top" secondItem="6508" secondAttribute="top"/>
-                                                <constraint id="6526" firstItem="6522" firstAttribute="bottom" secondItem="6508" secondAttribute="bottom"/>
+                                                <constraint id="6773" firstItem="6762" firstAttribute="leading" secondItem="6508" secondAttribute="leading"/>
+                                                <constraint id="6774" firstItem="6762" firstAttribute="top" secondItem="6508" secondAttribute="top"/>
+                                                <constraint id="6775" firstItem="6762" firstAttribute="top" secondItem="6508" secondAttribute="top"/>
+                                                <constraint id="6776" firstItem="6762" firstAttribute="trailing" secondItem="6508" secondAttribute="trailing"/>
+                                                <constraint id="6777" firstItem="6762" firstAttribute="bottom" secondItem="6508" secondAttribute="bottom"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="6509">
-                                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="6700">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="6701" rowHeight="44">
+                                        <rect key="frame" x="0.0" y="548" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6509" id="6510">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6701" id="6702">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="6511">
-                                        <rect key="frame" x="0.0" y="88" width="414" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6511" id="6512">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="6763" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" placeholder="Description">
+                                                    <rect key="frame" x="20" y="7" width="374" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Attachment" id="6492"/>
-                    <connections>
-                        <outlet property="viewButtons" destination="6522" id="name-outlet-6522"/>
-                        <outlet property="btnCamera" destination="6527" id="name-outlet-6527"/>
-                        <outlet property="btnPhotos" destination="6528" id="name-outlet-6528"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Attachment" id="6492">
+                        <barButtonItem key="rightBarButtonItem" id="6721" title="Save"/>
+                        <barButtonItem key="leftBarButtonItem" id="6722" title="Cancel"/>
+                    </navigationItem>
+                    <connections/>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="6719"/>
+                        <barButtonItem title="Delete" id="6718" width="276"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="6720"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6498" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1940,7 +1932,7 @@
         </scene>
         <scene sceneID="6499">
             <objects>
-                <navigationController id="6500" sceneMemberID="viewController">
+                <navigationController id="6500" sceneMemberID="viewController" toolbarHidden="NO">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6502">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1951,6 +1943,10 @@
                     <connections>
                         <segue destination="6491" kind="relationship" relationship="rootViewController" id="6501"/>
                     </connections>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="6715">
+                        <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    </toolbar>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6503" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1976,6 +1972,9 @@
         <image name="Images/photo-25.png" width="25" height="25"/>
         <image name="Images/Photos-25.png" width="25" height="25"/>
         <image name="Images/Screenshot-25.png" width="25" height="25"/>
+        <image name="Images/defaultbackground.png" width="330" height="189"/>
+        <image name="Images/Image File-100.png" width="100" height="100"/>
+        <image name="Images/Image File-50.png" width="50" height="50"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedScreenMetrics key="destination" type="retina55"/>

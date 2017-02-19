@@ -225,6 +225,9 @@
     <BundleResource Include="Images\photo-25.png" />
     <BundleResource Include="Images\Photos-25.png" />
     <BundleResource Include="Images\Screenshot-25.png" />
+    <BundleResource Include="Images\defaultbackground.png" />
+    <BundleResource Include="Images\Image File-100.png" />
+    <BundleResource Include="Images\Image File-50.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SettingsViewController.cs" />
