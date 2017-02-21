@@ -228,6 +228,7 @@
     <BundleResource Include="Images\defaultbackground.png" />
     <BundleResource Include="Images\Image File-100.png" />
     <BundleResource Include="Images\Image File-50.png" />
+    <Compile Include="Model\Attachment.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SettingsViewController.cs" />
@@ -327,6 +328,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

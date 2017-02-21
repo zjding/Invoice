@@ -16,26 +16,61 @@ namespace App4
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIBarButtonItem btnCancel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnImage { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIBarButtonItem btnSave { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIImageView imgAttachment { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField txtDescription { get; set; }
+
+        [Action ("btnCancel_UpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnCancel_UpInside (UIKit.UIBarButtonItem sender);
+
         [Action ("btnImage_UpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnImage_UpInside (UIKit.UIButton sender);
 
+        [Action ("btnSave_UpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnSave_UpInside (UIKit.UIBarButtonItem sender);
+
         void ReleaseDesignerOutlets ()
         {
+            if (btnCancel != null) {
+                btnCancel.Dispose ();
+                btnCancel = null;
+            }
+
             if (btnImage != null) {
                 btnImage.Dispose ();
                 btnImage = null;
             }
 
+            if (btnSave != null) {
+                btnSave.Dispose ();
+                btnSave = null;
+            }
+
             if (imgAttachment != null) {
                 imgAttachment.Dispose ();
                 imgAttachment = null;
+            }
+
+            if (txtDescription != null) {
+                txtDescription.Dispose ();
+                txtDescription = null;
             }
         }
     }

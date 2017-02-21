@@ -11,6 +11,8 @@ namespace App4
 		UIImagePickerController cameraPicker;
 		UIImagePickerController photoPicker;
 
+		public InvoiceDynamicDetailViewController callingController;
+
         public InvoicePhotoViewController (IntPtr handle) : base (handle)
         {
 			
@@ -82,6 +84,27 @@ namespace App4
 		async private void picker_Cancelled(object sender, EventArgs e)
 		{
 			await this.photoPicker.DismissViewControllerAsync(true);
+		}
+
+		async partial void btnSave_UpInside(UIBarButtonItem sender)
+		{
+			var imageStream = this.imgAttachment.Image.AsJPEG().AsStream();
+
+			var name = await ImageManager.UploadImage(imageStream);
+
+			Attachment attachment = new Attachment();
+			attachment.imageName = name;
+			attachment.image = this.imgAttachment.Image;
+			attachment.description = this.txtDescription.Text;
+
+			this.callingController.attachments.Add(attachment);
+
+			this.callingController.DismissViewController(true, null);
+		}
+
+		partial void btnCancel_UpInside(UIBarButtonItem sender)
+		{
+			this.callingController.DismissViewController(true, null);
 		}
 	}
 }

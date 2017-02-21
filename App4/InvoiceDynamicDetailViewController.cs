@@ -23,6 +23,7 @@ namespace App4
 		public List<Item> items = new List<Item>();
 		public Client client = new Client();
 		public List<UIImage> images = new List<UIImage>();
+		public List<Attachment> attachments = new List<Attachment>();
 
 		LoadingOverlay loadingOverlay;
 
@@ -137,6 +138,14 @@ namespace App4
 			}
 		}
 
+		public override string TitleForHeader(UITableView tableView, nint section)
+		{
+			if (section == 2)
+				return "Items";
+
+			return base.TitleForHeader(tableView, section);
+		}
+
 		public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
 		{
 			if (segue.Identifier == "Invoice_To_Item_Segue")
@@ -162,11 +171,17 @@ namespace App4
 
 				((InvoiceSignatureViewController)(destCtrl.ViewControllers[0])).callingViewController = this;
 			}
+			//else if (segue.Identifier == "Invoice_To_Attachment_Segue")
+			//{
+			//	var destCtrl = segue.DestinationViewController as UINavigationController;
+
+			//	((InvoiceAttachmentViewController)(destCtrl.ViewControllers[0])).callingController = this;
+			//}
 			else if (segue.Identifier == "Invoice_To_Attachment_Segue")
 			{
 				var destCtrl = segue.DestinationViewController as UINavigationController;
 
-				((InvoiceAttachmentViewController)(destCtrl.ViewControllers[0])).callingController = this;
+				((InvoicePhotoViewController)(destCtrl.ViewControllers[0])).callingController = this;
 			}
 
 			base.PrepareForSegue(segue, sender);

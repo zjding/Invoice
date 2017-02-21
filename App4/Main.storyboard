@@ -1067,7 +1067,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue id="6661" destination="6500" kind="presentation"/>
+                                    <segue id="6661" destination="6500" kind="presentation" identifier="Invoice_To_Attachment_Segue"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1928,12 +1928,23 @@
                         </sections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Attachment" id="6492">
-                        <barButtonItem key="rightBarButtonItem" id="6721" title="Save"/>
-                        <barButtonItem key="leftBarButtonItem" id="6722" title="Cancel"/>
+                        <barButtonItem key="rightBarButtonItem" id="6721" title="Save">
+                            <connections>
+                                <action selector="btnSave_UpInside:" destination="6491" id="6850"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" id="6722" title="Cancel">
+                            <connections>
+                                <action selector="btnCancel_UpInside:" destination="6491" id="6851"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="imgAttachment" destination="6762" id="name-outlet-6762"/>
                         <outlet property="btnImage" destination="6813" id="name-outlet-6813"/>
+                        <outlet property="btnSave" destination="6721" id="name-outlet-6721"/>
+                        <outlet property="btnCancel" destination="6722" id="name-outlet-6722"/>
+                        <outlet property="txtDescription" destination="6763" id="name-outlet-6763"/>
                     </connections>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="6719"/>
