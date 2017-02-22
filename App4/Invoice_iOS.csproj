@@ -229,6 +229,10 @@
     <BundleResource Include="Images\Image File-100.png" />
     <BundleResource Include="Images\Image File-50.png" />
     <Compile Include="Model\Attachment.cs" />
+    <Compile Include="InvoiceAddAttachmentCell.cs" />
+    <Compile Include="InvoiceAddAttachmentCell.designer.cs">
+      <DependentUpon>InvoiceAddAttachmentCell.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SettingsViewController.cs" />

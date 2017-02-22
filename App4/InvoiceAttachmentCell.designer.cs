@@ -14,8 +14,25 @@ namespace App4
     [Register ("InvoiceAttachmentCell")]
     partial class InvoiceAttachmentCell
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        public UIKit.UIImageView imgAttachment { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+		public UILabel lblDescription { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
+            if (imgAttachment != null) {
+                imgAttachment.Dispose ();
+                imgAttachment = null;
+            }
+
+            if (lblDescription != null) {
+                lblDescription.Dispose ();
+                lblDescription = null;
+            }
         }
     }
 }

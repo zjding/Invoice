@@ -19,6 +19,7 @@ namespace App4
 		public string AddItemCellIdentifier = "AddItemCellIdentifier";
 		public string InvoiceSignatureCellIdentifier = "InvoiceSignatureCellIdentifier";
 		public string InvoiceAttachmentCellIdentifier = "InvoiceAttachmentCellIdentifier";
+		public string AddAttachmentCellIdentifier = "AddAttachmentCellIdentifier";
 
 		public List<Item> items = new List<Item>();
 		public Client client = new Client();
@@ -49,21 +50,25 @@ namespace App4
 
 		public override nint RowsInSection(UITableView tableView, nint section)
 		{
-			if (section == 0)
+			if (section == 0) // invoice name
 			{
 				return 1;
 			}
-			else if (section == 1)
+			else if (section == 1) // client name
 			{
 				return 1;
 			}
-			else if (section == 2)
+			else if (section == 2) // items
 			{
 				return items.Count + 1;
 			}
-			else if (section == 3)
+			else if (section == 3) // attachments
 			{
-				return 2;
+				return attachments.Count + 1;
+			}
+			else if (section == 4) // signature
+			{
+				return 1;
 			}
 
 			return 0;
@@ -98,7 +103,7 @@ namespace App4
 
 				return cell;
 			}
-			else if (indexPath.Section == 2)
+			else if (indexPath.Section == 2) // item
 			{
 				if (indexPath.Row == items.Count)
 				{
@@ -115,14 +120,11 @@ namespace App4
 					return cell;
 				}
 			}
-			else
+			else if (indexPath.Section == 3) // attachment
 			{
-				if (indexPath.Row == 0)
+				if (indexPath.Row == attachments.Count)
 				{
-					InvoiceSignatureCell cell = this.TableView.DequeueReusableCell(InvoiceSignatureCellIdentifier) as InvoiceSignatureCell;
-
-					//cell.TextLabel.Text = "Client";
-					//cell.DetailTextLabel.Text = client.FirstName + " " + client.LastName;
+					InvoiceAddAttachmentCell cell = this.TableView.DequeueReusableCell(AddAttachmentCellIdentifier) as InvoiceAddAttachmentCell;
 
 					return cell;
 				}
@@ -130,11 +132,17 @@ namespace App4
 				{
 					InvoiceAttachmentCell cell = this.TableView.DequeueReusableCell(InvoiceAttachmentCellIdentifier) as InvoiceAttachmentCell;
 
-					//cell.TextLabel.Text = "Client";
-					//cell.DetailTextLabel.Text = client.FirstName + " " + client.LastName;
+					cell.imgAttachment.Image = attachments[indexPath.Row].image;
+					cell.lblDescription.Text = attachments[indexPath.Row].description;
 
 					return cell;
 				}
+			}
+			else
+			{
+				InvoiceSignatureCell cell = this.TableView.DequeueReusableCell(InvoiceSignatureCellIdentifier) as InvoiceSignatureCell;
+
+				return cell;
 			}
 		}
 
