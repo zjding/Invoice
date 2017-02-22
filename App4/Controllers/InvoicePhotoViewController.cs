@@ -97,7 +97,13 @@ namespace App4
 
 			var imageStream = resizedImage.AsJPEG((System.nfloat)0.75).AsStream();
 
+			var bounds = UIScreen.MainScreen.Bounds;
+
+			loadingOverlay = new LoadingOverlay(bounds);
+			this.View.Add(loadingOverlay);
+
 			var name = await ImageManager.UploadImage(imageStream);
+
 
 			Attachment attachment = new Attachment();
 			attachment.imageName = name;
@@ -111,10 +117,6 @@ namespace App4
 
 			var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
 
-			var bounds = UIScreen.MainScreen.Bounds;
-
-			loadingOverlay = new LoadingOverlay(bounds);
-			this.View.Add(loadingOverlay);
 
 			//if (bNew)
 			//{

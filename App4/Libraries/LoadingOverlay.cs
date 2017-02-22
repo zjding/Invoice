@@ -13,9 +13,9 @@ namespace App4
 		public LoadingOverlay(CGRect frame) : base(frame)
 		{
 			// configurable bits
-			BackgroundColor = UIColor.White;
+			//BackgroundColor = UIColor.White;
 			//Alpha = 0.25f;
-			AutoresizingMask = UIViewAutoresizing.All;
+			//AutoresizingMask = UIViewAutoresizing.All;
 
 			//nfloat labelHeight = 22;
 			//nfloat labelWidth = Frame.Width - 20;
@@ -26,12 +26,24 @@ namespace App4
 
 			// create the activity spinner, center it horizontall and put it 5 points above center x
 			activitySpinner = new UIActivityIndicatorView(UIActivityIndicatorViewStyle.Gray);
+			//activitySpinner.Frame = new CGRect(
+			//	centerX - (activitySpinner.Frame.Width / 2),
+			//	centerY - activitySpinner.Frame.Height - 40,
+			//	activitySpinner.Frame.Width,
+			//	activitySpinner.Frame.Height);
+			//activitySpinner.AutoresizingMask = UIViewAutoresizing.All;
+
 			activitySpinner.Frame = new CGRect(
 				centerX - (activitySpinner.Frame.Width / 2),
 				centerY - activitySpinner.Frame.Height - 40,
-				activitySpinner.Frame.Width,
-				activitySpinner.Frame.Height);
-			activitySpinner.AutoresizingMask = UIViewAutoresizing.All;
+				50,
+				50);
+			activitySpinner.Layer.CornerRadius = 05;
+			activitySpinner.Opaque = true;
+
+			activitySpinner.BackgroundColor = new UIColor((System.nfloat)0.0, (System.nfloat)0.7);
+			activitySpinner.ActivityIndicatorViewStyle = UIActivityIndicatorViewStyle.White;
+
 			AddSubview(activitySpinner);
 			activitySpinner.StartAnimating();
 
