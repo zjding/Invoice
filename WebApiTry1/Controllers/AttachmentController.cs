@@ -11,7 +11,40 @@ namespace WebApiTry1.Controllers
 {
     public class AttachmentController : ApiController
     {
-        private string m_connectionString = @"Server=tcp:webapitry120161228015023.database.windows.net,1433;Initial Catalog=WebApiTry120161228015023;Persist Security Info=False;User ID=zjding;Password=G4indigo;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        [Route("api/Attachment/GetAttachments")]
+        public List<Attachment> Get()
+        {
+            List<Attachment> attachments = new List<Attachment>();
+
+            string commandString = @"Select * from Attachment";
+
+            SqlDataReader reader = null;
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = Constant.connectionString;
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = commandString;
+            command.Connection = connection;
+
+            connection.Open();
+            reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Attachment attachment = new Attachment();
+                attachment.id = Convert.ToInt64(reader["Id"]);
+                attachment.imageName = reader["ImageName"] != DBNull.Value ? Convert.ToString(reader["ImageName"]) : string.Empty;
+                attachment.description = reader["Description"] != DBNull.Value ? Convert.ToString(reader["Description"]) : string.Empty;    
+
+                attachments.Add(attachment);
+            }
+
+            connection.Close();
+
+            return attachments;
+
+        }
+
 
         [HttpPost]
         public HttpResponseMessage AddAttachment(Attachment attachment)
