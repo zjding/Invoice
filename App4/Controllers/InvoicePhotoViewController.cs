@@ -3,6 +3,9 @@ using System;
 using UIKit;
 using CoreGraphics;
 using System.Drawing;
+using Newtonsoft.Json;
+using System.Net.Http;
+using System.Text;
 
 namespace App4
 {
@@ -12,6 +15,8 @@ namespace App4
 		UIImagePickerController photoPicker;
 
 		public InvoiceDynamicDetailViewController callingController;
+
+		LoadingOverlay loadingOverlay;
 
         public InvoicePhotoViewController (IntPtr handle) : base (handle)
         {
@@ -97,9 +102,36 @@ namespace App4
 			attachment.image = this.imgAttachment.Image;
 			attachment.description = this.txtDescription.Text;
 
-			this.callingController.attachments.Add(attachment);
+			/////
+			string jsonString = JsonConvert.SerializeObject(attachment);
 
-			this.callingController.DismissViewController(true, null);
+			HttpClient httpClient = new HttpClient();
+
+			var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
+
+			var bounds = UIScreen.MainScreen.Bounds;
+
+			loadingOverlay = new LoadingOverlay(bounds);
+			this.View.Add(loadingOverlay);
+
+			//if (bNew)
+			//{
+				var result = await httpClient.PostAsync("http://webapitry120161228015023.azurewebsites.net/api/Attachment/AddAttachment", content);
+
+				var contents = await result.Content.ReadAsStringAsync();
+
+				string returnMessage = contents.ToString();
+
+				loadingOverlay.Hide();
+
+				if (returnMessage == "\"Added attachment successfully\"")
+				{
+					this.callingController.attachments.Add(attachment);
+					callingController.DismissViewController(true, null);
+
+				}
+			//}
+			////
 		}
 
 		partial void btnCancel_UpInside(UIBarButtonItem sender)
