@@ -93,7 +93,9 @@ namespace App4
 
 		async partial void btnSave_UpInside(UIBarButtonItem sender)
 		{
-			var imageStream = this.imgAttachment.Image.AsJPEG().AsStream();
+			var resizedImage = ImageManager.ResizeImage(this.imgAttachment.Image, 1000, 1000);
+
+			var imageStream = resizedImage.AsJPEG((System.nfloat)0.75).AsStream();
 
 			var name = await ImageManager.UploadImage(imageStream);
 

@@ -5,6 +5,7 @@ using UIKit;
 using Invoice_Model;
 using System.Net.Http;
 using Newtonsoft.Json;
+using System.Threading.Tasks;
 
 namespace App4
 {
@@ -36,10 +37,42 @@ namespace App4
         {
         }
 
-		public override void ViewDidLoad()
+		async public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
 			//items.Add("Item 1");
+
+			var bounds = UIScreen.MainScreen.Bounds;
+
+			loadingOverlay = new LoadingOverlay(bounds);
+			this.View.Add(loadingOverlay);
+
+			string result = await httpClient.GetStringAsync("http://webapitry120161228015023.azurewebsites.net/api/Item/GetItems");
+
+			items = JsonConvert.DeserializeObject<List<Item>>(result);
+
+			result = await httpClient.GetStringAsync("http://webapitry120161228015023.azurewebsites.net/api/Attachment/GetAttachments");
+
+			List<Invoice_Model.Attachment> atts = JsonConvert.DeserializeObject<List<Invoice_Model.Attachment>>(result);
+
+			foreach (Invoice_Model.Attachment att in atts)
+			{
+				Attachment attachment = new Attachment();
+				attachment.imageName = att.imageName;
+
+				var bytes = Task.Run(() => ImageManager.GetImage(att.imageName)).Result;
+				var data = NSData.FromArray(bytes);
+				attachment.image = UIImage.LoadFromData(data);
+
+				attachment.description = att.description;
+				attachments.Add(attachment);
+			}
+
+			loadingOverlay.Hide();
+
+			this.TableView.SeparatorStyle = UITableViewCellSeparatorStyle.SingleLine;
+
+			this.TableView.ReloadData();
 
 		}
 
@@ -195,22 +228,9 @@ namespace App4
 			base.PrepareForSegue(segue, sender);
 		}
 
-		async public override void ViewWillAppear(Boolean animated)
+		public override void ViewWillAppear(Boolean animated)
 		{
 			base.ViewWillAppear(animated);
-
-			var bounds = UIScreen.MainScreen.Bounds;
-
-			loadingOverlay = new LoadingOverlay(bounds);
-			this.View.Add(loadingOverlay);
-
-			string result = await httpClient.GetStringAsync("http://webapitry120161228015023.azurewebsites.net/api/Item/GetItems");
-
-			items = JsonConvert.DeserializeObject<List<Item>>(result);
-
-			loadingOverlay.Hide();
-
-			this.TableView.SeparatorStyle = UITableViewCellSeparatorStyle.SingleLine;
 
 			this.TableView.ReloadData();
 		}

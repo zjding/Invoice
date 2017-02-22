@@ -7,6 +7,8 @@ using Microsoft.WindowsAzure.Storage.Blob;
 using Microsoft.WindowsAzure.Storage;
 using System.Threading.Tasks;
 using System.IO;
+using UIKit;
+using System.Drawing;
 
 namespace App4
 {
@@ -119,6 +121,20 @@ namespace App4
             return new string(Enumerable.Repeat(chars, length)
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
+
+		public static UIImage ResizeImage(UIImage sourceImage, float maxWidth, float maxHeight)
+		{
+			var sourceSize = sourceImage.Size;
+			var maxResizeFactor = Math.Max(maxWidth / sourceSize.Width, maxHeight / sourceSize.Height);
+			if (maxResizeFactor > 1) return sourceImage;
+			float width = (float)(maxResizeFactor * sourceSize.Width);
+			float height = (float)(maxResizeFactor * sourceSize.Height);
+			UIGraphics.BeginImageContext(new SizeF(width, height));
+			sourceImage.Draw(new RectangleF(0, 0, width, height));
+			var resultImage = UIGraphics.GetImageFromCurrentImageContext();
+			UIGraphics.EndImageContext();
+			return resultImage;
+		}
     }
 }
 
