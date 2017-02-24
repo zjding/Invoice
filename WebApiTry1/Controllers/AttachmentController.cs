@@ -71,6 +71,33 @@ namespace WebApiTry1.Controllers
             return Request.CreateResponse(HttpStatusCode.Created, "Added attachment successfully");
         }
 
+        [HttpPut]
+        public HttpResponseMessage PutAttachment(Attachment attachment)
+        {
+            string commandString = @"UPDATE Attachment Set ImageName = @ImageName, Description = @Description
+                                    WHERE Id = @Id";
+
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = Constant.connectionString;
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = commandString;
+            command.Connection = connection;
+
+            command.Parameters.AddWithValue("@ImageName", attachment.imageName);
+            command.Parameters.AddWithValue("@Description", attachment.description);
+            command.Parameters.AddWithValue("@Id", attachment.id);
+           
+
+            connection.Open();
+
+            int rowInserted = command.ExecuteNonQuery();
+
+            connection.Close();
+
+            return Request.CreateResponse(HttpStatusCode.Created, "Updated attachment successfully");
+        }
+
         [Route("api/Attachment/Delete/{id}")]
         [HttpDelete]
         public HttpResponseMessage DeleteAttachment(string id)
