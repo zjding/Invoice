@@ -59,6 +59,7 @@ namespace App4
 			foreach (Invoice_Model.Attachment att in atts)
 			{
 				Attachment attachment = new Attachment();
+				attachment.id = att.id;
 				attachment.imageName = att.imageName;
 
 				var bytes = Task.Run(() => ImageManager.GetImage(att.imageName)).Result;

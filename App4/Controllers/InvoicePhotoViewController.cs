@@ -113,24 +113,22 @@ namespace App4
 			loadingOverlay = new LoadingOverlay(bounds);
 			this.View.Add(loadingOverlay);
 
-			var name = await ImageManager.UploadImage(imageStream);
+			if (bNew)
+			{
+				var name = await ImageManager.UploadImage(imageStream);
 
+				Attachment attachment = new Attachment();
+				attachment.imageName = name;
+				attachment.image = this.imgAttachment.Image;
+				attachment.description = this.txtDescription.Text;
 
-			Attachment attachment = new Attachment();
-			attachment.imageName = name;
-			attachment.image = this.imgAttachment.Image;
-			attachment.description = this.txtDescription.Text;
+				/////
+				string jsonString = JsonConvert.SerializeObject(attachment);
 
-			/////
-			string jsonString = JsonConvert.SerializeObject(attachment);
+				HttpClient httpClient = new HttpClient();
 
-			HttpClient httpClient = new HttpClient();
+				var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
 
-			var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
-
-
-			//if (bNew)
-			//{
 				var result = await httpClient.PostAsync("http://webapitry120161228015023.azurewebsites.net/api/Attachment/AddAttachment", content);
 
 				var contents = await result.Content.ReadAsStringAsync();
@@ -142,11 +140,49 @@ namespace App4
 				if (returnMessage == "\"Added attachment successfully\"")
 				{
 					this.callingController.attachments.Add(attachment);
-					callingController.DismissViewController(true, null);
+					this.NavigationController.PopViewController(true);
 
 				}
-			//}
-			////
+			}
+			else
+			{
+				await ImageManager.DeleteImage(attachment.imageName);
+
+				var name = await ImageManager.UploadImage(imageStream);
+
+				Invoice_Model.Attachment att = new Invoice_Model.Attachment();
+				att.id = attachment.id;
+				att.imageName = name;
+				att.description = txtDescription.Text;
+
+				attachment.imageName = name;
+				attachment.image = this.imgAttachment.Image;
+				attachment.description = this.txtDescription.Text;
+
+				string jsonString = JsonConvert.SerializeObject(att);
+
+				HttpClient httpClient = new HttpClient();
+
+				var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
+
+				var result = await httpClient.PutAsync("http://webapitry120161228015023.azurewebsites.net/api/Attachment/PutAttachment", content);
+
+				var contents = await result.Content.ReadAsStringAsync();
+
+				string returnMessage = contents.ToString();
+
+				loadingOverlay.Hide();
+
+				if (returnMessage == "\"Updated attachment successfully\"")
+				{
+					int i = callingController.attachments.FindIndex(a => a.id == att.id);
+					callingController.attachments.RemoveAt(i);
+					callingController.attachments.Insert(i, attachment);
+					this.NavigationController.PopViewController(true);
+
+				}
+
+			}
 		}
 
 		partial void btnCancel_UpInside(UIBarButtonItem sender)

@@ -56,6 +56,16 @@ namespace App4
             return name;
         }
 
+		public static async Task<string> DeleteImage(string fileName)
+		{
+			var container = GetContainer();
+
+			var blob = container.GetBlockBlobReference(fileName);
+			await blob.DeleteIfExistsAsync();
+
+			return fileName;
+		}
+
         /// <summary>
         /// Lists of all the available images in the blob container
         /// </summary>
