@@ -70,5 +70,29 @@ namespace WebApiTry1.Controllers
 
             return Request.CreateResponse(HttpStatusCode.Created, "Added attachment successfully");
         }
+
+        [Route("api/Attachment/Delete/{id}")]
+        [HttpDelete]
+        public HttpResponseMessage DeleteAttachment(string id)
+        {
+            string commandString = @"DELETE FROM Attachment WHERE Id = @Id";
+
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = Constant.connectionString;
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = commandString;
+            command.Connection = connection;
+
+            command.Parameters.AddWithValue("@Id", id);
+
+            connection.Open();
+
+            int rowDeleted = command.ExecuteNonQuery();
+
+            connection.Close();
+
+            return Request.CreateResponse(HttpStatusCode.OK, "Deleted attachment successfully");
+        }
     }
 }
