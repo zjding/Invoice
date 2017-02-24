@@ -20,6 +20,10 @@ namespace App4
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnDelete { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnImage { get; set; }
 
         [Outlet]
@@ -38,6 +42,10 @@ namespace App4
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnCancel_UpInside (UIKit.UIBarButtonItem sender);
 
+        [Action ("btnDelete_UpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnDelete_UpInside (UIKit.UIButton sender);
+
         [Action ("btnImage_UpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnImage_UpInside (UIKit.UIButton sender);
@@ -51,6 +59,11 @@ namespace App4
             if (btnCancel != null) {
                 btnCancel.Dispose ();
                 btnCancel = null;
+            }
+
+            if (btnDelete != null) {
+                btnDelete.Dispose ();
+                btnDelete = null;
             }
 
             if (btnImage != null) {

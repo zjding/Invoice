@@ -142,5 +142,16 @@ namespace App4
 		{
 			this.callingController.DismissViewController(true, null);
 		}
+
+		public override void WillDisplayHeaderView(UITableView tableView, UIView headerView, nint section)
+		{
+			//if (section == 2)
+			//{
+				var header = headerView as UITableViewHeaderFooterView;
+
+				header.TextLabel.TextColor = UIColor.DarkGray;
+				header.TextLabel.Font = UIFont.BoldSystemFontOfSize(12);
+			//}
+		}
 	}
 }

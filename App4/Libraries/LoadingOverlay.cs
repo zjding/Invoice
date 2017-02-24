@@ -35,7 +35,7 @@ namespace App4
 
 			activitySpinner.Frame = new CGRect(
 				centerX - (activitySpinner.Frame.Width / 2),
-				centerY - activitySpinner.Frame.Height - 40,
+				centerY - activitySpinner.Frame.Height - 60,
 				50,
 				50);
 			activitySpinner.Layer.CornerRadius = 05;
