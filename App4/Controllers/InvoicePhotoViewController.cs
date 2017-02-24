@@ -179,7 +179,6 @@ namespace App4
 					callingController.attachments.RemoveAt(i);
 					callingController.attachments.Insert(i, attachment);
 					this.NavigationController.PopViewController(true);
-
 				}
 
 			}
@@ -187,7 +186,7 @@ namespace App4
 
 		partial void btnCancel_UpInside(UIBarButtonItem sender)
 		{
-			this.callingController.DismissViewController(true, null);
+			this.NavigationController.PopViewController(true);
 		}
 
 		public override void WillDisplayHeaderView(UITableView tableView, UIView headerView, nint section)
