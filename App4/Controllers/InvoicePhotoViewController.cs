@@ -14,6 +14,10 @@ namespace App4
 		UIImagePickerController cameraPicker;
 		UIImagePickerController photoPicker;
 
+		public bool bNew;
+
+		public Attachment attachment;
+
 		public InvoiceDynamicDetailViewController callingController;
 
 		LoadingOverlay loadingOverlay;
@@ -41,6 +45,13 @@ namespace App4
 			photoPicker.FinishedPickingMedia += picker_FinishedPickingMedia;
 			photoPicker.Canceled += picker_Cancelled;
 			photoPicker.SourceType = UIImagePickerControllerSourceType.PhotoLibrary;
+
+			if (!bNew)
+			{
+				imgAttachment.Image = attachment.image;
+				imgAttachment.ContentMode = UIViewContentMode.ScaleToFill;
+				txtDescription.Text = attachment.description;
+			}
 		}
 
 		partial void btnImage_UpInside(UIButton sender)
@@ -145,13 +156,17 @@ namespace App4
 
 		public override void WillDisplayHeaderView(UITableView tableView, UIView headerView, nint section)
 		{
-			//if (section == 2)
-			//{
-				var header = headerView as UITableViewHeaderFooterView;
 
-				header.TextLabel.TextColor = UIColor.DarkGray;
-				header.TextLabel.Font = UIFont.BoldSystemFontOfSize(12);
-			//}
+			var header = headerView as UITableViewHeaderFooterView;
+
+			header.TextLabel.TextColor = UIColor.DarkGray;
+			header.TextLabel.Font = UIFont.BoldSystemFontOfSize(12);
+
+		}
+
+		partial void btnDelete_UpInside(UIButton sender)
+		{
+			throw new NotImplementedException();
 		}
 	}
 }

@@ -26,6 +26,7 @@ namespace App4
 		public Client client = new Client();
 		public List<UIImage> images = new List<UIImage>();
 		public List<Attachment> attachments = new List<Attachment>();
+		public Attachment selectedAttachment;
 
 		LoadingOverlay loadingOverlay;
 
@@ -179,6 +180,16 @@ namespace App4
 			}
 		}
 
+		public override NSIndexPath WillSelectRow(UITableView tableView, NSIndexPath indexPath)
+		{
+			if (indexPath.Section == 3) // attachment
+			{
+				selectedAttachment = attachments[indexPath.Row];
+			}
+
+			return indexPath;
+		}
+
 		public override string TitleForHeader(UITableView tableView, nint section)
 		{
 			if (section == 2)
@@ -223,6 +234,14 @@ namespace App4
 				var destCtrl = segue.DestinationViewController as UINavigationController;
 
 				((InvoicePhotoViewController)(destCtrl.ViewControllers[0])).callingController = this;
+			}
+			else if (segue.Identifier == "Invoice_To_ExistingAttachment_Segue")
+			{
+				var destCtrl = segue.DestinationViewController as InvoicePhotoViewController;
+
+				destCtrl.callingController = this;
+				destCtrl.bNew = false;
+				destCtrl.attachment = selectedAttachment;
 			}
 
 			base.PrepareForSegue(segue, sender);
