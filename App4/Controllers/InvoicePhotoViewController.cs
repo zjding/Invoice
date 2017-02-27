@@ -52,6 +52,20 @@ namespace App4
 				imgAttachment.ContentMode = UIViewContentMode.ScaleToFill;
 				txtDescription.Text = attachment.description;
 			}
+			else
+			{
+				//TableView.BeginUpdates();
+				//TableView.DeleteSections(new NSIndexSet(1), UITableViewRowAnimation.None);
+				//TableView.EndUpdates();
+			}
+		}
+
+		public override nint NumberOfSections(UITableView tableView)
+		{
+			if (!bNew)
+				return 3;
+			else
+				return 2;
 		}
 
 		partial void btnImage_UpInside(UIButton sender)
@@ -140,8 +154,7 @@ namespace App4
 				if (returnMessage == "\"Added attachment successfully\"")
 				{
 					this.callingController.attachments.Add(attachment);
-					this.NavigationController.PopViewController(true);
-
+					callingController.DismissViewController(true, null);
 				}
 			}
 			else
@@ -186,7 +199,10 @@ namespace App4
 
 		partial void btnCancel_UpInside(UIBarButtonItem sender)
 		{
-			this.NavigationController.PopViewController(true);
+			if (!bNew)
+				this.NavigationController.PopViewController(true);
+			else
+				callingController.DismissViewController(true, null);
 		}
 
 		public override void WillDisplayHeaderView(UITableView tableView, UIView headerView, nint section)
@@ -199,9 +215,29 @@ namespace App4
 
 		}
 
-		partial void btnDelete_UpInside(UIButton sender)
+		async partial void btnDelete_UpInside(UIButton sender)
 		{
-			throw new NotImplementedException();
+			var bounds = UIScreen.MainScreen.Bounds;
+			loadingOverlay = new LoadingOverlay(bounds);
+			this.View.Add(loadingOverlay);
+
+			////
+			HttpClient httpClient = new HttpClient();
+
+			var result = await httpClient.DeleteAsync("http://webapitry120161228015023.azurewebsites.net/api/Attachment/Delete/" + attachment.id.ToString());
+
+			result.EnsureSuccessStatusCode();
+
+			await ImageManager.DeleteImage(attachment.imageName);
+
+			loadingOverlay.Hide();
+
+			if (result.IsSuccessStatusCode)
+			{
+				int i = callingController.attachments.FindIndex(a => a.id == attachment.id);
+				callingController.attachments.RemoveAt(i);
+				this.NavigationController.PopViewController(true);
+			}
 		}
 	}
 }

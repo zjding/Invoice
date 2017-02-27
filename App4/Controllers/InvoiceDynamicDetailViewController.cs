@@ -183,7 +183,7 @@ namespace App4
 
 		public override NSIndexPath WillSelectRow(UITableView tableView, NSIndexPath indexPath)
 		{
-			if (indexPath.Section == 3) // attachment
+			if (indexPath.Section == 3 && indexPath.Row < attachments.Count) // attachment
 			{
 				selectedAttachment = attachments[indexPath.Row];
 			}
@@ -235,6 +235,7 @@ namespace App4
 				var destCtrl = segue.DestinationViewController as UINavigationController;
 
 				((InvoicePhotoViewController)(destCtrl.ViewControllers[0])).callingController = this;
+				((InvoicePhotoViewController)(destCtrl.ViewControllers[0])).bNew = true;
 			}
 			else if (segue.Identifier == "Invoice_To_ExistingAttachment_Segue")
 			{
