@@ -30,7 +30,18 @@ namespace App4
 			// Add Actions
 			actionSheetAlert.AddAction(UIAlertAction.Create("New Invoice", UIAlertActionStyle.Default, (action) => Console.WriteLine("Item One pressed.")));
 
-			actionSheetAlert.AddAction(UIAlertAction.Create("New Estimate", UIAlertActionStyle.Default, (action) => Console.WriteLine("Item Two pressed.")));
+
+
+			actionSheetAlert.AddAction(UIAlertAction.Create("New Estimate", UIAlertActionStyle.Default, (action) =>
+			{
+				UIStoryboard storyBoard = UIStoryboard.FromName("Main", null);
+				EstimationViewController estimationVC = (EstimationViewController)storyBoard.InstantiateViewController("estimationVC");
+				estimationVC.ModalTransitionStyle = UIModalTransitionStyle.CoverVertical;
+				this.PresentViewController(estimationVC, true, null);
+
+				//EstimationViewController estimationVC = new EstimationViewController();			
+				//this.PresentViewController(estimationVC, true, null);
+			}));
 
 			actionSheetAlert.AddAction(UIAlertAction.Create("Cancel", UIAlertActionStyle.Cancel, (action) => Console.WriteLine("Cancel button pressed.")));
 

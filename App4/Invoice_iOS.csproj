@@ -237,6 +237,10 @@
     <Compile Include="Libraries\RaisedTabBarController.cs" />
     <Compile Include="Libraries\LoadingOverlay.cs" />
     <Compile Include="Libraries\ImageManager.cs" />
+    <Compile Include="Controllers\EstimationViewController.cs" />
+    <Compile Include="Controllers\EstimationViewController.designer.cs">
+      <DependentUpon>EstimationViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ViewController.designer.cs">

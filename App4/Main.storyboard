@@ -2045,6 +2045,45 @@
             </objects>
             <point key="canvasLocation" x="4177" y="364"/>
         </scene>
+        <scene sceneID="7499">
+            <objects>
+                <viewController id="7500" sceneMemberID="viewController" customClass="EstimationViewController" storyboardIdentifier="estimationVC">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7497"/>
+                        <viewControllerLayoutGuide type="bottom" id="7498"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7501">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="7504" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="125"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0" green="1" blue="0" alpha="1"/>
+                                <constraints>
+                                    <constraint id="7508" firstItem="7504" firstAttribute="height" constant="125"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7509" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="125" width="414" height="611"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <constraints>
+                            <constraint id="7505" firstItem="7504" firstAttribute="leading" secondItem="7501" secondAttribute="leading"/>
+                            <constraint id="7506" firstItem="7497" firstAttribute="bottom" secondItem="7504" secondAttribute="top" constant="20"/>
+                            <constraint id="7507" firstItem="7504" firstAttribute="trailing" secondItem="7501" secondAttribute="trailing"/>
+                            <constraint id="7512" firstItem="7509" firstAttribute="top" secondItem="7504" secondAttribute="bottom"/>
+                            <constraint id="7513" firstItem="7509" firstAttribute="leading" secondItem="7501" secondAttribute="leading"/>
+                            <constraint id="7514" firstItem="7509" firstAttribute="trailing" secondItem="7501" secondAttribute="trailing"/>
+                            <constraint id="7515" firstItem="7509" firstAttribute="bottom" secondItem="7498" secondAttribute="top"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7502" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4174" y="1169"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Images/Settings-25.png" width="25" height="25"/>
