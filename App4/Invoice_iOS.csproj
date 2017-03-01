@@ -241,6 +241,17 @@
     <Compile Include="Controllers\EstimationViewController.designer.cs">
       <DependentUpon>EstimationViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Libraries\BLKFlexibleHeightBar\BLKFlexibleHeightBar.cs" />
+    <Compile Include="Libraries\BLKFlexibleHeightBar\BLKFlexibleHeightBarSubview.cs" />
+    <None Include="Libraries\BLKFlexibleHeightBar\BLKFlexibleHeightBarSubview.tt" />
+    <Compile Include="Libraries\BLKFlexibleHeightBar\BLKFlexibleHeightBarSubviewLayoutAttributes.cs" />
+    <Compile Include="Libraries\BLKFlexibleHeightBar\IBLKFlexibleHeightBarSubview.cs" />
+    <Compile Include="Libraries\BLKFlexibleHeightBar\BLKFlexibleHeightBarBehaviorDefiner\BLKDelegateSplitter.cs" />
+    <Compile Include="Libraries\BLKFlexibleHeightBar\BLKFlexibleHeightBarBehaviorDefiner\BLKFlexibleHeightBarBehaviorDefiner.cs" />
+    <Compile Include="Libraries\BLKFlexibleHeightBar\BLKFlexibleHeightBarBehaviorDefiner\FacebookStyleBarBehaviorDefiner.cs" />
+    <Compile Include="Libraries\BLKFlexibleHeightBar\BLKFlexibleHeightBarBehaviorDefiner\Range.cs" />
+    <Compile Include="Libraries\BLKFlexibleHeightBar\BLKFlexibleHeightBarBehaviorDefiner\SquareCashStyleBehaviorDefiner.cs" />
+    <Compile Include="Libraries\SquareCashStyleBar.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ViewController.designer.cs">

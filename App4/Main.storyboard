@@ -2057,28 +2057,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="7504" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="125"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0" green="1" blue="0" alpha="1"/>
-                                <constraints>
-                                    <constraint id="7508" firstItem="7504" firstAttribute="height" constant="125"/>
-                                </constraints>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7509" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="0.0" y="125" width="414" height="611"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <constraints>
-                            <constraint id="7505" firstItem="7504" firstAttribute="leading" secondItem="7501" secondAttribute="leading"/>
-                            <constraint id="7506" firstItem="7497" firstAttribute="bottom" secondItem="7504" secondAttribute="top" constant="20"/>
-                            <constraint id="7507" firstItem="7504" firstAttribute="trailing" secondItem="7501" secondAttribute="trailing"/>
-                            <constraint id="7512" firstItem="7509" firstAttribute="top" secondItem="7504" secondAttribute="bottom"/>
-                            <constraint id="7513" firstItem="7509" firstAttribute="leading" secondItem="7501" secondAttribute="leading"/>
-                            <constraint id="7514" firstItem="7509" firstAttribute="trailing" secondItem="7501" secondAttribute="trailing"/>
-                            <constraint id="7515" firstItem="7509" firstAttribute="bottom" secondItem="7498" secondAttribute="top"/>
+                            <constraint id="7548" firstItem="7497" firstAttribute="bottom" secondItem="7509" secondAttribute="top" constant="20"/>
+                            <constraint id="7549" firstItem="7509" firstAttribute="leading" secondItem="7501" secondAttribute="leading"/>
+                            <constraint id="7550" firstItem="7509" firstAttribute="trailing" secondItem="7501" secondAttribute="trailing"/>
+                            <constraint id="7551" firstItem="7509" firstAttribute="bottom" secondItem="7498" secondAttribute="top"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="7509" id="name-outlet-7509"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7502" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
