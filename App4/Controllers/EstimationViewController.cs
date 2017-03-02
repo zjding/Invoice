@@ -38,8 +38,28 @@ namespace App4
 			closeButton.Frame = new CGRect(0f, 0f, 30f, 30f);
 			closeButton.TintColor = UIColor.White;
 			closeButton.SetImage(UIImage.FromFile(@"Images/Multiply-50-white.png"), UIControlState.Normal);
-			//closeButton.AddTarget(CloseViewController, UIControlEvent.TouchUpInside);
+			closeButton.AddTarget(CloseViewController, UIControlEvent.TouchUpInside);
 			_headerBar.AddSubview(closeButton);
+
+			var tapGesture = new UITapGestureRecognizer(tapHeaderBar);
+			_headerBar.UserInteractionEnabled = true;
+			_headerBar.AddGestureRecognizer(tapGesture);
+		}
+
+		void tapHeaderBar()
+		{
+			UIAlertView alert = new UIAlertView()
+			{
+				Title = "alert title",
+				Message = "this is a simple alert"
+			};
+			alert.AddButton("OK");
+			alert.Show();
+		}
+
+		void CloseViewController(object sender, EventArgs e)
+		{
+			DismissViewController(true, null);
 		}
 
 		public override UIStatusBarStyle PreferredStatusBarStyle()
