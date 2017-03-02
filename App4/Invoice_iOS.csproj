@@ -252,6 +252,8 @@
     <Compile Include="Libraries\BLKFlexibleHeightBar\BLKFlexibleHeightBarBehaviorDefiner\Range.cs" />
     <Compile Include="Libraries\BLKFlexibleHeightBar\BLKFlexibleHeightBarBehaviorDefiner\SquareCashStyleBehaviorDefiner.cs" />
     <Compile Include="Libraries\SquareCashStyleBar.cs" />
+    <BundleResource Include="Images\Multiply-50-white.png" />
+    <BundleResource Include="Images\Close.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ViewController.designer.cs">

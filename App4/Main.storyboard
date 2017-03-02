@@ -2100,6 +2100,8 @@
         <image name="Images/defaultbackground.png" width="330" height="189"/>
         <image name="Images/Image File-100.png" width="100" height="100"/>
         <image name="Images/Image File-50.png" width="50" height="50"/>
+        <image name="Images/Multiply-50-white.png" width="50" height="50"/>
+        <image name="Images/Close.png" width="50" height="50"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedScreenMetrics key="destination" type="retina55"/>
