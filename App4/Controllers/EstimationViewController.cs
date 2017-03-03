@@ -41,6 +41,10 @@ namespace App4
 			closeButton.AddTarget(CloseViewController, UIControlEvent.TouchUpInside);
 			_headerBar.AddSubview(closeButton);
 
+
+
+
+
 			var tapGesture = new UITapGestureRecognizer(tapHeaderBar);
 			_headerBar.UserInteractionEnabled = true;
 			_headerBar.AddGestureRecognizer(tapGesture);
