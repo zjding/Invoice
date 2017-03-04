@@ -254,6 +254,12 @@
     <Compile Include="Libraries\SquareCashStyleBar.cs" />
     <BundleResource Include="Images\Multiply-50-white.png" />
     <BundleResource Include="Images\Close.png" />
+    <BundleResource Include="Images\Checkmark-50.png" />
+    <BundleResource Include="Images\Left-50.png" />
+    <Compile Include="Controllers\InvoiceDateViewController.cs" />
+    <Compile Include="Controllers\InvoiceDateViewController.designer.cs">
+      <DependentUpon>InvoiceDateViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ViewController.designer.cs">
