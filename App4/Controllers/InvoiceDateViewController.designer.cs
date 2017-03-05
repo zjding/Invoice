@@ -16,21 +16,26 @@ namespace App4
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField txtIssueDate { get; set; }
+        UIKit.UIButton btnDue { get; set; }
 
-        [Action ("txtIssueDate_EditingDidBegin:")]
+        [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void txtIssueDate_EditingDidBegin (UIKit.UITextField sender);
+        UIKit.UITextField txtInvoiceNum { get; set; }
 
-        [Action ("txtIssueDate_UpInside:")]
+        [Action ("btnDue_UpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void txtIssueDate_UpInside (UIKit.UITextField sender);
+        partial void btnDue_UpInside (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
-            if (txtIssueDate != null) {
-                txtIssueDate.Dispose ();
-                txtIssueDate = null;
+            if (btnDue != null) {
+                btnDue.Dispose ();
+                btnDue = null;
+            }
+
+            if (txtInvoiceNum != null) {
+                txtInvoiceNum.Dispose ();
+                txtInvoiceNum = null;
             }
         }
     }
