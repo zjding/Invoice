@@ -2233,14 +2233,24 @@
                         <color key="separatorColor" colorSpace="calibratedRGB" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1"/>
                     </tableView>
                     <navigationItem key="navigationItem" title="Invoice Details" id="7750">
-                        <barButtonItem key="leftBarButtonItem" id="7764" systemItem="cancel"/>
-                        <barButtonItem key="rightBarButtonItem" id="7914" systemItem="done"/>
+                        <barButtonItem key="leftBarButtonItem" id="7764" systemItem="cancel">
+                            <connections>
+                                <action selector="btnCancel_UpInside:" destination="7749" id="7921"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" id="7914" systemItem="done">
+                            <connections>
+                                <action selector="btnDone_UpInside:" destination="7749" id="7922"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="btnDue" destination="7822" id="name-outlet-7822"/>
                         <outlet property="txtInvoiceNum" destination="7788" id="name-outlet-7788"/>
                         <outlet property="btnIssueDate" destination="7868" id="name-outlet-7868"/>
                         <outlet property="btnDueDate" destination="7883" id="name-outlet-7883"/>
+                        <outlet property="btnDone" destination="7914" id="name-outlet-7914"/>
+                        <outlet property="btnCancel" destination="7764" id="name-outlet-7764"/>
                     </connections>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="7852"/>

@@ -131,5 +131,15 @@ namespace App4
 
 			this.btnDueDate.SetTitle(dateFormatter.ToString(ConvertDateTimeToNSDate(dueDT)), UIControlState.Normal);
 		}
+
+		partial void btnCancel_UpInside(UIBarButtonItem sender)
+		{
+			throw new NotImplementedException();
+		}
+
+		partial void btnDone_UpInside(UIBarButtonItem sender)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }
