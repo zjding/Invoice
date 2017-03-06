@@ -2135,7 +2135,27 @@
                                                     <color key="textColor" colorSpace="calibratedRGB" red="0.6" green="0.6" blue="0.6" alpha="1"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7868" translatesAutoresizingMaskIntoConstraints="NO">
+                                                    <rect key="frame" x="110" y="7" width="284" height="30"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                                    <state key="normal" title="March 13, 2017">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </state>
+                                                    <constraints>
+                                                        <constraint id="7872" firstItem="7868" firstAttribute="height" constant="30"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <action selector="btnIssueDate_UpInside:" destination="7749" id="7873" eventType="touchUpInside"/>
+                                                        <action selector="btnIssueDate_Change:" destination="7749" id="7882" eventType="valueChanged"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint id="7869" firstItem="7868" firstAttribute="leading" secondItem="7780" secondAttribute="leading" constant="110"/>
+                                                <constraint id="7870" firstItem="7780" firstAttribute="trailing" secondItem="7868" secondAttribute="trailing" constant="20"/>
+                                                <constraint id="7871" firstItem="7868" firstAttribute="top" secondItem="7780" secondAttribute="top" constant="7"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="7781">
@@ -2188,13 +2208,23 @@
                                                     <color key="textColor" colorSpace="calibratedRGB" red="0.6" green="0.6" blue="0.6" alpha="1"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="March 3, 2017" minimumFontSize="17" id="7793" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7883" translatesAutoresizingMaskIntoConstraints="NO">
                                                     <rect key="frame" x="110" y="7" width="286" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
+                                                    <state key="normal" title="March 30, 2017">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </state>
+                                                    <constraints>
+                                                        <constraint id="7887" firstItem="7883" firstAttribute="height" constant="30"/>
+                                                    </constraints>
+                                                </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint id="7884" firstItem="7883" firstAttribute="leading" secondItem="7784" secondAttribute="leading" constant="110"/>
+                                                <constraint id="7885" firstItem="7784" firstAttribute="trailing" secondItem="7883" secondAttribute="trailing" constant="18"/>
+                                                <constraint id="7886" firstItem="7883" firstAttribute="top" secondItem="7784" secondAttribute="top" constant="7"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -2203,11 +2233,13 @@
                         <color key="separatorColor" colorSpace="calibratedRGB" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1"/>
                     </tableView>
                     <navigationItem key="navigationItem" title="Invoice Details" id="7750">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="7764" image="Images/Left-50.png"/>
+                        <barButtonItem key="leftBarButtonItem" id="7764" image="Images/Back-50.png"/>
                     </navigationItem>
                     <connections>
                         <outlet property="btnDue" destination="7822" id="name-outlet-7822"/>
                         <outlet property="txtInvoiceNum" destination="7788" id="name-outlet-7788"/>
+                        <outlet property="btnIssueDate" destination="7868" id="name-outlet-7868"/>
+                        <outlet property="btnDueDate" destination="7883" id="name-outlet-7883"/>
                     </connections>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="7852"/>
@@ -2244,7 +2276,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7761" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4243" y="2368"/>
+            <point key="canvasLocation" x="4315" y="2368"/>
         </scene>
     </scenes>
     <resources>
@@ -2273,6 +2305,7 @@
         <image name="Images/Close.png" width="50" height="50"/>
         <image name="Images/Checkmark-50.png" width="30" height="30"/>
         <image name="Images/Left-50.png" width="30" height="30"/>
+        <image name="Images/Back-50.png" width="25" height="25"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedScreenMetrics key="destination" type="retina55"/>

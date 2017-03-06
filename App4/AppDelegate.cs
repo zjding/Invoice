@@ -24,7 +24,7 @@ namespace App4
 
 			UIBarButtonItem.Appearance.SetTitleTextAttributes(new UITextAttributes()
 			{
-				Font = UIFont.FromName("Avenir Next", 14)
+				Font = UIFont.FromName("Avenir Next", 15)
 				//TextColor = UIColor.White
 			}, UIControlState.Normal);
 

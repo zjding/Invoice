@@ -20,17 +20,43 @@ namespace App4
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnDueDate { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnIssueDate { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField txtInvoiceNum { get; set; }
 
         [Action ("btnDue_UpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnDue_UpInside (UIKit.UIButton sender);
 
+        [Action ("btnIssueDate_Change:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnIssueDate_Change (UIKit.UIButton sender);
+
+        [Action ("btnIssueDate_UpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnIssueDate_UpInside (UIKit.UIButton sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (btnDue != null) {
                 btnDue.Dispose ();
                 btnDue = null;
+            }
+
+            if (btnDueDate != null) {
+                btnDueDate.Dispose ();
+                btnDueDate = null;
+            }
+
+            if (btnIssueDate != null) {
+                btnIssueDate.Dispose ();
+                btnIssueDate = null;
             }
 
             if (txtInvoiceNum != null) {

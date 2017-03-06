@@ -37,6 +37,8 @@ namespace App4
 		void doneButtonClicked(object sender, EventArgs e)
 		{
 			txtInvoiceNum.ResignFirstResponder();
+
+
 		}
 
 
@@ -97,10 +99,65 @@ namespace App4
 				var index = modalPicker.PickerView.SelectedRowInComponent(0);
 
 				btnDue.SetTitle(dueDaysList[(int)index], UIControlState.Normal);
+
+				btnIssueDate_Change(null);
 			};
 
 			await PresentViewControllerAsync(modalPicker, true);
 			                
+		}
+
+		async partial void btnIssueDate_UpInside(UIButton sender)
+		{
+			var modalPicker = new ModalPickerViewController(ModalPickerType.Date, "Select a Date", this)
+			{
+				HeaderBackgroundColor = new UIColor(red: .13f, green: .56f, blue: .99f, alpha: 1.0f),
+				HeaderTextColor = UIColor.White,
+				TransitioningDelegate = new ModalPickerTransitionDelegate(),
+				ModalPresentationStyle = UIModalPresentationStyle.Custom
+			};
+
+			modalPicker.DatePicker.Mode = UIDatePickerMode.Date;
+
+			modalPicker.OnModalPickerDismissed += (s, ea) =>
+			{
+				var dateFormatter = new NSDateFormatter()
+				{
+					DateFormat = "MMMM dd, yyyy"
+				};
+
+				this.btnIssueDate.SetTitle(dateFormatter.ToString(modalPicker.DatePicker.Date), UIControlState.Normal);
+
+				btnIssueDate_Change(null);
+			};
+
+			await PresentViewControllerAsync(modalPicker, true);
+		}
+
+		public NSDate ConvertDateTimeToNSDate(DateTime date)
+		{
+			DateTime newDate = TimeZone.CurrentTimeZone.ToLocalTime(
+				new DateTime(2001, 1, 1, 0, 0, 0));
+			return NSDate.FromTimeIntervalSinceReferenceDate(
+				(date - newDate).TotalSeconds);
+		}
+
+		partial void btnIssueDate_Change(UIButton sender)
+		{
+			DateTime issueDT = Convert.ToDateTime(btnIssueDate.Title(UIControlState.Normal));
+
+			string title = btnDue.Title(UIControlState.Normal);
+			string dayNum = title.Replace("days", "").Replace("day", "").Trim();
+
+			int dueDay = int.Parse(dayNum);
+			DateTime dueDT = issueDT.AddDays(dueDay);
+
+			var dateFormatter = new NSDateFormatter()
+			{
+				DateFormat = "MMMM dd, yyyy"
+			};
+
+			this.btnDueDate.SetTitle(dateFormatter.ToString(ConvertDateTimeToNSDate(dueDT)), UIControlState.Normal);
 		}
 	}
 }

@@ -260,6 +260,7 @@
     <Compile Include="Controllers\InvoiceDateViewController.designer.cs">
       <DependentUpon>InvoiceDateViewController.cs</DependentUpon>
     </Compile>
+    <BundleResource Include="Images\Back-50.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ViewController.designer.cs">
