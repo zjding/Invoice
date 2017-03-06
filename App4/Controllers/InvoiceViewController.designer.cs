@@ -11,8 +11,8 @@ using UIKit;
 
 namespace App4
 {
-    [Register ("EstimationViewController")]
-    partial class EstimationViewController
+    [Register ("InvoiceViewController")]
+    partial class InvoiceViewController
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]

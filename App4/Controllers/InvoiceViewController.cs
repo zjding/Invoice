@@ -6,13 +6,13 @@ using CoreGraphics;
 
 namespace App4
 {
-    public partial class EstimationViewController : UIViewController
-    {
+    public partial class InvoiceViewController : UIViewController
+	{
 		SquareCashStyleBar _headerBar;
 
-        public EstimationViewController (IntPtr handle) : base (handle)
-        {
-        }
+		public InvoiceViewController(IntPtr handle) : base(handle)
+		{
+		}
 
 		public override void ViewDidLoad()
 		{
@@ -41,10 +41,6 @@ namespace App4
 			closeButton.AddTarget(CloseViewController, UIControlEvent.TouchUpInside);
 			_headerBar.AddSubview(closeButton);
 
-
-
-
-
 			var tapGesture = new UITapGestureRecognizer(tapHeaderBar);
 			_headerBar.UserInteractionEnabled = true;
 			_headerBar.AddGestureRecognizer(tapGesture);
@@ -52,13 +48,20 @@ namespace App4
 
 		void tapHeaderBar()
 		{
-			UIAlertView alert = new UIAlertView()
-			{
-				Title = "alert title",
-				Message = "this is a simple alert"
-			};
-			alert.AddButton("OK");
-			alert.Show();
+			//UIAlertView alert = new UIAlertView()
+			//{
+			//	Title = "alert title",
+			//	Message = "this is a simple alert"
+			//};
+			//alert.AddButton("OK");
+			//alert.Show();
+
+			UIStoryboard storyBoard = UIStoryboard.FromName("Main", null);
+			UINavigationController detailVC = (UINavigationController)storyBoard.InstantiateViewController("invoiceDateNavigationVC");
+			detailVC.ModalTransitionStyle = UIModalTransitionStyle.CoverVertical;
+			this.PresentViewController(detailVC, true, null);
+
+			//this.NavigationController.PushViewController(detailVC, true);
 		}
 
 		void CloseViewController(object sender, EventArgs e)
@@ -75,5 +78,5 @@ namespace App4
 		{
 			return true;
 		}
-    }
+	}
 }

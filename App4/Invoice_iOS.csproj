@@ -237,10 +237,6 @@
     <Compile Include="Libraries\RaisedTabBarController.cs" />
     <Compile Include="Libraries\LoadingOverlay.cs" />
     <Compile Include="Libraries\ImageManager.cs" />
-    <Compile Include="Controllers\EstimationViewController.cs" />
-    <Compile Include="Controllers\EstimationViewController.designer.cs">
-      <DependentUpon>EstimationViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Libraries\BLKFlexibleHeightBar\BLKFlexibleHeightBar.cs" />
     <Compile Include="Libraries\BLKFlexibleHeightBar\BLKFlexibleHeightBarSubview.cs" />
     <None Include="Libraries\BLKFlexibleHeightBar\BLKFlexibleHeightBarSubview.tt" />
@@ -261,6 +257,10 @@
       <DependentUpon>InvoiceDateViewController.cs</DependentUpon>
     </Compile>
     <BundleResource Include="Images\Back-50.png" />
+    <Compile Include="Controllers\InvoiceViewController.cs" />
+    <Compile Include="Controllers\InvoiceViewController.designer.cs">
+      <DependentUpon>InvoiceViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ViewController.designer.cs">
