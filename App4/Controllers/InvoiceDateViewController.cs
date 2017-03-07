@@ -12,6 +12,13 @@ namespace App4
         {
         }
 
+		public override void ViewWillAppear(bool animated)
+		{
+			base.ViewWillAppear(animated);
+
+			this.NavigationController.SetNavigationBarHidden(false, false);
+		}
+
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
@@ -32,6 +39,15 @@ namespace App4
 			toolbar.SizeToFit();
 
 			txtInvoiceNum.InputAccessoryView = toolbar;
+
+			//UIBarButtonItem btnBack = new UIBarButtonItem(UIImage.FromFile("Images/Left-50.png"), UIBarButtonItemStyle.Plain, null);
+
+			//this.NavigationItem.LeftBarButtonItem = btnBack;
+
+			UINavigationBar.Appearance.BackIndicatorImage = UIImage.FromFile("Images/Left-50.png");
+			UINavigationBar.Appearance.BackIndicatorTransitionMaskImage = UIImage.FromFile("Images/Left-50.png");
+
+			UIBarButtonItem.Appearance.SetBackButtonTitlePositionAdjustment(new UIOffset(0, -66), UIBarMetrics.Default);
 		}
 
 		void doneButtonClicked(object sender, EventArgs e)
@@ -132,14 +148,14 @@ namespace App4
 			this.btnDueDate.SetTitle(dateFormatter.ToString(ConvertDateTimeToNSDate(dueDT)), UIControlState.Normal);
 		}
 
-		partial void btnCancel_UpInside(UIBarButtonItem sender)
-		{
-			throw new NotImplementedException();
-		}
+		//partial void btnCancel_UpInside(UIBarButtonItem sender)
+		//{
+		//	throw new NotImplementedException();
+		//}
 
-		partial void btnDone_UpInside(UIBarButtonItem sender)
-		{
-			throw new NotImplementedException();
-		}
+		//partial void btnDone_UpInside(UIBarButtonItem sender)
+		//{
+		//	throw new NotImplementedException();
+		//}
 	}
 }

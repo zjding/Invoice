@@ -35,9 +35,12 @@ namespace App4
 			actionSheetAlert.AddAction(UIAlertAction.Create("New Estimate", UIAlertActionStyle.Default, (action) =>
 			{
 				UIStoryboard storyBoard = UIStoryboard.FromName("Main", null);
-				InvoiceViewController invoiceVC = (InvoiceViewController)storyBoard.InstantiateViewController("estimationVC");
-				invoiceVC.ModalTransitionStyle = UIModalTransitionStyle.CoverVertical;
-				this.PresentViewController(invoiceVC, true, null);
+				//InvoiceViewController invoiceVC = (InvoiceViewController)storyBoard.InstantiateViewController("estimationVC");r
+				//invoiceVC.ModalTransitionStyle = UIModalTransitionStyle.CoverVertical;
+				//this.PresentViewController(invoiceVC, true, null);
+
+				UINavigationController invoiceNavigationVC = (UINavigationController)storyBoard.InstantiateViewController("invoiceNavigationVC");
+				this.PresentViewController(invoiceNavigationVC, true, null);
 
 				//InvoiceViewController estimationVC = new InvoiceViewController();			
 				//this.PresentViewController(estimationVC, true, null);

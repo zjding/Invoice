@@ -14,6 +14,13 @@ namespace App4
 		{
 		}
 
+		public override void ViewWillAppear(bool animated)
+		{
+			base.ViewWillAppear(animated);
+
+			this.NavigationController.SetNavigationBarHidden(true, false);
+		}
+
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
@@ -57,11 +64,14 @@ namespace App4
 			//alert.Show();
 
 			UIStoryboard storyBoard = UIStoryboard.FromName("Main", null);
-			UINavigationController detailVC = (UINavigationController)storyBoard.InstantiateViewController("invoiceDateNavigationVC");
-			detailVC.ModalTransitionStyle = UIModalTransitionStyle.CoverVertical;
-			this.PresentViewController(detailVC, true, null);
+			//UINavigationController detailVC = (UINavigationController)storyBoard.InstantiateViewController("invoiceDateNavigationVC");
+			////detailVC.ModalTransitionStyle = UIModalTransitionStyle.CoverVertical;
+			////this.PresentViewController(detailVC, true, null);
 
 			//this.NavigationController.PushViewController(detailVC, true);
+
+			InvoiceDateViewController invoiceDateVC = (InvoiceDateViewController)storyBoard.InstantiateViewController("invoiceDetailVC");
+			this.NavigationController.PushViewController(invoiceDateVC, true);
 		}
 
 		void CloseViewController(object sender, EventArgs e)

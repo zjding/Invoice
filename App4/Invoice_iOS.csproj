@@ -261,6 +261,10 @@
     <Compile Include="Controllers\InvoiceViewController.designer.cs">
       <DependentUpon>InvoiceViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="testController.cs" />
+    <Compile Include="testController.designer.cs">
+      <DependentUpon>testController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ViewController.designer.cs">
