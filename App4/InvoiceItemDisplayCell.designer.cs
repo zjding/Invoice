@@ -20,6 +20,10 @@ namespace App4
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        public UIKit.UILabel lblNumber { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         public UIKit.UILabel lblPrice { get; set; }
 
         [Outlet]
@@ -31,6 +35,11 @@ namespace App4
             if (lblName != null) {
                 lblName.Dispose ();
                 lblName = null;
+            }
+
+            if (lblNumber != null) {
+                lblNumber.Dispose ();
+                lblNumber = null;
             }
 
             if (lblPrice != null) {

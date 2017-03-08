@@ -271,6 +271,7 @@
     <Compile Include="InvoiceItemDisplayCell.designer.cs">
       <DependentUpon>InvoiceItemDisplayCell.cs</DependentUpon>
     </Compile>
+    <BundleResource Include="Images\Add List-25.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ViewController.designer.cs">

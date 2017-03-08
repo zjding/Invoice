@@ -156,6 +156,7 @@ namespace App4
 					cell.lblName.Text = items[indexPath.Row].Name;
 					cell.lblUnitPrice.Text = items[indexPath.Row].Price.ToString("C", CultureInfo.CurrentCulture) + " x " + items[indexPath.Row].Quantity.ToString();
 					cell.lblPrice.Text = (items[indexPath.Row].Price * items[indexPath.Row].Quantity).ToString("C", CultureInfo.CurrentCulture);
+					cell.lblNumber.Text = (indexPath.Row + 1).ToString();
 
 					return cell;
 				}
