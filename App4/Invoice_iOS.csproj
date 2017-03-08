@@ -264,6 +264,13 @@
       <DependentUpon>testController.cs</DependentUpon>
     </Compile>
     <BundleResource Include="Images\Left-50 copy.png" />
+    <BundleResource Include="Images\Calendar-50.png" />
+    <BundleResource Include="Images\Calendar-25.png" />
+    <BundleResource Include="Images\Client-25.png" />
+    <Compile Include="InvoiceItemDisplayCell.cs" />
+    <Compile Include="InvoiceItemDisplayCell.designer.cs">
+      <DependentUpon>InvoiceItemDisplayCell.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ViewController.designer.cs">

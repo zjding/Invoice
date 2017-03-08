@@ -6,6 +6,7 @@ using Invoice_Model;
 using System.Net.Http;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
+using System.Globalization;
 
 namespace App4
 {
@@ -21,6 +22,7 @@ namespace App4
 		public string InvoiceSignatureCellIdentifier = "InvoiceSignatureCellIdentifier";
 		public string InvoiceAttachmentCellIdentifier = "InvoiceAttachmentCellIdentifier";
 		public string AddAttachmentCellIdentifier = "AddAttachmentCellIdentifier";
+		public string InvoiceItemDisplayCellIdentifier = "InvoiceItemDisplayCellIdentifier";
 
 		public List<Item> items = new List<Item>();
 		public Client client = new Client();
@@ -116,7 +118,7 @@ namespace App4
 			{
 				InvoiceNameCell nameCell = this.TableView.DequeueReusableCell(InvoiceNameCellIdentifier) as InvoiceNameCell;
 
-				nameCell.lblInvoiceName.Text = "INVOICE-00001";
+				//nameCell.lblInvoiceName.Text = "INVOICE-00001";
 
 				var dateFormatter = new NSDateFormatter()
 				{
@@ -125,7 +127,7 @@ namespace App4
 
 				var curDate = new NSDate();
 
-				nameCell.btnDate.SetTitle(dateFormatter.ToString(curDate), UIControlState.Normal);
+				//nameCell.btnDate.SetTitle(dateFormatter.ToString(curDate), UIControlState.Normal);
 				nameCell.viewController = this;
 
 				return nameCell;
@@ -134,8 +136,8 @@ namespace App4
 			{
 				InvoiceClientNameCell cell = this.TableView.DequeueReusableCell(ClientNameCellIdentifier) as InvoiceClientNameCell;
 
-				cell.TextLabel.Text = "Client";
-				cell.DetailTextLabel.Text = client.FirstName + " " + client.LastName;
+				//cell.TextLabel.Text = "Client";
+				//cell.DetailTextLabel.Text = client.FirstName + " " + client.LastName;
 
 				return cell;
 			}
@@ -149,9 +151,11 @@ namespace App4
 				}
 				else
 				{
-					InvoiceItemCell cell = this.TableView.DequeueReusableCell(ItemCellIdentifier) as InvoiceItemCell;
-					cell.TextLabel.Text = items[indexPath.Row].Name;
-					cell.DetailTextLabel.Text = (items[indexPath.Row].Price * items[indexPath.Row].Quantity).ToString();
+					//InvoiceItemCell cell = this.TableView.DequeueReusableCell(ItemCellIdentifier) as InvoiceItemCell;
+					InvoiceItemDisplayCell cell = this.TableView.DequeueReusableCell(InvoiceItemDisplayCellIdentifier) as InvoiceItemDisplayCell;
+					cell.lblName.Text = items[indexPath.Row].Name;
+					cell.lblUnitPrice.Text = items[indexPath.Row].Price.ToString("C", CultureInfo.CurrentCulture) + " x " + items[indexPath.Row].Quantity.ToString();
+					cell.lblPrice.Text = (items[indexPath.Row].Price * items[indexPath.Row].Quantity).ToString("C", CultureInfo.CurrentCulture);
 
 					return cell;
 				}
@@ -192,12 +196,34 @@ namespace App4
 			return indexPath;
 		}
 
+		public override void WillDisplayHeaderView(UITableView tableView, UIView headerView, nint section)
+		{
+
+			var header = headerView as UITableViewHeaderFooterView;
+
+			header.TextLabel.TextColor = UIColor.DarkGray;
+			header.TextLabel.Font = UIFont.BoldSystemFontOfSize(12);
+
+		}
+
 		public override string TitleForHeader(UITableView tableView, nint section)
 		{
+			if (section == 0)
+				return " ";
+			//if (section == 1)
+			//	return "Client";
 			if (section == 2)
 				return "Items";
 
 			return base.TitleForHeader(tableView, section);
+		}
+
+		public override string TitleForFooter(UITableView tableView, nint section)
+		{
+			if (section == 1)
+				return " ";
+
+			return base.TitleForFooter(tableView, section);
 		}
 
 		public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)

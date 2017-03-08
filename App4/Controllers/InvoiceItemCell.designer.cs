@@ -14,5 +14,8 @@ namespace App4
     [Register ("InvoiceItemCell")]
     partial class InvoiceItemCell
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }

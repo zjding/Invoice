@@ -16,21 +16,17 @@ namespace App4
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        public UIKit.UIButton btnDate { get; set; }
+        UIKit.UILabel lblDueTerm { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        public UIKit.UILabel lblInvoiceName { get; set; }
-
-        [Action ("OnBtnInvoiceDateUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void OnBtnInvoiceDateUpInside (UIKit.UIButton sender);
+        UIKit.UILabel lblInvoiceName { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
-            if (btnDate != null) {
-                btnDate.Dispose ();
-                btnDate = null;
+            if (lblDueTerm != null) {
+                lblDueTerm.Dispose ();
+                lblDueTerm = null;
             }
 
             if (lblInvoiceName != null) {
