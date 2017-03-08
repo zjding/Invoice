@@ -143,7 +143,7 @@ namespace App4
 			}
 			else if (indexPath.Section == 2) // item
 			{
-				if (indexPath.Row == items.Count)
+				if (indexPath.Row == 0)
 				{
 					InvoiceAddItemCell cell = this.TableView.DequeueReusableCell(AddItemCellIdentifier) as InvoiceAddItemCell;
 
@@ -153,10 +153,10 @@ namespace App4
 				{
 					//InvoiceItemCell cell = this.TableView.DequeueReusableCell(ItemCellIdentifier) as InvoiceItemCell;
 					InvoiceItemDisplayCell cell = this.TableView.DequeueReusableCell(InvoiceItemDisplayCellIdentifier) as InvoiceItemDisplayCell;
-					cell.lblName.Text = items[indexPath.Row].Name;
-					cell.lblUnitPrice.Text = items[indexPath.Row].Price.ToString("C", CultureInfo.CurrentCulture) + " x " + items[indexPath.Row].Quantity.ToString();
-					cell.lblPrice.Text = (items[indexPath.Row].Price * items[indexPath.Row].Quantity).ToString("C", CultureInfo.CurrentCulture);
-					cell.lblNumber.Text = (indexPath.Row + 1).ToString();
+					cell.lblName.Text = items[indexPath.Row-1].Name;
+					cell.lblUnitPrice.Text = items[indexPath.Row-1].Price.ToString("C", CultureInfo.CurrentCulture) + " x " + items[indexPath.Row-1].Quantity.ToString();
+					cell.lblPrice.Text = (items[indexPath.Row-1].Price * items[indexPath.Row-1].Quantity).ToString("C", CultureInfo.CurrentCulture);
+					cell.lblNumber.Text = (indexPath.Row).ToString();
 
 					return cell;
 				}
