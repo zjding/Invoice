@@ -3,6 +3,7 @@ using System;
 using UIKit;
 using BLKFlexibleHeightBarDemo;
 using CoreGraphics;
+using Invoice_Model;
 
 namespace App4
 {
@@ -10,8 +11,17 @@ namespace App4
 	{
 		SquareCashStyleBar _headerBar;
 
+		public Invoice invoice;
+
 		public InvoiceViewController(IntPtr handle) : base(handle)
 		{
+			invoice = new Invoice();
+			invoice.name = "#2";
+			invoice.issueDate = DateTime.Now.ToString("MMMMM dd, yyyy");
+			invoice.dueTerm = "30 days";
+			invoice.dueDate = DateTime.Now.AddDays(30).ToString("MMMMM dd, yyyy");
+
+
 		}
 
 		public override void ViewWillAppear(bool animated)
@@ -19,15 +29,28 @@ namespace App4
 			base.ViewWillAppear(animated);
 
 			this.NavigationController.SetNavigationBarHidden(true, false);
+
+			_headerBar.numberLabel.Text = invoice.name;
+			_headerBar.dateLabel.Text = invoice.issueDate;
+			_headerBar.dueLabel.Text = "Due: " + invoice.dueTerm;
 		}
 
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
 
+			_headerBar = new SquareCashStyleBar(new CGRect(0f, 0f, View.Frame.Width, 50f));
+
+			_headerBar.invoiceName = invoice.name;
+			_headerBar.invoiceIssueDate = invoice.issueDate;
+			_headerBar.invoiceDueTerm = invoice.dueTerm;
+			_headerBar.ConfigureBar();
+
+
 			SetNeedsStatusBarAppearanceUpdate();
 
-			_headerBar = new SquareCashStyleBar(new CGRect(0f, 0f, View.Frame.Width, 50f));
+
+
 
 			var behaviorDefiner = new SquareCashStyleBehaviorDefiner();
 			behaviorDefiner.AddSnappingPositionProgress(0f, 0f, .5f);
@@ -64,13 +87,14 @@ namespace App4
 			//alert.Show();
 
 			UIStoryboard storyBoard = UIStoryboard.FromName("Main", null);
-			//UINavigationController detailVC = (UINavigationController)storyBoard.InstantiateViewController("invoiceDateNavigationVC");
-			////detailVC.ModalTransitionStyle = UIModalTransitionStyle.CoverVertical;
-			////this.PresentViewController(detailVC, true, null);
-
-			//this.NavigationController.PushViewController(detailVC, true);
 
 			InvoiceDateViewController invoiceDateVC = (InvoiceDateViewController)storyBoard.InstantiateViewController("invoiceDetailVC");
+			invoiceDateVC.name = invoice.name;
+			invoiceDateVC.issueDate = invoice.issueDate;
+			invoiceDateVC.dueTerm = invoice.dueTerm;
+			invoiceDateVC.dueDate = invoice.dueDate;
+			invoiceDateVC.callingController = this;
+
 			this.NavigationController.PushViewController(invoiceDateVC, true);
 		}
 

@@ -16,6 +16,10 @@ namespace App4
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIBarButtonItem btnDone { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnDue { get; set; }
 
         [Outlet]
@@ -29,6 +33,10 @@ namespace App4
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField txtInvoiceNum { get; set; }
+
+        [Action ("btnDone_UpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnDone_UpInside (UIKit.UIBarButtonItem sender);
 
         [Action ("btnDue_UpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -44,6 +52,11 @@ namespace App4
 
         void ReleaseDesignerOutlets ()
         {
+            if (btnDone != null) {
+                btnDone.Dispose ();
+                btnDone = null;
+            }
+
             if (btnDue != null) {
                 btnDue.Dispose ();
                 btnDue = null;

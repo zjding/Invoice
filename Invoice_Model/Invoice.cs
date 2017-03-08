@@ -5,8 +5,8 @@ namespace Invoice_Model
 	{		
 		public int id { get; set; }
 		public string name { get; set; }
-		public DateTime issueDate { get; set; }
+		public string issueDate { get; set; }
 		public string dueTerm { get; set; }
-		public DateTime dueDate { get; set; }
+		public string dueDate { get; set; }
 	}
 }

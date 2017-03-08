@@ -5,9 +5,18 @@ namespace BLKFlexibleHeightBarDemo
 {
 	public class SquareCashStyleBar : BLKFlexibleHeightBar
 	{
+		public string invoiceName;
+		public string invoiceIssueDate;
+		public string invoiceDueTerm;
+
+		public BLKFlexibleHeightBarSubviewUILabel invoiceLabel;
+		public BLKFlexibleHeightBarSubviewUILabel numberLabel;
+		public BLKFlexibleHeightBarSubviewUILabel dateLabel;
+		public BLKFlexibleHeightBarSubviewUILabel dueLabel;
+
 		public SquareCashStyleBar(CGRect frame) : base(frame)
 		{
-			ConfigureBar();
+			//ConfigureBar();
 		}
 
 		public SquareCashStyleBar()
@@ -15,7 +24,7 @@ namespace BLKFlexibleHeightBarDemo
 			ConfigureBar();
 		}
 
-		void ConfigureBar()
+		public void ConfigureBar()
 		{
 			// Configure bar appearence
 			_maximumBarHeight = 80.0f;
@@ -25,7 +34,7 @@ namespace BLKFlexibleHeightBarDemo
 			///////////////////////
 
 			// Add and configure name label
-			var invoiceLabel = new BLKFlexibleHeightBarSubviewUILabel();
+			invoiceLabel = new BLKFlexibleHeightBarSubviewUILabel();
 			//nameLabel.Font = UIFont.SystemFontOfSize (30f);
 			invoiceLabel.Font = UIFont.FromName("Arial", 36f);
 			invoiceLabel.TextColor = UIColor.White;
@@ -53,11 +62,11 @@ namespace BLKFlexibleHeightBarDemo
 			/////////////////
 
 			// Add and configure name label
-			var numberLabel = new BLKFlexibleHeightBarSubviewUILabel();
+			numberLabel = new BLKFlexibleHeightBarSubviewUILabel();
 			//nameLabel.Font = UIFont.SystemFontOfSize (30f);
 			numberLabel.Font = UIFont.FromName("Arial", 18f);
 			numberLabel.TextColor = UIColor.White;
-			numberLabel.Text = "#2";
+			numberLabel.Text = invoiceName;
 
 			var initialNumberLabelLayoutAttributes = new BLKFlexibleHeightBarSubviewLayoutAttributes();
 			initialNumberLabelLayoutAttributes.Size = numberLabel.SizeThatFits(CGSize.Empty);
@@ -81,16 +90,16 @@ namespace BLKFlexibleHeightBarDemo
 			/////////////////
 
 			// Add and configure name label
-			var dateLabel = new BLKFlexibleHeightBarSubviewUILabel();
+			dateLabel = new BLKFlexibleHeightBarSubviewUILabel();
 			//nameLabel.Font = UIFont.SystemFontOfSize (30f);
 			dateLabel.Font = UIFont.FromName("Avenir Next", 16f);
 			dateLabel.TextColor = UIColor.White;
-			dateLabel.Text = "12/12/2017";
+			dateLabel.Text = invoiceIssueDate;
 
 			var initialDateLabelLayoutAttributes = new BLKFlexibleHeightBarSubviewLayoutAttributes();
 			initialDateLabelLayoutAttributes.Size = dateLabel.SizeThatFits(CGSize.Empty);
 			//initialNameLabelLayoutAttributes.Center = new CGPoint(Frame.Size.Width * .5f, _maximumBarHeight - 50f);
-			initialDateLabelLayoutAttributes.Center = new CGPoint(45f, _maximumBarHeight - 22f);
+			initialDateLabelLayoutAttributes.Center = new CGPoint(60f, _maximumBarHeight - 22f);
 			dateLabel.AddLayoutAttributes(initialDateLabelLayoutAttributes, 0f);
 
 			//var midwayNameLabelLayoutAttributes = new BLKFlexibleHeightBarSubviewLayoutAttributes (initialNameLabelLayoutAttributes);
@@ -100,7 +109,7 @@ namespace BLKFlexibleHeightBarDemo
 
 			var finalDateLabelLayoutAttributes = new BLKFlexibleHeightBarSubviewLayoutAttributes(initialDateLabelLayoutAttributes);
 			//finalNameLabelLayoutAttributes.Center = new CGPoint (Frame.Size.Width * .5f, _minimumBarHeight - 25f);
-			finalDateLabelLayoutAttributes.Center = new CGPoint(45f, _minimumBarHeight - 15f);
+			finalDateLabelLayoutAttributes.Center = new CGPoint(60f, _minimumBarHeight - 15f);
 			finalDateLabelLayoutAttributes.Alpha = 0f;
 			dateLabel.AddLayoutAttributes(finalDateLabelLayoutAttributes, 1f);
 
@@ -108,11 +117,11 @@ namespace BLKFlexibleHeightBarDemo
 
 			/////////////////
 
-			var dueLabel = new BLKFlexibleHeightBarSubviewUILabel();
+			dueLabel = new BLKFlexibleHeightBarSubviewUILabel();
 			//nameLabel.Font = UIFont.SystemFontOfSize (30f);
 			dueLabel.Font = UIFont.FromName("Avenir Next", 12f);
 			dueLabel.TextColor = UIColor.White;
-			dueLabel.Text = "Due: 30 days";
+			dueLabel.Text = "Due: " + invoiceDueTerm;
 
 			var initialDueLabelLayoutAttributes = new BLKFlexibleHeightBarSubviewLayoutAttributes();
 			initialDueLabelLayoutAttributes.Size = dueLabel.SizeThatFits(CGSize.Empty);

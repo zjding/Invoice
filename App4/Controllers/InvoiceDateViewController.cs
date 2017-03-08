@@ -8,6 +8,13 @@ namespace App4
 {
     public partial class InvoiceDateViewController : UITableViewController
     {
+		public string name;
+		public string issueDate;
+		public string dueTerm;
+		public string dueDate;
+
+		public InvoiceViewController callingController;
+
         public InvoiceDateViewController (IntPtr handle) : base (handle)
         {
         }
@@ -22,6 +29,11 @@ namespace App4
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+
+			this.txtInvoiceNum.Text = name;
+			this.btnIssueDate.SetTitle(issueDate, UIControlState.Normal);
+			this.btnDue.SetTitle(dueTerm, UIControlState.Normal);
+			this.btnDueDate.SetTitle(dueDate, UIControlState.Normal);
 
 			TableView.TableFooterView = new UIView();
 
@@ -157,5 +169,15 @@ namespace App4
 		//{
 		//	throw new NotImplementedException();
 		//}
+
+		partial void btnDone_UpInside(UIBarButtonItem sender)
+		{
+			callingController.invoice.name = txtInvoiceNum.Text;
+			callingController.invoice.issueDate = btnIssueDate.Title(UIControlState.Normal);
+			callingController.invoice.dueTerm = btnDue.Title(UIControlState.Normal);
+			callingController.invoice.dueDate = btnDueDate.Title(UIControlState.Normal);
+
+			this.NavigationController.PopViewController(true);
+		}
 	}
 }
