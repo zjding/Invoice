@@ -42,6 +42,7 @@ namespace App4
 		{
 			base.ViewDidLoad();
 			//items.Add("Item 1");
+			this.NavigationItem.Title = "Invoice #1";
 
 			var bounds = UIScreen.MainScreen.Bounds;
 

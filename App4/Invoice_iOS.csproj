@@ -43,8 +43,6 @@
     <MtouchUseLlvm>False</MtouchUseLlvm>
     <MtouchUseThumb>False</MtouchUseThumb>
     <MtouchEnableBitcode>False</MtouchEnableBitcode>
-    <MtouchUseSGen>False</MtouchUseSGen>
-    <MtouchUseRefCounting>False</MtouchUseRefCounting>
     <OptimizePNGs>True</OptimizePNGs>
     <MtouchTlsProvider>Default</MtouchTlsProvider>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
@@ -265,6 +263,7 @@
     <Compile Include="testController.designer.cs">
       <DependentUpon>testController.cs</DependentUpon>
     </Compile>
+    <BundleResource Include="Images\Left-50 copy.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ViewController.designer.cs">
