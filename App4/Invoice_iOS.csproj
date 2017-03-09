@@ -276,6 +276,10 @@
     <Compile Include="InvoiceSubtotalCell.designer.cs">
       <DependentUpon>InvoiceSubtotalCell.cs</DependentUpon>
     </Compile>
+    <Compile Include="InvoiceTaxCell.cs" />
+    <Compile Include="InvoiceTaxCell.designer.cs">
+      <DependentUpon>InvoiceTaxCell.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ViewController.designer.cs">

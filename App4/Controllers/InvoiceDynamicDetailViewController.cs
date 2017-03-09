@@ -24,6 +24,7 @@ namespace App4
 		public string AddAttachmentCellIdentifier = "AddAttachmentCellIdentifier";
 		public string InvoiceItemDisplayCellIdentifier = "InvoiceItemDisplayCellIdentifier";
 		public string InvoiceSubtotalCellIdentifier = "InvoiceSubtotalCellIdentifier";
+		public string InvoiceTaxCellIdentifier = "InvoiceTaxCellIdentifier";
 
 		public List<Item> items = new List<Item>();
 		public Client client = new Client();
@@ -168,11 +169,17 @@ namespace App4
 			}
 			else if (indexPath.Section == 3) // total
 			{
-				
+				if (indexPath.Row == 0)
+				{
 					InvoiceSubtotalCell cell = this.TableView.DequeueReusableCell(InvoiceSubtotalCellIdentifier) as InvoiceSubtotalCell;
-					
-
 					return cell;
+				}
+				else 
+				{
+					InvoiceTaxCell cell = this.TableView.DequeueReusableCell(InvoiceTaxCellIdentifier) as InvoiceTaxCell;
+					return cell;
+				}
+
 
 			}
 			else if (indexPath.Section == 4) // attachment
