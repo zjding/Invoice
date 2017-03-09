@@ -272,6 +272,10 @@
       <DependentUpon>InvoiceItemDisplayCell.cs</DependentUpon>
     </Compile>
     <BundleResource Include="Images\Add List-25.png" />
+    <Compile Include="InvoiceSubtotalCell.cs" />
+    <Compile Include="InvoiceSubtotalCell.designer.cs">
+      <DependentUpon>InvoiceSubtotalCell.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ViewController.designer.cs">

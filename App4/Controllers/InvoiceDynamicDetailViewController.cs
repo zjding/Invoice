@@ -23,6 +23,7 @@ namespace App4
 		public string InvoiceAttachmentCellIdentifier = "InvoiceAttachmentCellIdentifier";
 		public string AddAttachmentCellIdentifier = "AddAttachmentCellIdentifier";
 		public string InvoiceItemDisplayCellIdentifier = "InvoiceItemDisplayCellIdentifier";
+		public string InvoiceSubtotalCellIdentifier = "InvoiceSubtotalCellIdentifier";
 
 		public List<Item> items = new List<Item>();
 		public Client client = new Client();
@@ -83,7 +84,7 @@ namespace App4
 
 		public override nint NumberOfSections(UITableView tableView)
 		{
-			return 5;
+			return 6;
 		}
 
 		public override nint RowsInSection(UITableView tableView, nint section)
@@ -100,11 +101,15 @@ namespace App4
 			{
 				return items.Count + 1;
 			}
-			else if (section == 3) // attachments
+			else if (section == 3) // total
+			{
+				return 2;
+			}
+			else if (section == 4) // attachments
 			{
 				return attachments.Count + 1;
 			}
-			else if (section == 4) // signature
+			else if (section == 5) // signature
 			{
 				return 1;
 			}
@@ -161,7 +166,16 @@ namespace App4
 					return cell;
 				}
 			}
-			else if (indexPath.Section == 3) // attachment
+			else if (indexPath.Section == 3) // total
+			{
+				
+					InvoiceSubtotalCell cell = this.TableView.DequeueReusableCell(InvoiceSubtotalCellIdentifier) as InvoiceSubtotalCell;
+					
+
+					return cell;
+
+			}
+			else if (indexPath.Section == 4) // attachment
 			{
 				if (indexPath.Row == attachments.Count)
 				{
