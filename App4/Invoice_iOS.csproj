@@ -268,13 +268,21 @@
       <DependentUpon>InvoiceItemDisplayCell.cs</DependentUpon>
     </Compile>
     <BundleResource Include="Images\Add List-25.png" />
-    <Compile Include="InvoiceSubtotalCell.cs" />
-    <Compile Include="InvoiceSubtotalCell.designer.cs">
-      <DependentUpon>InvoiceSubtotalCell.cs</DependentUpon>
+    <Compile Include="InvoiceSubtotalTableCell.cs" />
+    <Compile Include="InvoiceSubtotalTableCell.designer.cs">
+      <DependentUpon>InvoiceSubtotalTableCell.cs</DependentUpon>
     </Compile>
-    <Compile Include="InvoiceTaxCell.cs" />
-    <Compile Include="InvoiceTaxCell.designer.cs">
-      <DependentUpon>InvoiceTaxCell.cs</DependentUpon>
+    <Compile Include="InvoiceDiscountTVCell.cs" />
+    <Compile Include="InvoiceDiscountTVCell.designer.cs">
+      <DependentUpon>InvoiceDiscountTVCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceTaxTVCell.cs" />
+    <Compile Include="InvoiceTaxTVCell.designer.cs">
+      <DependentUpon>InvoiceTaxTVCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceSubtotalTVCell.cs" />
+    <Compile Include="InvoiceSubtotalTVCell.designer.cs">
+      <DependentUpon>InvoiceSubtotalTVCell.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

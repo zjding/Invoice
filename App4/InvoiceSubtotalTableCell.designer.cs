@@ -11,11 +11,8 @@ using UIKit;
 
 namespace App4
 {
-    [Register ("InvoiceSubtotalCell")]
-    partial class InvoiceSubtotalCell
+    [Register ("InvoiceSubtotalTableCell")]
+    partial class InvoiceSubtotalTableCell
     {
-        void ReleaseDesignerOutlets ()
-        {
-        }
     }
 }

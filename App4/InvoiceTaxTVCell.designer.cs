@@ -11,8 +11,11 @@ using UIKit;
 
 namespace App4
 {
-    [Register ("InvoiceTaxCell")]
-    partial class InvoiceTaxCell
+    [Register ("InvoiceTaxTVCell")]
+    partial class InvoiceTaxTVCell
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }
