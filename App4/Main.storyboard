@@ -1001,53 +1001,8 @@
                                     <segue id="3550" destination="3490" kind="show" identifier="Invoice_To_Client_Segue"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3235" customClass="InvoiceItemCell" reuseIdentifier="ItemCellIdentifier">
-                                <rect key="frame" x="0.0" y="116" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3235" id="3236" customClass="InvoiceItemCell">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8459" translatesAutoresizingMaskIntoConstraints="NO">
-                                            <rect key="frame" x="20" y="11" width="374" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8549" translatesAutoresizingMaskIntoConstraints="NO">
-                                            <rect key="frame" x="67" y="11" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                            <constraints>
-                                                <constraint id="8551" firstItem="8549" firstAttribute="width" constant="42"/>
-                                                <constraint id="8552" firstItem="8549" firstAttribute="height" constant="21"/>
-                                            </constraints>
-                                        </label>
-                                    </subviews>
-                                    <variation key="default">
-                                        <mask key="constraints">
-                                            <exclude reference="8361"/>
-                                        </mask>
-                                    </variation>
-                                    <variation key="heightClass=regular-widthClass=compact">
-                                        <mask key="constraints">
-                                            <include reference="8361"/>
-                                        </mask>
-                                    </variation>
-                                    <constraints>
-                                        <constraint id="8460" firstItem="8459" firstAttribute="leading" secondItem="3236" secondAttribute="leading" constant="20"/>
-                                        <constraint id="8461" firstItem="3236" firstAttribute="trailing" secondItem="8459" secondAttribute="trailing" constant="20"/>
-                                        <constraint id="8462" firstItem="8459" firstAttribute="top" secondItem="3236" secondAttribute="top" constant="11"/>
-                                        <constraint id="8463" firstItem="3236" firstAttribute="bottom" secondItem="8459" secondAttribute="bottom" constant="11"/>
-                                        <constraint id="8550" firstItem="8549" firstAttribute="leading" secondItem="3236" secondAttribute="leading" constant="67"/>
-                                        <constraint id="8553" firstItem="8549" firstAttribute="top" secondItem="3236" secondAttribute="top" constant="11"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections/>
-                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3299" reuseIdentifier="AddItemCellIdentifier" customClass="InvoiceAddItemCell">
-                                <rect key="frame" x="0.0" y="160" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="116" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3299" id="3300">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
@@ -1083,7 +1038,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="5284" customClass="InvoiceSignatureCell" reuseIdentifier="InvoiceSignatureCellIdentifier" style="IBUITableViewCellStyleDefault" textLabel="5286" accessoryType="disclosureIndicator">
-                                <rect key="frame" x="0.0" y="204" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="160" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5284" id="5285">
                                     <rect key="frame" x="0.0" y="0.0" width="376" height="43"/>
@@ -1103,7 +1058,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="5589" accessoryType="disclosureIndicator" reuseIdentifier="InvoiceAttachmentCellIdentifier" customClass="InvoiceAttachmentCell">
-                                <rect key="frame" x="0.0" y="248" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="204" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5589" id="5590">
                                     <rect key="frame" x="0.0" y="0.0" width="376" height="43"/>
@@ -1141,7 +1096,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="6862" customClass="InvoiceAddAttachmentCell" reuseIdentifier="AddAttachmentCellIdentifier" style="IBUITableViewCellStyleDefault" textLabel="6895" imageView="6896">
-                                <rect key="frame" x="0.0" y="292" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="248" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6862" id="6863">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
@@ -1165,7 +1120,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="8500" customClass="InvoiceItemDisplayCell" reuseIdentifier="InvoiceItemDisplayCellIdentifier">
-                                <rect key="frame" x="0.0" y="336" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="292" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8500" id="8501">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
@@ -1226,7 +1181,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="8645" customClass="InvoiceSubtotalCell" reuseIdentifier="InvoiceSubtotalCellIdentifier">
-                                <rect key="frame" x="0.0" y="380" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="336" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8645" id="8646">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
@@ -1266,7 +1221,7 @@
                                 <color key="backgroundColor" colorSpace="calibratedRGB" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1"/>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="8647" customClass="InvoiceTaxCell" reuseIdentifier="InvoiceTaxCellIdentifier">
-                                <rect key="frame" x="0.0" y="424" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="380" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8647" id="8648">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
@@ -1307,7 +1262,7 @@
                                 <color key="backgroundColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="8649">
-                                <rect key="frame" x="0.0" y="468" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="424" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8649" id="8650">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
@@ -1315,7 +1270,7 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="8651">
-                                <rect key="frame" x="0.0" y="512" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="468" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8651" id="8652">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>

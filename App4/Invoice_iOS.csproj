@@ -183,10 +183,6 @@
     <Compile Include="Controllers\InvoiceDynamicDetailViewController.designer.cs">
       <DependentUpon>InvoiceDynamicDetailViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\InvoiceItemCell.cs" />
-    <Compile Include="Controllers\InvoiceItemCell.designer.cs">
-      <DependentUpon>InvoiceItemCell.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controllers\InvoiceItemDetailViewController.cs" />
     <Compile Include="Controllers\InvoiceItemDetailViewController.designer.cs">
       <DependentUpon>InvoiceItemDetailViewController.cs</DependentUpon>
