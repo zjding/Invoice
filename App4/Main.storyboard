@@ -1065,28 +1065,25 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="6929" translatesAutoresizingMaskIntoConstraints="NO">
-                                            <rect key="frame" x="20" y="0.0" width="44" height="44"/>
+                                            <rect key="frame" x="65" y="2" width="40" height="40"/>
                                             <constraints>
-                                                <constraint id="6933" firstItem="6929" firstAttribute="width" constant="44"/>
+                                                <constraint id="9086" firstItem="6929" firstAttribute="height" constant="40"/>
+                                                <constraint id="9087" firstItem="6929" firstAttribute="width" constant="40"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6934" translatesAutoresizingMaskIntoConstraints="NO">
-                                            <rect key="frame" x="87" y="22" width="269" height="21"/>
+                                            <rect key="frame" x="129" y="11" width="247" height="21"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                             <color key="textColor" colorSpace="calibratedWhite" white="0.666666666666667" alpha="1"/>
                                             <nil key="highlightedColor"/>
-                                            <constraints>
-                                                <constraint id="6938" firstItem="6934" firstAttribute="height" constant="21"/>
-                                            </constraints>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint id="6930" firstItem="6929" firstAttribute="leading" secondItem="5590" secondAttribute="leading" constant="20"/>
-                                        <constraint id="6931" firstItem="6929" firstAttribute="top" secondItem="5590" secondAttribute="top"/>
-                                        <constraint id="6932" firstItem="6929" firstAttribute="bottom" secondItem="5590" secondAttribute="bottom"/>
-                                        <constraint id="6935" firstItem="6934" firstAttribute="leading" secondItem="6929" secondAttribute="trailing" constant="23"/>
-                                        <constraint id="6936" firstItem="5590" firstAttribute="trailing" secondItem="6934" secondAttribute="trailing" constant="20"/>
-                                        <constraint id="6937" firstItem="6934" firstAttribute="bottom" secondItem="5590" secondAttribute="bottom"/>
+                                        <constraint id="9084" firstItem="6929" firstAttribute="centerY" secondItem="5590" secondAttribute="centerY"/>
+                                        <constraint id="9085" firstItem="6929" firstAttribute="leading" secondItem="5590" secondAttribute="leading" constant="65"/>
+                                        <constraint id="9088" firstItem="6934" firstAttribute="trailing" secondItem="5590" secondAttribute="trailing"/>
+                                        <constraint id="9089" firstItem="6934" firstAttribute="leading" secondItem="6929" secondAttribute="trailing" constant="24"/>
+                                        <constraint id="9090" firstItem="6934" firstAttribute="centerY" secondItem="5590" secondAttribute="centerY"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -1210,8 +1207,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                             <constraints>
-                                                <constraint id="8772" firstItem="8764" firstAttribute="height" constant="21"/>
-                                                <constraint id="8773" firstItem="8764" firstAttribute="width" constant="115"/>
+                                                <constraint id="9057" firstItem="8764" firstAttribute="height" constant="21"/>
+                                                <constraint id="9058" firstItem="8764" firstAttribute="width" constant="115"/>
                                             </constraints>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$46.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8765" translatesAutoresizingMaskIntoConstraints="NO">
@@ -1220,16 +1217,16 @@
                                             <color key="textColor" colorSpace="calibratedWhite" white="0.333333333333333" alpha="1"/>
                                             <nil key="highlightedColor"/>
                                             <constraints>
-                                                <constraint id="8930" firstItem="8765" firstAttribute="height" constant="21"/>
-                                                <constraint id="8931" firstItem="8765" firstAttribute="width" constant="100"/>
+                                                <constraint id="9068" firstItem="8765" firstAttribute="height" constant="21"/>
+                                                <constraint id="9069" firstItem="8765" firstAttribute="width" constant="100"/>
                                             </constraints>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint id="8770" firstItem="8764" firstAttribute="leading" secondItem="8650" secondAttribute="leading" constant="120"/>
-                                        <constraint id="8771" firstItem="8764" firstAttribute="top" secondItem="8650" secondAttribute="top" constant="11"/>
-                                        <constraint id="8928" firstItem="8650" firstAttribute="trailing" secondItem="8765" secondAttribute="trailing" constant="38"/>
-                                        <constraint id="8929" firstItem="8765" firstAttribute="top" secondItem="8650" secondAttribute="top" constant="11"/>
+                                        <constraint id="9055" firstItem="8764" firstAttribute="leading" secondItem="8650" secondAttribute="leading" constant="120"/>
+                                        <constraint id="9056" firstItem="8764" firstAttribute="centerY" secondItem="8650" secondAttribute="centerY"/>
+                                        <constraint id="9067" firstItem="8765" firstAttribute="centerY" secondItem="8650" secondAttribute="centerY"/>
+                                        <constraint id="9070" firstItem="8650" firstAttribute="trailing" secondItem="8765" secondAttribute="trailing" constant="38"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -1246,8 +1243,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                             <constraints>
-                                                <constraint id="8784" firstItem="8780" firstAttribute="height" constant="21"/>
-                                                <constraint id="8785" firstItem="8780" firstAttribute="width" constant="96"/>
+                                                <constraint id="9061" firstItem="8780" firstAttribute="height" constant="21"/>
+                                                <constraint id="9062" firstItem="8780" firstAttribute="width" constant="96"/>
                                             </constraints>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$4.60" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8781" translatesAutoresizingMaskIntoConstraints="NO">
@@ -1256,16 +1253,16 @@
                                             <color key="textColor" colorSpace="calibratedWhite" white="0.333333333333333" alpha="1"/>
                                             <nil key="highlightedColor"/>
                                             <constraints>
-                                                <constraint id="8934" firstItem="8781" firstAttribute="height" constant="21"/>
-                                                <constraint id="8935" firstItem="8781" firstAttribute="width" constant="100"/>
+                                                <constraint id="9073" firstItem="8781" firstAttribute="width" constant="100"/>
+                                                <constraint id="9074" firstItem="8781" firstAttribute="height" constant="21"/>
                                             </constraints>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint id="8782" firstItem="8780" firstAttribute="leading" secondItem="8652" secondAttribute="leading" constant="120"/>
-                                        <constraint id="8783" firstItem="8780" firstAttribute="top" secondItem="8652" secondAttribute="top" constant="11"/>
-                                        <constraint id="8932" firstItem="8652" firstAttribute="trailing" secondItem="8781" secondAttribute="trailing" constant="38"/>
-                                        <constraint id="8933" firstItem="8781" firstAttribute="top" secondItem="8652" secondAttribute="top" constant="11"/>
+                                        <constraint id="9059" firstItem="8780" firstAttribute="leading" secondItem="8652" secondAttribute="leading" constant="120"/>
+                                        <constraint id="9060" firstItem="8780" firstAttribute="centerY" secondItem="8652" secondAttribute="centerY"/>
+                                        <constraint id="9071" firstItem="8781" firstAttribute="centerY" secondItem="8652" secondAttribute="centerY"/>
+                                        <constraint id="9072" firstItem="8652" firstAttribute="trailing" secondItem="8781" secondAttribute="trailing" constant="38"/>
                                     </constraints>
                                     <color key="backgroundColor" colorSpace="calibratedRGB" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1"/>
                                 </tableViewCellContentView>
@@ -1277,12 +1274,15 @@
                                     <rect key="frame" x="0.0" y="0.0" width="376" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tax (10%)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8800" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tax (10%)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8800" translatesAutoresizingMaskIntoConstraints="NO">
                                             <rect key="frame" x="120" y="11" width="81" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
+                                            <constraints>
+                                                <constraint id="9065" firstItem="8800" firstAttribute="height" constant="21"/>
+                                                <constraint id="9066" firstItem="8800" firstAttribute="width" constant="81"/>
+                                            </constraints>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$4.60" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8801" translatesAutoresizingMaskIntoConstraints="NO">
                                             <rect key="frame" x="310" y="11" width="66" height="21"/>
@@ -1290,14 +1290,16 @@
                                             <color key="textColor" colorSpace="calibratedWhite" white="0.333333333333333" alpha="1"/>
                                             <nil key="highlightedColor"/>
                                             <constraints>
-                                                <constraint id="8939" firstItem="8801" firstAttribute="height" constant="21"/>
-                                                <constraint id="8940" firstItem="8801" firstAttribute="width" constant="66"/>
+                                                <constraint id="9076" firstItem="8801" firstAttribute="height" constant="21"/>
+                                                <constraint id="9077" firstItem="8801" firstAttribute="width" constant="66"/>
                                             </constraints>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint id="8938" firstItem="8801" firstAttribute="top" secondItem="8761" secondAttribute="top" constant="11"/>
-                                        <constraint id="8941" firstItem="8801" firstAttribute="trailing" secondItem="8761" secondAttribute="trailing"/>
+                                        <constraint id="9063" firstItem="8800" firstAttribute="leading" secondItem="8761" secondAttribute="leading" constant="120"/>
+                                        <constraint id="9064" firstItem="8800" firstAttribute="centerY" secondItem="8761" secondAttribute="centerY"/>
+                                        <constraint id="9075" firstItem="8801" firstAttribute="trailing" secondItem="8761" secondAttribute="trailing"/>
+                                        <constraint id="9078" firstItem="8801" firstAttribute="centerY" secondItem="8761" secondAttribute="centerY"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" colorSpace="calibratedRGB" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1"/>
@@ -1315,8 +1317,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                             <constraints>
-                                                <constraint id="8860" firstItem="8854" firstAttribute="height" constant="21"/>
-                                                <constraint id="8861" firstItem="8854" firstAttribute="width" constant="42"/>
+                                                <constraint id="9051" firstItem="8854" firstAttribute="height" constant="21"/>
+                                                <constraint id="9052" firstItem="8854" firstAttribute="width" constant="42"/>
                                             </constraints>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8855" translatesAutoresizingMaskIntoConstraints="NO">
@@ -1325,16 +1327,16 @@
                                             <color key="textColor" colorSpace="calibratedWhite" white="0.333333333333333" alpha="1"/>
                                             <nil key="highlightedColor"/>
                                             <constraints>
-                                                <constraint id="8864" firstItem="8855" firstAttribute="height" constant="21"/>
-                                                <constraint id="8865" firstItem="8855" firstAttribute="width" constant="42"/>
+                                                <constraint id="9047" firstItem="8855" firstAttribute="height" constant="21"/>
+                                                <constraint id="9048" firstItem="8855" firstAttribute="width" constant="42"/>
                                             </constraints>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint id="8858" firstItem="8854" firstAttribute="leading" secondItem="8851" secondAttribute="leading" constant="120"/>
-                                        <constraint id="8859" firstItem="8854" firstAttribute="top" secondItem="8851" secondAttribute="top" constant="11"/>
-                                        <constraint id="8862" firstItem="8855" firstAttribute="trailing" secondItem="8851" secondAttribute="trailing"/>
-                                        <constraint id="8863" firstItem="8855" firstAttribute="top" secondItem="8851" secondAttribute="top" constant="11"/>
+                                        <constraint id="9045" firstItem="8855" firstAttribute="centerY" secondItem="8851" secondAttribute="centerY"/>
+                                        <constraint id="9046" firstItem="8855" firstAttribute="trailing" secondItem="8851" secondAttribute="trailing"/>
+                                        <constraint id="9049" firstItem="8854" firstAttribute="centerY" secondItem="8851" secondAttribute="centerY"/>
+                                        <constraint id="9050" firstItem="8854" firstAttribute="leading" secondItem="8851" secondAttribute="leading" constant="120"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" colorSpace="calibratedRGB" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1"/>
@@ -1346,16 +1348,14 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8866" translatesAutoresizingMaskIntoConstraints="NO">
-                                            <rect key="frame" x="120" y="11" width="62" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance Due" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8866" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <rect key="frame" x="120" y="11" width="102" height="21"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                             <nil key="highlightedColor"/>
                                             <constraints>
-                                                <constraint id="8870" firstItem="8866" firstAttribute="height" constant="21"/>
-                                                <constraint id="8871" firstItem="8866" firstAttribute="width" constant="62"/>
-                                                <constraint id="8886" firstItem="8866" firstAttribute="height" constant="21"/>
-                                                <constraint id="8887" firstItem="8866" firstAttribute="width" constant="62"/>
+                                                <constraint id="9107" firstItem="8866" firstAttribute="width" constant="102"/>
+                                                <constraint id="9108" firstItem="8866" firstAttribute="height" constant="21"/>
                                             </constraints>
                                         </label>
                                         <view contentMode="scaleToFill" id="8867" translatesAutoresizingMaskIntoConstraints="NO">
@@ -1368,33 +1368,33 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$43.70" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8879" translatesAutoresizingMaskIntoConstraints="NO">
                                             <rect key="frame" x="306" y="11" width="70" height="21"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                             <nil key="highlightedColor"/>
                                             <constraints>
-                                                <constraint id="8882" firstItem="8879" firstAttribute="height" constant="21"/>
-                                                <constraint id="8883" firstItem="8879" firstAttribute="width" constant="70"/>
+                                                <constraint id="9099" firstItem="8879" firstAttribute="height" constant="21"/>
+                                                <constraint id="9100" firstItem="8879" firstAttribute="width" constant="70"/>
                                             </constraints>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint id="8868" firstItem="8866" firstAttribute="leading" secondItem="8853" secondAttribute="leading" constant="120"/>
                                         <constraint id="8875" firstItem="8867" firstAttribute="leading" secondItem="8853" secondAttribute="leading" constant="65"/>
                                         <constraint id="8876" firstItem="8867" firstAttribute="trailing" secondItem="8853" secondAttribute="trailing" constant="5"/>
                                         <constraint id="8877" firstItem="8867" firstAttribute="top" secondItem="8853" secondAttribute="top"/>
-                                        <constraint id="8880" firstItem="8853" firstAttribute="trailing" secondItem="8879" secondAttribute="trailing" constant="38"/>
-                                        <constraint id="8881" firstItem="8879" firstAttribute="top" secondItem="8867" secondAttribute="centerY" constant="10"/>
-                                        <constraint id="8884" firstItem="8866" firstAttribute="leading" secondItem="8853" secondAttribute="leading" constant="120"/>
-                                        <constraint id="8885" firstItem="8866" firstAttribute="top" secondItem="8867" secondAttribute="centerY" constant="10"/>
+                                        <constraint id="9097" firstItem="8879" firstAttribute="centerY" secondItem="8853" secondAttribute="centerY"/>
+                                        <constraint id="9098" firstItem="8853" firstAttribute="trailing" secondItem="8879" secondAttribute="trailing" constant="38"/>
+                                        <constraint id="9105" firstItem="8866" firstAttribute="centerY" secondItem="8853" secondAttribute="centerY"/>
+                                        <constraint id="9106" firstItem="8866" firstAttribute="leading" secondItem="8853" secondAttribute="leading" constant="120"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1"/>
+                                <color key="backgroundColor" colorSpace="calibratedWhite" white="0.333333333333333" alpha="1"/>
                             </tableViewCell>
                         </prototypes>
                         <color key="separatorColor" colorSpace="calibratedRGB" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1"/>
                     </tableView>
                     <navigationItem key="navigationItem" title="Invoice" id="3137">
                         <barButtonItem key="leftBarButtonItem" id="3203" image="Images/Left-50 copy.png"/>
+                        <barButtonItem key="rightBarButtonItem" id="9081" systemItem="action"/>
                     </navigationItem>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>

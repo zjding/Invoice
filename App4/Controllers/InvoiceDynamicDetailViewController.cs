@@ -202,7 +202,7 @@ namespace App4
 			}
 			else if (indexPath.Section == 4) // attachment
 			{
-				if (indexPath.Row == attachments.Count)
+				if (indexPath.Row == 0)
 				{
 					InvoiceAddAttachmentCell cell = this.TableView.DequeueReusableCell(AddAttachmentCellIdentifier) as InvoiceAddAttachmentCell;
 
@@ -212,8 +212,8 @@ namespace App4
 				{
 					InvoiceAttachmentCell cell = this.TableView.DequeueReusableCell(InvoiceAttachmentCellIdentifier) as InvoiceAttachmentCell;
 
-					cell.imgAttachment.Image = attachments[indexPath.Row].image;
-					cell.lblDescription.Text = attachments[indexPath.Row].description;
+					cell.imgAttachment.Image = attachments[indexPath.Row-1].image;
+					cell.lblDescription.Text = attachments[indexPath.Row-1].description;
 
 					return cell;
 				}
@@ -255,6 +255,9 @@ namespace App4
 			if (section == 2)
 				return "Items";
 
+			if (section == 4)
+				return "Attachments";
+
 			return base.TitleForHeader(tableView, section);
 		}
 
@@ -263,7 +266,18 @@ namespace App4
 			if (section == 1)
 				return " ";
 
+			if (section == 3)
+				return " ";
+
 			return base.TitleForFooter(tableView, section);
+		}
+
+		public override nfloat GetHeightForRow(UITableView tableView, NSIndexPath indexPath)
+		{
+			if (indexPath.Section == 3)
+				return 30;
+
+			return base.GetHeightForRow(tableView, indexPath);
 		}
 
 		public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
