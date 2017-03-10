@@ -179,10 +179,6 @@
     <Compile Include="Controllers\InvoiceDetailViewController.designer.cs">
       <DependentUpon>InvoiceDetailViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\InvoiceDynamicDetailViewController.cs" />
-    <Compile Include="Controllers\InvoiceDynamicDetailViewController.designer.cs">
-      <DependentUpon>InvoiceDynamicDetailViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controllers\InvoiceItemDetailViewController.cs" />
     <Compile Include="Controllers\InvoiceItemDetailViewController.designer.cs">
       <DependentUpon>InvoiceItemDetailViewController.cs</DependentUpon>
@@ -263,33 +259,38 @@
     <BundleResource Include="Images\Calendar-50.png" />
     <BundleResource Include="Images\Calendar-25.png" />
     <BundleResource Include="Images\Client-25.png" />
-    <Compile Include="InvoiceItemDisplayCell.cs" />
-    <Compile Include="InvoiceItemDisplayCell.designer.cs">
-      <DependentUpon>InvoiceItemDisplayCell.cs</DependentUpon>
-    </Compile>
     <BundleResource Include="Images\Add List-25.png" />
     <Compile Include="InvoiceSubtotalTableCell.cs" />
     <Compile Include="InvoiceSubtotalTableCell.designer.cs">
       <DependentUpon>InvoiceSubtotalTableCell.cs</DependentUpon>
     </Compile>
-    <Compile Include="InvoiceDiscountTVCell.cs" />
-    <Compile Include="InvoiceDiscountTVCell.designer.cs">
+    <BundleResource Include="Images\Attach-25.png" />
+    <Compile Include="Controllers\InvoiceDynamicDetailViewController.cs" />
+    <Compile Include="Controllers\InvoiceDynamicDetailViewController.designer.cs">
+      <DependentUpon>InvoiceDynamicDetailViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\InvoiceDiscountTVCell.cs" />
+    <Compile Include="Controllers\InvoiceDiscountTVCell.designer.cs">
       <DependentUpon>InvoiceDiscountTVCell.cs</DependentUpon>
     </Compile>
-    <Compile Include="InvoiceTaxTVCell.cs" />
-    <Compile Include="InvoiceTaxTVCell.designer.cs">
-      <DependentUpon>InvoiceTaxTVCell.cs</DependentUpon>
+    <Compile Include="Controllers\InvoiceItemDisplayCell.cs" />
+    <Compile Include="Controllers\InvoiceItemDisplayCell.designer.cs">
+      <DependentUpon>InvoiceItemDisplayCell.cs</DependentUpon>
     </Compile>
-    <Compile Include="InvoiceSubtotalTVCell.cs" />
-    <Compile Include="InvoiceSubtotalTVCell.designer.cs">
-      <DependentUpon>InvoiceSubtotalTVCell.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InvoicePaidTVCell.cs" />
-    <Compile Include="InvoicePaidTVCell.designer.cs">
+    <Compile Include="Controllers\InvoicePaidTVCell.cs" />
+    <Compile Include="Controllers\InvoicePaidTVCell.designer.cs">
       <DependentUpon>InvoicePaidTVCell.cs</DependentUpon>
     </Compile>
-    <Compile Include="InvoiceTotalTVCell.cs" />
-    <Compile Include="InvoiceTotalTVCell.designer.cs">
+    <Compile Include="Controllers\InvoiceSubtotalTVCell.cs" />
+    <Compile Include="Controllers\InvoiceSubtotalTVCell.designer.cs">
+      <DependentUpon>InvoiceSubtotalTVCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\InvoiceTaxTVCell.cs" />
+    <Compile Include="Controllers\InvoiceTaxTVCell.designer.cs">
+      <DependentUpon>InvoiceTaxTVCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\InvoiceTotalTVCell.cs" />
+    <Compile Include="Controllers\InvoiceTotalTVCell.designer.cs">
       <DependentUpon>InvoiceTotalTVCell.cs</DependentUpon>
     </Compile>
   </ItemGroup>
