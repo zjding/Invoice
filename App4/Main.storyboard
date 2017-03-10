@@ -1018,7 +1018,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8625" translatesAutoresizingMaskIntoConstraints="NO">
                                             <rect key="frame" x="65" y="11" width="144" height="21"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
-                                            <color key="textColor" colorSpace="calibratedRGB" red="0.12156862745098039" green="0.46274509803921571" blue="0.996078431372549" alpha="1"/>
+                                            <color key="textColor" colorSpace="calibratedRGB" red="0.16470588235294117" green="0.41568627450980394" blue="0.99215686274509807" alpha="1"/>
                                             <nil key="highlightedColor"/>
                                             <constraints>
                                                 <constraint id="8635" firstItem="8625" firstAttribute="height" constant="21"/>
@@ -1095,25 +1095,37 @@
                                     <segue id="7417" destination="6491" kind="show" identifier="Invoice_To_ExistingAttachment_Segue"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="6862" customClass="InvoiceAddAttachmentCell" reuseIdentifier="AddAttachmentCellIdentifier" style="IBUITableViewCellStyleDefault" textLabel="6895" imageView="6896">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="6862" customClass="InvoiceAddAttachmentCell" reuseIdentifier="AddAttachmentCellIdentifier">
                                 <rect key="frame" x="0.0" y="248" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6862" id="6863">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Add Attachment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6895">
-                                            <rect key="frame" x="79" y="0.0" width="315" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Images/Plus_S.png" id="6896">
-                                            <rect key="frame" x="20" y="0.0" width="44" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="8979" translatesAutoresizingMaskIntoConstraints="NO" image="Images/Attach-25.png">
+                                            <rect key="frame" x="20" y="9" width="25" height="25"/>
+                                            <constraints>
+                                                <constraint id="8983" firstItem="8979" firstAttribute="height" constant="25"/>
+                                                <constraint id="8984" firstItem="8979" firstAttribute="width" constant="25"/>
+                                            </constraints>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Attachment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8980" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <rect key="frame" x="65" y="11" width="122" height="21"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                            <color key="textColor" colorSpace="calibratedRGB" red="0.16470588235294117" green="0.41568627450980394" blue="0.99215686274509807" alpha="1"/>
+                                            <nil key="highlightedColor"/>
+                                            <constraints>
+                                                <constraint id="8987" firstItem="8980" firstAttribute="height" constant="21"/>
+                                                <constraint id="8988" firstItem="8980" firstAttribute="width" constant="122"/>
+                                            </constraints>
+                                        </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint id="8981" firstItem="8979" firstAttribute="leading" secondItem="6863" secondAttribute="leading" constant="20"/>
+                                        <constraint id="8982" firstItem="8979" firstAttribute="top" secondItem="6863" secondAttribute="top" constant="9"/>
+                                        <constraint id="8985" firstItem="8980" firstAttribute="leading" secondItem="6863" secondAttribute="leading" constant="65"/>
+                                        <constraint id="8986" firstItem="8980" firstAttribute="top" secondItem="6863" secondAttribute="top" constant="11"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue id="7025" destination="6500" kind="presentation" identifier="Invoice_To_Attachment_Segue"/>
@@ -1163,6 +1175,10 @@
                                             <color key="textColor" colorSpace="calibratedWhite" white="0.666666666666667" alpha="1"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="8978" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                            <rect key="frame" x="-44" y="-38" width="240" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint id="8565" firstItem="8556" firstAttribute="leading" secondItem="8501" secondAttribute="leading" constant="65"/>
@@ -2616,6 +2632,7 @@
         <image name="Images/Calendar-25.png" width="25" height="25"/>
         <image name="Images/Client-25.png" width="25" height="25"/>
         <image name="Images/Add List-25.png" width="25" height="25"/>
+        <image name="Images/Attach-25.png" width="25" height="25"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedScreenMetrics key="destination" type="retina55"/>

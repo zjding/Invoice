@@ -260,10 +260,6 @@
     <BundleResource Include="Images\Calendar-25.png" />
     <BundleResource Include="Images\Client-25.png" />
     <BundleResource Include="Images\Add List-25.png" />
-    <Compile Include="InvoiceSubtotalTableCell.cs" />
-    <Compile Include="InvoiceSubtotalTableCell.designer.cs">
-      <DependentUpon>InvoiceSubtotalTableCell.cs</DependentUpon>
-    </Compile>
     <BundleResource Include="Images\Attach-25.png" />
     <Compile Include="Controllers\InvoiceDynamicDetailViewController.cs" />
     <Compile Include="Controllers\InvoiceDynamicDetailViewController.designer.cs">
