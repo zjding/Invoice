@@ -284,6 +284,14 @@
     <Compile Include="InvoiceSubtotalTVCell.designer.cs">
       <DependentUpon>InvoiceSubtotalTVCell.cs</DependentUpon>
     </Compile>
+    <Compile Include="InvoicePaidTVCell.cs" />
+    <Compile Include="InvoicePaidTVCell.designer.cs">
+      <DependentUpon>InvoicePaidTVCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceTotalTVCell.cs" />
+    <Compile Include="InvoiceTotalTVCell.designer.cs">
+      <DependentUpon>InvoiceTotalTVCell.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ViewController.designer.cs">

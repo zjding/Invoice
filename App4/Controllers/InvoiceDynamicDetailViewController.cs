@@ -28,6 +28,8 @@ namespace App4
 		public string InvoiceTaxTVCellIdentifier = "InvoiceTaxTVCellIdentifier";
 		public string InvoiceDiscountTVCellIdentifier = "InvoiceDiscountTVCellIdentifier";
 		public string InvoiceSubtotalTVCellIdentifier = "InvoiceSubtotalTVCellIdentifier";
+		public string InvoicePaidTVCellIdentifier = "InvoicePaidTVCellIdentifier";
+		public string InvoiceTotalTVCellIdentifier = "InvoiceTotalTVCellIdentifier";
 
 		public List<Item> items = new List<Item>();
 		public Client client = new Client();
@@ -107,7 +109,7 @@ namespace App4
 			}
 			else if (section == 3) // total
 			{
-				return 3;
+				return 5;
 			}
 			else if (section == 4) // attachments
 			{
@@ -182,13 +184,21 @@ namespace App4
 					InvoiceTaxTVCell cell = this.TableView.DequeueReusableCell(InvoiceTaxTVCellIdentifier) as InvoiceTaxTVCell;
 					return cell;
 				}
-				else 
+				else if (indexPath.Row == 2)
 				{
 					InvoiceDiscountTVCell cell = this.TableView.DequeueReusableCell(InvoiceDiscountTVCellIdentifier) as InvoiceDiscountTVCell;
 					return cell;
 				}
-
-
+				else if (indexPath.Row == 3)
+				{
+					InvoicePaidTVCell cell = this.TableView.DequeueReusableCell(InvoicePaidTVCellIdentifier) as InvoicePaidTVCell;
+					return cell;
+				}
+				else
+				{
+					InvoiceTotalTVCell cell = this.TableView.DequeueReusableCell(InvoiceTotalTVCellIdentifier) as InvoiceTotalTVCell;
+					return cell;
+				}
 			}
 			else if (indexPath.Section == 4) // attachment
 			{
