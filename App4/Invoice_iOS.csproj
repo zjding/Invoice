@@ -300,6 +300,15 @@
     <Compile Include="InvoicePaymentTVCell.designer.cs">
       <DependentUpon>InvoicePaymentTVCell.cs</DependentUpon>
     </Compile>
+    <BundleResource Include="Images\left.png" />
+    <Compile Include="InvoiceNameViewController.cs" />
+    <Compile Include="InvoiceNameViewController.designer.cs">
+      <DependentUpon>InvoiceNameViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceNameNavigationController.cs" />
+    <Compile Include="InvoiceNameNavigationController.designer.cs">
+      <DependentUpon>InvoiceNameNavigationController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ViewController.designer.cs">

@@ -88,6 +88,35 @@ namespace App4
 
 			this.TableView.ReloadData();
 
+			var tapGesture = new UITapGestureRecognizer(tapHeaderBar);
+			this.NavigationController.NavigationBar.UserInteractionEnabled = true;
+			this.NavigationController.NavigationBar.AddGestureRecognizer(tapGesture);
+			//this.NavigationItem.TitleView.UserInteractionEnabled = true;
+			//NavigationItem.TitleView.AddGestureRecognizer(tapGesture);
+		}
+
+		void tapHeaderBar()
+		{
+			//UIAlertView alert = new UIAlertView()
+			//{
+			//	Title = "alert title",
+			//	Message = "this is a simple alert"
+			//};
+			//alert.AddButton("OK");
+			//alert.Show();
+
+			UIStoryboard storyBoard = UIStoryboard.FromName("Main", null);
+
+			InvoiceNameViewController invoiceNameController = (InvoiceNameViewController)storyBoard.InstantiateViewController("InvoiceNameViewController");
+			invoiceNameController.name = NavigationItem.Title;
+			invoiceNameController.callingController = this;
+			//invoiceDateVC.name = invoice.name;
+			//invoiceDateVC.issueDate = invoice.issueDate;
+			//invoiceDateVC.dueTerm = invoice.dueTerm;
+			//invoiceDateVC.dueDate = invoice.dueDate;
+			//invoiceDateVC.callingController = this;
+
+			this.NavigationController.PushViewController(invoiceNameController, true);
 		}
 
 		public override nint NumberOfSections(UITableView tableView)
