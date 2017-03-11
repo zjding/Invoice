@@ -289,6 +289,17 @@
     <Compile Include="Controllers\InvoiceTotalTVCell.designer.cs">
       <DependentUpon>InvoiceTotalTVCell.cs</DependentUpon>
     </Compile>
+    <BundleResource Include="Images\Signature-25.png" />
+    <BundleResource Include="Images\Edit File-25.png" />
+    <Compile Include="InvoiceNoteTVCell.cs" />
+    <Compile Include="InvoiceNoteTVCell.designer.cs">
+      <DependentUpon>InvoiceNoteTVCell.cs</DependentUpon>
+    </Compile>
+    <BundleResource Include="Images\US Dollar-25.png" />
+    <Compile Include="InvoicePaymentTVCell.cs" />
+    <Compile Include="InvoicePaymentTVCell.designer.cs">
+      <DependentUpon>InvoicePaymentTVCell.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ViewController.designer.cs">

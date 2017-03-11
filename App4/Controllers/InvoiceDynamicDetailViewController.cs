@@ -30,6 +30,8 @@ namespace App4
 		public string InvoiceSubtotalTVCellIdentifier = "InvoiceSubtotalTVCellIdentifier";
 		public string InvoicePaidTVCellIdentifier = "InvoicePaidTVCellIdentifier";
 		public string InvoiceTotalTVCellIdentifier = "InvoiceTotalTVCellIdentifier";
+		public string InvoiceNoteTVCellIdentifier = "InvoiceNoteTVCellIdentifier";
+		public string InvoicePaymentTVCellIdentifier = "InvoicePaymentTVCellIdentifier";
 
 		public List<Item> items = new List<Item>();
 		public Client client = new Client();
@@ -90,7 +92,7 @@ namespace App4
 
 		public override nint NumberOfSections(UITableView tableView)
 		{
-			return 6;
+			return 8;
 		}
 
 		public override nint RowsInSection(UITableView tableView, nint section)
@@ -115,7 +117,15 @@ namespace App4
 			{
 				return attachments.Count + 1;
 			}
-			else if (section == 5) // signature
+			else if (section == 6) // signature
+			{
+				return 1;
+			}
+			else if (section == 5) // note
+			{
+				return 1;
+			}
+			else if (section == 7) // payment
 			{
 				return 1;
 			}
@@ -218,9 +228,21 @@ namespace App4
 					return cell;
 				}
 			}
-			else
+			else if (indexPath.Section == 5) // note
+			{
+				InvoiceNoteTVCell cell = this.TableView.DequeueReusableCell(InvoiceNoteTVCellIdentifier) as InvoiceNoteTVCell;
+
+				return cell;
+			}
+			else if (indexPath.Section == 6) // signature
 			{
 				InvoiceSignatureCell cell = this.TableView.DequeueReusableCell(InvoiceSignatureCellIdentifier) as InvoiceSignatureCell;
+
+				return cell;
+			}
+			else  // payment
+			{
+				InvoicePaymentTVCell cell = this.TableView.DequeueReusableCell(InvoicePaymentTVCellIdentifier) as InvoicePaymentTVCell;
 
 				return cell;
 			}
@@ -258,6 +280,15 @@ namespace App4
 			if (section == 4)
 				return "Attachments";
 
+			if (section == 6)
+				return " ";
+
+			if (section == 5)
+				return "Note";
+
+			if (section == 7)
+				return " ";
+
 			return base.TitleForHeader(tableView, section);
 		}
 
@@ -267,6 +298,12 @@ namespace App4
 				return " ";
 
 			if (section == 3)
+				return " ";
+
+			if (section == 4)
+				return " ";
+
+			if (section == 7)
 				return " ";
 
 			return base.TitleForFooter(tableView, section);
